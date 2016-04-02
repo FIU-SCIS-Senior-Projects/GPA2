@@ -11,7 +11,7 @@ class SettingsController
    {
       $this->user = $user;
       $this->userName = $userName;
-      $this->log = new ErrorLog();
+      //$this->log = new ErrorLog();
    }
 
    public function importAudit()
@@ -44,7 +44,7 @@ class SettingsController
 
          shell_exec('rm -rf ' . $username);
 
-         $this->log->toLog(1, __METHOD__ , "GPA Audit Imported");
+         toLog(1, "Info", "settings.php/gpaImport", "GPA Audit Imported");
       }
    }
 
@@ -111,7 +111,7 @@ class SettingsController
          $conn->query("INSERT INTO StudentCourse (grade, weight, relevance, semester, year,
            courseInfoID, selected, userID) VALUES (?, 0, 0, ?, ?, (SELECT CourseInfoID FROM CourseInfo
            WHERE courseID = ?), 0, ?)", $params);
-         $this->log->toLog(0, __METHOD__, "Course: $courseID inserted for user: $this->user");
+         toLog(0, "DEBUG", "SC/insertCourses", "Course: $courseID inserted for user: $this->user");
       }
    }
 
@@ -195,14 +195,14 @@ class SettingsController
             if ($counter >= $bucket[2])
             {
                $bucketCompleted = true;
-               $this->log->toLog("0", __METHOD__, "Bucket: $bucket[0] Completed");
+               toLog("0", "DEBUG", "SC/checkBucket", "Bucket: $bucket[0] Completed");
                break;
             }
          }
 
          if (!$bucketCompleted)
          {
-            $this->log->toLog("0", __METHOD__, "Bucket: $bucket[0] not completed");
+            toLog("0", "DEBUG", "SC/checkBucket", "Bucket: $bucket[0] not completed");
             foreach ($coursesNotTaken as $courseNotTaken)
             {
                $params = array($courseNotTaken, $this->user);
@@ -323,7 +323,7 @@ class SettingsController
                $params = array($out[1], $out[2], $out[6], $this->user);
                $conn->query("INSERT INTO StudentCourse (grade, weight, relevance, semester, year, courseInfoID,
                 selected, userID) VALUES ('ND', ?, ?, '', '', ?, 0, ?)", $params);
-               $this->log->toLog(0, __METHOD__, "Updated course $courseID");
+               toLog(0, "DEBUG", "SC/update", "Updated course $courseID");
                continue;
             }
 
@@ -332,7 +332,7 @@ class SettingsController
 
          $params = array($courseID);
          $out = $conn->select("SELECT courseInfoID FROM CourseInfo WHERE courseID = ?", $params);
-         $this->log->toLog(0, __METHOD__, "Insert course $courseID");
+         toLog(0, "DEBUG", "SC/update", "Insert course $courseID");
 
          if (count($out) == 0)
          {

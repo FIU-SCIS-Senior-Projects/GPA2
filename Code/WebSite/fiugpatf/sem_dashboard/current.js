@@ -124,9 +124,6 @@ function start() {
 	//$('#ExportButton').click(function(){
 	//	exportData();
 	//});
-    
-
-    var currentURL = 'current.php';
 
     $("#generateSemesterForecast").click(function() {
 
@@ -151,10 +148,11 @@ function start() {
             }
         }
     });
+
     $.ajax({
         type: 'POST',
         async: false,
-        url: currentURL,
+        url: router,
         dataType: 'json',
         data: {
             action: 'getGradProgram'
@@ -181,7 +179,7 @@ function start() {
     $.ajax({
         type: 'POST',
         async: false,
-        url: currentURL,
+        url: router,
         dataType: 'json',
         data: {
             action: 'getCurrentProgram'

@@ -61,6 +61,33 @@ class SemesterDashboardControllerTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals($return, $expected);
     }
 
+    function testGetGradProgram004() {
+
+        $sdc = new SemesterDashboardController(12, 'newuser20');
+        $return = $sdc->getGradProgram();
+
+        //expected output for unit test
+        $expected = [
+            ["Masters in IT",3.2],
+            ["Masters in Mathematics",2.8],
+            ["Masters in Computer Science",3]
+        ];
+
+        $this->assertEquals($return, $expected);
+    }
+
+    function testGetCurrentProgram005() {
+        $sdc = new SemesterDashboardController(12, 'newuser20');
+        $return = $sdc->getGradProgram();
+
+        //expected output for unit test
+        $expected = [
+            ["Computer Science"]
+        ];
+
+        $this->assertEquals($return, $expected);
+    }
+
 
 
 }

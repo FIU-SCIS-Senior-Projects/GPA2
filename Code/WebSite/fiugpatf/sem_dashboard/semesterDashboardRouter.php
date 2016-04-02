@@ -77,6 +77,54 @@ class SemesterDashboardRouter {
                 $controller = new SemesterForecastController($_SESSION['userID'], $_SESSION['username']);
                 $controller->$action();
                 break;
+            case "getGradProgram":
+                $controller = new SemesterDashboardController($_SESSION['userID'], $_SESSION['username']);
+                $controller->$action();
+                break;
+            case "getCurrentProgram":
+                $controller = new SemesterDashboardController($_SESSION['userID'], $_SESSION['username']);
+                $controller->$action();
+                break;
+            case "remove":
+                $controller = new SemesterDashboardController($_SESSION['userID'], $_SESSION['username']);
+                $controller->$action($_POST['id']);
+                break;
+            case "tabs":
+                $controller = new SemesterDashboardController($_SESSION['userID'], $_SESSION['username']);
+                $controller->$action($_POST['course']);
+                break;
+            case "getAllAssessments":
+                $controller = new SemesterDashboardController($_SESSION['userID'], $_SESSION['username']);
+                $controller->$action($_POST['course']);
+                break;
+            case "plotPoints":
+                $controller = new SemesterDashboardController($_SESSION['userID'], $_SESSION['username']);
+                $controller->$action($_POST['course']);
+                break;
+            case "add":
+                $controller = new SemesterDashboardController($_SESSION['userID'], $_SESSION['username']);
+                $controller->$action($_POST['assessment'], $_POST['percentage'], $_POST['course']);
+                break;
+            case "addGrade":
+                $controller = new SemesterDashboardController($_SESSION['userID'], $_SESSION['username']);
+                $controller->$action($_POST['course'], $_POST['assesment'], $_POST['grade']);
+                break;
+            case "removeGrade":
+                $controller = new SemesterDashboardController($_SESSION['userID'], $_SESSION['username']);
+                $controller->$action($_POST['grade'], $_POST['assessment'], $_POST['course']);
+                break;
+            case "modifyGrade":
+                $controller = new SemesterDashboardController($_SESSION['userID'], $_SESSION['username']);
+                $controller->$action($_POST['newGrade'], $_POST['grade'], $_POST['assessment'], $_POST['course']);
+                break;
+            case "removeBucket":
+                $controller = new SemesterDashboardController($_SESSION['userID'], $_SESSION['username']);
+                $controller->$action($_POST['assessment'], $_POST['course']);
+                break;
+            case "getGrades":
+                $controller = new SemesterDashboardController($_SESSION['userID'], $_SESSION['username']);
+                $controller->$action($_POST['assessment'], $_POST['course']);
+                break;
         }
     }
 }

@@ -4,16 +4,19 @@ $flgSemKey = sem_get(9876543211);
 $memKey = shm_attach(123456789);
 $queKey = msg_get_queue(123456788);
 $flgKey = 555555555;
-$settingMemKey = shm_attach(123456788);
-$settingKey = 666666666;
 $flag = 0;
 $received = true;
 $first = true;
+$log = fopen("log.txt", "a");
 
-$settings = shm_get_var($settingMemKey, $settingKey);
-$file = $settings['log_location']['local'];
-$log = fopen($file, "a");
 
+while ($first){
+
+   msg_receive ($queKey, 1, $msg_type, 16384, $msg);
+   fwrite($log, $msg);
+   $first = false;
+
+}
 
 while ($received){
    
@@ -32,4 +35,5 @@ while ($received){
    sem_release($flgSemKey);
 
 }
+
 ?>

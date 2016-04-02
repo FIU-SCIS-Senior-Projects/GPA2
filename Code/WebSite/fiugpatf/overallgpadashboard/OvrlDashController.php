@@ -10,7 +10,7 @@ class OverallDashboardController
     {
         $this->userID = $userID;
         $this->username = $username;
-        $this->log = new ErrorLog();
+        //$this->log = new ErrorLog();
     }
 
     public function getMajorBuckets()
@@ -24,7 +24,7 @@ class OverallDashboardController
         $output = array();
         foreach ($buckets as $bucket)
         {
-            $this->log->toLog(0, __METHOD__, "bucket: description: $bucket[0]
+            toLog(0, "DEBUG", __METHOD__, "bucket: description: $bucket[0]
                 required: $bucket[1] ");
 
             if($bucket[1] == '1')
@@ -68,7 +68,7 @@ class OverallDashboardController
 
         foreach ($grades as $grade)
         {
-            $this->log->toLog(0, __METHOD__, "grades: grade: $grade[0] credits: $grade[1] ");
+            toLog(0, "DEBUG", __METHOD__, "grades: grade: $grade[0] credits: $grade[1] ");
 
             switch($grade[0])
             {
@@ -128,12 +128,12 @@ class OverallDashboardController
 
         if($creditHours == 0)
         {
-            $this->log->toLog(0, __METHOD__, "gpa: null");
+            toLog(0, "DEBUG", __METHOD__, "gpa: null");
             return 'null';
         }
 
         $gpa = round($gradePoints / $creditHours, 2,PHP_ROUND_HALF_UP);
-        $this->log->toLog(0, __METHOD__, "gpa: $gpa");
+        toLog(0, "DEBUG", __METHOD__, "gpa: $gpa");
         return $gpa;
     }
 
@@ -146,11 +146,11 @@ class OverallDashboardController
 
         if (count($currProgram) == 0)
         {
-            $this->log->toLog(0, __METHOD__, "program: null");
+            toLog(0, "DEBUG", __METHOD__, "program: null");
             return 'null';
         }
         $x = $currProgram[0][0];
-        $this->log->toLog(0, __METHOD__, "program: $x");
+        toLog(0, "DEBUG", __METHOD__, "program: $x");
         return $currProgram[0][0];
     }
 
@@ -163,7 +163,7 @@ class OverallDashboardController
 
         foreach ($gradPrograms as $gradProgram)
         {
-            $this->log->toLog(0, __METHOD__, "program: $gradProgram[0] gpa: $gradProgram[1]");
+            toLog(0, "DEBUG", __METHOD__, "program: $gradProgram[0] gpa: $gradProgram[1]");
         }
 
         return $gradPrograms;
@@ -180,7 +180,7 @@ class OverallDashboardController
 
         if(count($output) == 0)
         {
-            $this->log->toLog(3, __METHOD__, "No Data for graph");
+            toLog(3, 'WARNING', __METHOD__, "No data for graph");
             echo json_encode('No data for graph');
             return;
         }
@@ -270,7 +270,7 @@ class OverallDashboardController
                     $gradeValue = 3.00;
                     break;
                 default:
-                    $this->log->toLog(2, __METHOD__, "grade returned from query is not a char");
+                    toLog(2, "ERROR", __METHOD__, "grade returned from query is not a char");
                     break;
             }
 
@@ -315,7 +315,7 @@ class OverallDashboardController
 
         if(count($output) == 0)
         {
-            toLog(2, __METHOD__, "No courses exist for this user");
+            toLog(2, 'ERROR', __METHOD__, "No courses exist for this user");
             echo json_encode([]);
             return;
         }
@@ -323,10 +323,10 @@ class OverallDashboardController
         for ($i = 0, $c = count($output); $i < $c; $i++) {
 
             if($output[$i][1] == "") {
-                $this->log->toLog(3, __METHOD__, "weight is null");
+                toLog(3, "WARNING", __METHOD__, "weight is null");
             }
             if($output[$i][2] == "") {
-                $this->log->toLog(3, __METHOD__, "relevance is null");
+                toLog(3, "WARNING", __METHOD__, "relevance is null");
             }
 
             $courseID = $output[$i][0];
@@ -353,7 +353,7 @@ class OverallDashboardController
         }
         else {
             $bucket = "";
-            $this->log->toLog(3, __METHOD__, "bucket is null");
+            toLog(3, "WARNING", __METHOD__, "bucket is null");
         }
 
         $params = array($this->userID, $bucket);
@@ -362,7 +362,7 @@ class OverallDashboardController
                 FROM MajorBucket where description = ?)", $params);
 
         foreach ($buckets as $childBucket) {
-            $this->log->toLog(0, __METHOD__, "description: $childBucket[0]
+            toLog(0, "DEBUG", __METHOD__, "description: $childBucket[0]
                 allReq: $childBucket[1] parentID: $childBucket[2]");
         }
 
@@ -383,7 +383,7 @@ class OverallDashboardController
         }
         else {
             $bucket = "";
-            $this->log->toLog(3, __METHOD__, "bucket is null");
+            toLog(3, "WARNING", __METHOD__, "bucket is null");
         }
 
         $params = array($this->userID, $bucket, $this->userID);
@@ -394,7 +394,7 @@ class OverallDashboardController
 
         $output = array();
         foreach ($buckets as $childBucket) {
-            $this->log->toLog(0, __METHOD__, "description: $childBucket[0]
+            toLog(0, "DEBUG", __METHOD__, "description: $childBucket[0]
                 allReq: $childBucket[1]");
 
             if ($childBucket[1] == 1)
@@ -417,7 +417,7 @@ class OverallDashboardController
         }
         else {
             $bucket = "";
-            $this->log->toLog(3, __METHOD__, "bucket is null");
+            toLog(3, "WARNING", __METHOD__, "bucket is null");
         }
 
         $params = array($bucket, $this->userID, $this->userID, $this->userID);
@@ -431,7 +431,7 @@ class OverallDashboardController
 
         $output = array();
         foreach ($courses as $course) {
-            $this->log->toLog(0, __METHOD__, "courseID: $course[0],
+            toLog(0, "DEBUG", __METHOD__, "courseID: $course[0],
             credits: $course[1], weight: $course[2], relevance: $course[3], courseInfoID: $course[4],
             selected: $course[5]");
 
@@ -458,7 +458,7 @@ class OverallDashboardController
         }
         else {
             $bucket = "";
-            $this->log->toLog(3, __METHOD__, "bucket is null");
+            toLog(3, "WARNING", __METHOD__, "bucket is null");
         }
 
         $params = array($bucket, $this->userID, $this->userID);
@@ -473,7 +473,7 @@ class OverallDashboardController
 
         foreach ($courses as $course) {
 
-            $this->log->toLog(0, __METHOD__, "courseID: $course[0],
+            toLog(0, "DEBUG", __METHOD__, "courseID: $course[0],
             credits: $course[1], grade: $course[2]");
 
             array_push($output, array($course[0], $course[1], $course[2]));
@@ -489,7 +489,7 @@ class OverallDashboardController
             $courseID = $_POST['courseID'];
         } else {
             $courseID = "";
-            $this->log->toLog(3, __METHOD__, "course is null");
+            toLog(3, "WARNING", __METHOD__, "course is null");
         }
 
         $params = array($courseID);
@@ -511,7 +511,7 @@ class OverallDashboardController
             $courseID = $_POST['courseID'];
         } else {
             $courseID = "";
-            $this->log->toLog(3, __METHOD__, "course is null");
+            toLog(3, "WARNING", __METHOD__, "course is null");
         }
 
         $params = array($courseID);
@@ -536,7 +536,7 @@ class OverallDashboardController
             $users = $dbc->select("SELECT userName, lastName, firstName, email FROM Users WHERE type = '0' ", $params);
             $output = array();
             foreach ($users as $user) {
-                $this->log->toLog(3, __METHOD__, "userName: $user[0], lname: $user[1], fname: $user[2], email: $user[3]");
+                toLog(3, "DEBUG", __METHOD__, "userName: $user[0], lname: $user[1], fname: $user[2], email: $user[3]");
                 array_push($output, array($user[0], $user[1], $user[2], $user[3]));
             }
             echo json_encode($output);
@@ -558,13 +558,13 @@ class OverallDashboardController
             $courseID = $_POST['courseID'];
         } else {
             $courseID = "";
-            $this->log->toLog(3, __METHOD__, "course is null");
+            toLog(3, "WARNING", __METHOD__, "course is null");
         }
         if (isset($_POST['modifiedGrade'])) {
             $modifiedGrade = $_POST['modifiedGrade'];
         } else {
             $modifiedGrade = "";
-            $this->log->toLog(3, __METHOD__, "grade is null");
+            toLog(3, "WARNING", __METHOD__, "grade is null");
         }
 
         $params = array($modifiedGrade, $courseID, $this->userID);
@@ -582,19 +582,19 @@ class OverallDashboardController
             $courseID = $_POST['courseID'];
         } else {
             $courseID = "";
-            $this->log->toLog(3, __METHOD__, "course is null");
+            toLog(3, "WARNING", __METHOD__, "course is null");
         }
         if (isset($_POST['modifiedWeight'])) {
             $modifiedWeight = $_POST['modifiedWeight'];
         } else {
             $modifiedWeight = "";
-            $this->log->toLog(3, __METHOD__, "weight is null");
+            toLog(3, "WARNING", __METHOD__, "weight is null");
         }
         if (isset($_POST['modifiedRelevance'])) {
             $modifiedRelevance = $_POST['modifiedRelevance'];
         } else {
             $modifiedRelevance = "";
-            $this->log->toLog(3, __METHOD__, "relevance is null");
+            toLog(3, "WARNING", __METHOD__, "relevance is null");
         }
 
         $params = array($courseID);
@@ -614,7 +614,7 @@ class OverallDashboardController
             $courseID = $_POST['courseID'];
         } else {
             $courseID = "";
-            $this->log->toLog(3, __METHOD__, "course is null");
+            toLog(3, "WARNING", __METHOD__, "course is null");
         }
 
         $params = array($courseID, $this->userID);

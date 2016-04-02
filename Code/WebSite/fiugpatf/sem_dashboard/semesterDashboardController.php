@@ -10,6 +10,8 @@ class SemesterDashboardController
 {
     protected $userID;
     protected $username;
+    protected $id;
+    protected $course;
 
     public function __construct($userID, $username)
     {
@@ -487,6 +489,344 @@ class SemesterDashboardController
         $finalScore = ($calculateScore / $weightUsed) * 100;
         //echo "$finalScore\n";
         return $finalScore;
+    }
+
+    function getGradProgram() {
+
+        $db = new DatabaseConnector();
+        $return = [];
+
+        $stmt = "SELECT graduateProgram, requiredGPA FROM GraduatePrograms";
+        $params = array();
+        $output = $db->select($stmt, $params);
+
+        if(count($output) == 0) {
+            toLog(2, 'ERROR', __METHOD__, "No graduate programs returned");
+            echo json_encode([]);
+            return;
+        }
+
+        for ($i = 0, $c = count($output); $i < $c; $i++) {
+            $prg = $output[$i][0];
+            $gpa = $output[$i][1];
+            array_push($return, array($prg,$gpa));
+        }
+
+        echo json_encode($return);
+        return $return;
+    }
+
+    function getCurrentProgram() {
+
+        $db = new DatabaseConnector();
+        $return = [];
+
+        $stmt = "SELECT majorName FROM Major WHERE majorID IN (SELECT majorID FROM StudentMajor WHERE userID = ?)";
+        $params = array($this->userID);
+        $output = $db->select($stmt, $params);
+
+        if(count($output) == 0) {
+            toLog(2, 'ERROR', __METHOD__, "No major program selected");
+            echo json_encode([]);
+            return;
+        }
+
+        for ($i = 0, $c = count($output); $i < $c; $i++) {
+            $currentProgram = $output[$i][0];
+            array_push($return, array($currentProgram));
+        }
+
+        echo json_encode($return);
+        return $return;
+    }
+
+    function remove($id) {
+
+        $db = new DatabaseConnector();
+
+        $stmt = "Delete FROM StudentCourse WHERE userID = ? AND grade = 'IP' AND courseInfoID IN (SELECT C.courseInfoID FROM CourseInfo C WHERE courseID = ?)";
+        $params = array($this->userID, $id);
+        $db->query($stmt, $params);
+
+        toLog(1, 'INFO', __METHOD__, "Course has be removed");
+        $return = "true";
+
+        echo json_encode($return);
+        return $return;
+    }
+
+    function tabs($course) {
+
+        $db = new DatabaseConnector();
+        $return = [];
+
+        $stmt = "SELECT assessmentName FROM AssessmentType WHERE studentCourseID in (SELECT studentCourseID FROM StudentCourse WHERE grade = 'IP' AND userID = ? AND courseInfoID in (select courseInfoID FROM CourseInfo WHERE courseID = ?))";
+        $params = array($this->userID, $course);
+        $output = $db->select($stmt, $params);
+
+        if(count($output) == 0) {
+            toLog(2, 'ERROR', __METHOD__, "No course cannot be removed");
+            echo json_encode([]);
+            return;
+        }
+
+        for ($i = 0, $c = count($output); $i < $c; $i++) {
+            $assessments = $output[$i][0];
+            array_push($return, $assessments);
+        }
+
+        echo json_encode($return);
+        return $return;
+    }
+
+    function getAllAssessments($course) {
+
+        $db = new DatabaseConnector();
+        $return = [];
+
+        $stmt = "SELECT assessmentName, percentage FROM AssessmentType WHERE  studentCourseID IN (SELECT studentCourseID FROM StudentCourse WHERE grade = 'IP' AND userID = ? AND courseInfoID IN (SELECT courseInfoID FROM CourseInfo WHERE courseID = ?))";
+        $params = array($this->userID, $course);
+        $output = $db->select($stmt, $params);
+
+        if(count($output) == 0) {
+            toLog(2, 'ERROR', __METHOD__, "No assessments or percentages returned");
+            echo json_encode([]);
+            return;
+        }
+
+        $average = 0;
+        $totalPer = 0;
+
+        for ($i = 0, $c = count($output); $i < $c; $i++) {
+            $bucket = $output[$i][0];
+            $per = $output[$i][1];
+
+            $grade = $this->avgAssess($bucket, $course);
+            if($grade != "No Grades") {
+                array_push($return, array($bucket, $per, round($grade, 2)));
+                $average += $grade * $per;
+                $totalPer += $per;
+            }
+            else {
+                array_push($return, array($bucket, $per, $grade));
+            }
+        }
+
+        if($totalPer == 0) {
+            array_push($return, array("Total","" , "No Grades"));
+        }
+        else {
+            array_push($return, array("Total", "", round($average/$totalPer, 2)));
+        }
+
+        echo json_encode($return);
+        return $return;
+    }
+
+    function avgAssess($category, $course) {
+
+        $db = new DatabaseConnector();
+        $return = [];
+
+        $stmt = "SELECT grade FROM Assessment WHERE assessmentTypeID in (select assessmentTypeID FROM AssessmentType WHERE assessmentName = ?) AND studentCourseID in (SELECT studentCourseID FROM StudentCourse WHERE grade = 'IP' and userID = ? AND courseInfoID in (select courseInfoID FROM CourseInfo WHERE courseID = ?))";
+        $params = array($category, $this->userID, $course);
+        $output = $db->select($stmt, $params);
+
+        if(count($output) == 0) {
+            toLog(2, 'ERROR', __METHOD__, "No grades for assessments returned");
+            echo json_encode([]);
+            return;
+        }
+
+        $runAvg = 0;
+        $count = 0;
+
+        for ($i = 0, $c = count($output); $i < $c; $i++) {
+            $assessmentGrade = $output[$i][0];
+
+            $runAvg += $assessmentGrade;
+            $count++;
+
+            array_push($return, array($assessmentGrade));
+        }
+
+        if($count != 0) {
+            return $runAvg / $count;
+        }
+        else {
+            return "No Grades";
+        }
+    }
+
+    function plotPoints($course) {
+
+        $conn = new DatabaseConnector();
+        $params = array($this->userID, $course);
+        $output = $conn->select("SELECT b.assessmentTypeID, b.percentage, a.grade, a.dateEntered FROM Assessment as a, AssessmentType as b WHERE a.studentCourseID in (SELECT studentCourseID FROM StudentCourse WHERE grade = 'IP' and userID = ? and courseInfoID in (select courseInfoID FROM CourseInfo WHERE courseID = ?)) AND b.assessmentTypeID = a.assessmentTypeID ORDER BY dateEntered", $params);
+
+        $x = 1;
+        $dates = [];
+        $points = [];
+        $runningGrades = [];
+        $currDate = "Empty";
+
+        if (count($output) > 0)
+        {
+            foreach ($output as $assesment)
+            {
+                if ($currDate == "Empty")
+                {
+                    $currDate = $assesment[3];
+                    array_push($dates, array($x, substr($assesment[3], 5)));
+                    array_push($runningGrades, array($assesment[0], $assesment[1], $assesment[2]));
+                }
+                else if ($currDate == $assesment[3])
+                {
+                    array_push($runningGrades, array($assesment[0], $assesment[1], $assesment[2]));
+                } else
+                {
+                    array_push($points, array($x, $this->gradeUp($runningGrades)));
+                    array_push($runningGrades, array($assesment[0], $assesment[1], $assesment[2]));
+                    $x++;
+                    $currDate = $assesment[3];
+                    array_push($dates, array($x, substr($assesment[3], 5)));
+                }
+            }
+
+            array_push($runningGrades, array($assesment[0], $assesment[1], $assesment[2]));
+            array_push($points, array($x, $this->gradeUp($runningGrades)));
+            array_push($points, $dates);
+
+            echo json_encode($points);
+        }
+        else {
+            echo json_encode($output);
+        }
+    }
+
+    function gradeUp($runningGrades){
+        $summationGrades = array();
+        foreach($runningGrades as $gradeInfo)
+        {
+            if(isset($summationGrades[$gradeInfo[0]]))
+            {
+                $summationGrades[$gradeInfo[0]][1] +=  $gradeInfo[2];
+                $summationGrades[$gradeInfo[0]][2]++;
+            }
+            else
+            {
+                $summationGrades[$gradeInfo[0]] = array($gradeInfo[1], $gradeInfo[2], 1);
+            }
+        }
+
+        $totalPer = 0;
+        $runningAvg = 0;
+
+        foreach($summationGrades as $summation)
+        {
+            $runningAvg += (($summation[1] / $summation[2]) * $summation[0] / 100);
+            $totalPer += $summation[0];
+        }
+
+        $runningAvg = $runningAvg / $totalPer * 100;
+        return $runningAvg;
+    }
+
+    function add($assessment, $percentage, $course) {
+
+        $db = new DatabaseConnector();
+
+        $stmt = "INSERT into AssessmentType (assessmentName, percentage, studentCourseID) VALUES (?, ?, (SELECT studentCourseID FROM StudentCourse WHERE grade = 'IP' AND userID = ? AND courseInfoID in (select courseInfoID FROM CourseInfo WHERE courseID = ?)))";
+        $params = array($assessment, $percentage, $this->userID, $course);
+        $db->query($stmt, $params);
+
+        toLog(1, 'INFO', __METHOD__, "AssessmentType inserted into database");
+        $return = ["success"];
+        echo json_encode($return);
+
+    }
+
+    function addGrade($course, $assesment, $grade) {
+
+        $db = new DatabaseConnector();
+
+        $stmt = "INSERT into Assessment (assessmentTypeID, grade, studentCourseID, dateEntered) VALUES ((SELECT FROM AssessmentTypeWHERE StudentCourseID in (SELECT studentCourseID FROM StudentCourse WHERE grade = 'IP' and userID = ? AND courseInfoID in (select courseInfoID FROM CourseInfo WHERE courseID = ?)) AND assessmentName = ?), ?, (SELECT studentCourseID FROM StudentCourse WHERE grade = 'IP' and userID = ? AND courseInfoID in (select courseInfoID FROM CourseInfo WHERE courseID = ?)), '" . date("Y-m-d") ."')";
+        $params = array($this->userID, $course, $assesment, $grade, $this->userID, $course);
+        $db->query($stmt, $params);
+
+        toLog(1, 'INFO', __METHOD__, "Grade inserted into database");
+        $return = ["success"];
+        echo json_encode($return);
+
+    }
+
+    function removeGrade($grade, $assessment, $course) {
+
+        $db = new DatabaseConnector();
+
+        $stmt = "Delete from Assessment WHERE grade = ? AND assessmentTypeID in (select assessmentTypeID FROM AssessmentType WHERE assessmentName = ?) AND studentCourseID in (SELECT studentCourseID FROM StudentCourse WHERE grade = 'IP' and userID = ? and courseInfoID in (select courseInfoID FROM CourseInfo WHERE courseID = ?)) limit 1";
+        $params = array($grade, $assessment, $this->userID, $course);
+        $db->query($stmt, $params);
+
+        toLog(1, 'INFO', __METHOD__, "Grade removed from database");
+        $return = ["success"];
+        echo json_encode($return);
+
+    }
+
+    function modifyGrade($newGrade, $grade, $assessment, $course) {
+
+        $db = new DatabaseConnector();
+
+        $stmt = "Delete from Assessment WHERE grade = ? AND assessmentTypeID in (select assessmentTypeID FROM AssessmentType WHERE assessmentName = ?) AND studentCourseID in (SELECT studentCourseID FROM StudentCourse WHERE grade = 'IP' and userID = ? and courseInfoID in (select courseInfoID FROM CourseInfo WHERE courseID = ?)) limit 1";
+        $params = array($newGrade, $grade, $assessment, $this->userID, $course);
+        $db->query($stmt, $params);
+
+        toLog(1, 'INFO', __METHOD__, "Grade modified in database");
+        $return = ["success"];
+        echo json_encode($return);
+    }
+
+    function removeBucket($assessment, $course) {
+
+        $db = new DatabaseConnector();
+
+        $stmt = "DELETE from AssessmentType WHERE  AssessmentName = ? AND studentCourseID in (SELECT studentCourseID FROM StudentCourse WHERE grade = 'IP' and userID = ? and courseInfoID IN (SELECT courseInfoID FROM CourseInfo WHERE courseID = ?))";
+        $params = array($assessment, $this->userID, $course);
+        $db->query($stmt, $params);
+
+        toLog(1, 'INFO', __METHOD__, "Bucket removed from database");
+        $return = ["success"];
+        echo json_encode($return);
+
+    }
+
+    function getGrades($assessment, $course) {
+
+        $db = new DatabaseConnector();
+        $return = [];
+
+        $stmt = "SELECT grade FROM Assessment WHERE assessmentTypeID in (select assessmentTypeID FROM AssessmentType WHERE AssessmentName = ?) AND studentCourseID in (SELECT studentCourseID FROM StudentCourse WHERE grade = 'IP' and userID = ? AND courseInfoID in (select courseInfoID FROM CourseInfo WHERE courseID = ?))";
+        $params = array($assessment, $this->userID, $course);
+        $output = $db->select($stmt, $params);
+
+        toLog(1, 'INFO', __METHOD__, "Get grades for the assessment");
+
+        if(count($output) == 0) {
+            toLog(2, 'ERROR', __METHOD__, "No grades returned form assessment");
+            echo json_encode([]);
+            return;
+        }
+
+        $index = 1;
+        for ($i = 0, $c = count($output); $i < $c; $i++) {
+            $grades = $output[$i][0];
+            array_push($return, array("Grade" . $index, $grades));
+            $index++;
+        }
+
+        echo json_encode($return);
+        return $return;
     }
 
 } //end of semesterDashboardController()
