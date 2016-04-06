@@ -1,0 +1,752 @@
+<main>
+	<programName>Nursing</programName>
+	<minGPA>3.0</minGPA>
+	<bucket>
+		<data>
+			<dateStart>0000-00-00</dateStart>
+			<dateEnd>9999-12-31</dateEnd>
+			<description>Prerequisites</description>
+			<quantity>9</quantity>
+		</data>
+		<bucket>
+			<data>
+				<dateStart>0000-00-00</dateStart>
+				<dateEnd>9999-12-31</dateEnd>
+				<description>Human Anatomy &amp; Lab</description>
+				<quantity>2</quantity>
+			</data>
+			<course>
+				<courseID>ZOO3731</courseID>
+				<courseName>Human Anatomy</courseName>
+				<credits>3</credits>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>ZOO3731L</courseID>
+				<courseName>Human Anatomy Lab</courseName>
+				<credits>1</credits>
+				<minGrade>C</minGrade>
+			</course>
+		</bucket>
+	</bucket>
+</main>
+	<!--<table_data name="MajorBucket">
+        <row>
+            <field name="majorID">4</field>
+            <field name="dateStart">0000-00-00</field>
+            <field name="dateEnd">9999-12-31</field>
+            <field name="description">Human Anatomy &amp; Lab</field>
+            <field name="allRequired">1</field>
+            <field name="quantityNeeded">2</field>
+            <field name="quantification">courses</field>
+            <field name="parentID">Prerequisites</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucket">
+        <row>
+            <field name="majorID">4</field>
+            <field name="dateStart">0000-00-00</field>
+            <field name="dateEnd">9999-12-31</field>
+            <field name="description">Human Physiology &amp; Lab</field>
+            <field name="allRequired">1</field>
+            <field name="quantityNeeded">2</field>
+            <field name="quantification">courses</field>
+            <field name="parentID">Prerequisites</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucket">
+        <row>
+            <field name="majorID">4</field>
+            <field name="dateStart">0000-00-00</field>
+            <field name="dateEnd">9999-12-31</field>
+            <field name="description">Microbiology &amp; Lab</field>
+            <field name="allRequired">1</field>
+            <field name="quantityNeeded">2</field>
+            <field name="quantification">courses</field>
+            <field name="parentID">Prerequisites</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucket">
+        <row>
+            <field name="majorID">4</field>
+            <field name="dateStart">0000-00-00</field>
+            <field name="dateEnd">9999-12-31</field>
+            <field name="description">Chemistry &amp; Lab</field>
+            <field name="allRequired">1</field>
+            <field name="quantityNeeded">2</field>
+            <field name="quantification">courses</field>
+            <field name="parentID">Prerequisites</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucket">
+        <row>
+            <field name="majorID">4</field>
+            <field name="dateStart">0000-00-00</field>
+            <field name="dateEnd">9999-12-31</field>
+            <field name="description">Statistics</field>
+            <field name="allRequired">1</field>
+            <field name="quantityNeeded">1</field>
+            <field name="quantification">courses</field>
+            <field name="parentID">Prerequisites</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucket">
+        <row>
+            <field name="majorID">4</field>
+            <field name="dateStart">0000-00-00</field>
+            <field name="dateEnd">9999-12-31</field>
+            <field name="description">Nutrition</field>
+            <field name="allRequired">1</field>
+            <field name="quantityNeeded">3</field>
+            <field name="quantification">courses</field>
+            <field name="parentID">Prerequisites</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucket">
+        <row>
+            <field name="majorID">4</field>
+            <field name="dateStart">0000-00-00</field>
+            <field name="dateEnd">9999-12-31</field>
+            <field name="description">Human Growth &amp; Development</field>
+            <field name="allRequired">1</field>
+            <field name="quantityNeeded">1</field>
+            <field name="quantification">courses</field>
+            <field name="parentID">Prerequisites</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucket">
+        <row>
+            <field name="majorID">4</field>
+            <field name="dateStart">0000-00-00</field>
+            <field name="dateEnd">9999-12-31</field>
+            <field name="description">Intro to Psychology</field>
+            <field name="allRequired">1</field>
+            <field name="quantityNeeded">1</field>
+            <field name="quantification">courses</field>
+            <field name="parentID">Prerequisites</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucket">
+        <row>
+            <field name="majorID">4</field>
+            <field name="dateStart">0000-00-00</field>
+            <field name="dateEnd">9999-12-31</field>
+            <field name="description">Intro to Ethics</field>
+            <field name="allRequired">1</field>
+            <field name="quantityNeeded">1</field>
+            <field name="quantification">courses</field>
+            <field name="parentID">Prerequisites</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucket">
+        <row>
+            <field name="majorID">4</field>
+            <field name="dateStart">0000-00-00</field>
+            <field name="dateEnd">9999-12-31</field>
+            <field name="description">Nursing Core</field>
+            <field name="allRequired">1</field>
+            <field name="quantityNeeded">5</field>
+            <field name="quantification">buckets</field>
+            <field name="parentID">null</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucket">
+        <row>
+            <field name="majorID">4</field>
+            <field name="dateStart">0000-00-00</field>
+            <field name="dateEnd">9999-12-31</field>
+            <field name="description">Junior 1: Semester 1</field>
+            <field name="allRequired">1</field>
+            <field name="quantityNeeded">5</field>
+            <field name="quantification">courses</field>
+            <field name="parentID">Nursing Core</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucket">
+        <row>
+            <field name="majorID">4</field>
+            <field name="dateStart">0000-00-00</field>
+            <field name="dateEnd">9999-12-31</field>
+            <field name="description">Junior 2: Semester 2</field>
+            <field name="allRequired">1</field>
+            <field name="quantityNeeded">6</field>
+            <field name="quantification">courses</field>
+            <field name="parentID">Nursing Core</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucket">
+        <row>
+            <field name="majorID">4</field>
+            <field name="dateStart">0000-00-00</field>
+            <field name="dateEnd">9999-12-31</field>
+            <field name="description">Junior 2: Semester 3</field>
+            <field name="allRequired">1</field>
+            <field name="quantityNeeded">5</field>
+            <field name="quantification">courses</field>
+            <field name="parentID">Nursing Core</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucket">
+        <row>
+            <field name="majorID">4</field>
+            <field name="dateStart">0000-00-00</field>
+            <field name="dateEnd">9999-12-31</field>
+            <field name="description">Senior 3: Semester 1</field>
+            <field name="allRequired">1</field>
+            <field name="quantityNeeded">6</field>
+            <field name="quantification">courses</field>
+            <field name="parentID">Nursing Core</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucket">
+        <row>
+            <field name="majorID">4</field>
+            <field name="dateStart">0000-00-00</field>
+            <field name="dateEnd">9999-12-31</field>
+            <field name="description">Senior 4: Semester 2</field>
+            <field name="allRequired">1</field>
+            <field name="quantityNeeded">4</field>
+            <field name="quantification">courses</field>
+            <field name="parentID">Nursing Core</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">ZOO3731</field>
+            <field name="courseName">Human Anatomy</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">ZOO3731L</field>
+            <field name="courseName">Human Anatomy Lab</field>
+            <field name="credits">1</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">PCB2099</field>
+            <field name="courseName">Foundations of Human Physiology</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">PCB2099L</field>
+            <field name="courseName">Foundations of Human Physiology Lab</field>
+            <field name="credits">1</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">MCB2000</field>
+            <field name="courseName">Introductory Microbiology</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">MCB2000L</field>
+            <field name="courseName">Introductory Micro Lab</field>
+            <field name="credits">1</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">CHM1045</field>
+            <field name="courseName">General Chemistry I</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">CHM1045L</field>
+            <field name="courseName">General Chemistry Lab I</field>
+            <field name="credits">1</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">STA2023</field>
+            <field name="courseName">Statistics for Business and Economics</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">HUN2201</field>
+            <field name="courseName">Principles of Nutrition</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">PSY2012</field>
+            <field name="courseName">Introductory Psychology</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">PHI2600</field>
+            <field name="courseName">Introduction to Ethics</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NUR3029</field>
+            <field name="courseName">Foundations of Nursing Practice</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NUR3029C</field>
+            <field name="courseName">Foundations of Nursing Practice Lab</field>
+            <field name="credits">2</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NUR3029L</field>
+            <field name="courseName">Foundations of Nursing Practice Clinical</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NUR3125</field>
+            <field name="courseName">Pathophysiologic Basis for Nursing Practice</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NUR3066C</field>
+            <field name="courseName">Health Assessment and Promotion in Nursing Practice</field>
+            <field name="credits">4</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NUR3226</field>
+            <field name="courseName">Nursing Care of Adults I</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NUR3226L</field>
+            <field name="courseName">Nursing Care of Adults I Clinical</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NUR3145</field>
+            <field name="courseName">Pharmacologic Basis for Nursing Practice</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NUR3666</field>
+            <field name="courseName">Evidence-Based Nursing and Research in Global Health Care</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NSP3801</field>
+            <field name="courseName">Interprofessional Approaches to Health Care</field>
+            <field name="credits">1</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NUR3821</field>
+            <field name="courseName">Professional Nursing Leadership: Concepts and Issues</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NUR3227</field>
+            <field name="courseName">Nursing Care of Adults II</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NUR3227L</field>
+            <field name="courseName">Nursing Care of Adults II Clinical</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NUR4455</field>
+            <field name="courseName">Care of Families: Childbearing Nursing</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NUR4455L</field>
+            <field name="courseName">Care of Families: Childbearing Nursing Clinical</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NUR3685L</field>
+            <field name="courseName">Integrative Nursing Care I</field>
+            <field name="credits">0</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NUR3535</field>
+            <field name="courseName">Psychosocial Nursing</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NUR3535L</field>
+            <field name="courseName">Psychosocial Nursing Clinical</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NUR4355</field>
+            <field name="courseName">Care of Families: Childrearing Nursing</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NUR4355L</field>
+            <field name="courseName">Care of Families: Childrearing Nursing Clinical</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NUR4686L</field>
+            <field name="courseName">Integrative Nursing Care II</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NUR4667</field>
+            <field name="courseName">Nursing in Global Health Care Systems</field>
+            <field name="credits">3</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NUR4636C</field>
+            <field name="courseName">Care of Communities: Community Health Nursing</field>
+            <field name="credits">4</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NUR4286</field>
+            <field name="courseName">Nursing Care of Older Adults</field>
+            <field name="credits">2</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NUR4940</field>
+            <field name="courseName">Senior Nursing Synthesis</field>
+            <field name="credits">2</field>
+        </row>
+    </table_data>
+    <table_data name="CourseInfo">
+        <row>
+            <field name="courseID">NUR4945L</field>
+            <field name="courseName">Senior Clinical Practicum</field>
+            <field name="credits">4</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">ZOO3731</field>
+            <field name="bucketName">Human Anatomy &amp; Lab</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">ZOO3731L</field>
+            <field name="bucketName">Human Anatomy &amp; Lab</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">PCB2099</field>
+            <field name="bucketName">Human Physiology &amp; Lab</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">PCB2099L</field>
+            <field name="bucketName">Human Physiology &amp; Lab</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">MCB2000</field>
+            <field name="bucketName">Microbiology &amp; Lab</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">MCB2000L</field>
+            <field name="bucketName">Microbiology &amp; Lab</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">CHM1045</field>
+            <field name="bucketName">Chemistry &amp; Lab</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">CHM1045L</field>
+            <field name="bucketName">Chemistry &amp; Lab</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">STA2023</field>
+            <field name="bucketName">Statistics</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">HUN2201</field>
+            <field name="bucketName">Nutrition</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">DEP2000</field>
+            <field name="bucketName">Human Growth &amp; Development</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">PSY2012</field>
+            <field name="bucketName">Intro to Psychology</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">PHI2600</field>
+            <field name="bucketName">Intro to Ethics</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NUR3029</field>
+            <field name="bucketName">Junior 1: Semester 1</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NUR3029C</field>
+            <field name="bucketName">Junior 1: Semester 1</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NUR3029L</field>
+            <field name="bucketName">Junior 1: Semester 1</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NUR3125</field>
+            <field name="bucketName">Junior 1: Semester 1</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NUR3066C</field>
+            <field name="bucketName">Junior 1: Semester 1</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NUR3226</field>
+            <field name="bucketName">Junior 2: Semester 2</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NUR3226L</field>
+            <field name="bucketName">Junior 2: Semester 2</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NUR3145</field>
+            <field name="bucketName">Junior 2: Semester 2</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NUR3666</field>
+            <field name="bucketName">Junior 2: Semester 2</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NSP3801</field>
+            <field name="bucketName">Junior 2: Semester 2</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NUR3821</field>
+            <field name="bucketName">Junior 2: Semester 2</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NUR3227</field>
+            <field name="bucketName">Junior 2: Semester 3</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NUR3227L</field>
+            <field name="bucketName">Junior 2: Semester 3</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NUR4455</field>
+            <field name="bucketName">Junior 2: Semester 3</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NUR4455L</field>
+            <field name="bucketName">Junior 2: Semester 3</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NUR3685L</field>
+            <field name="bucketName">Junior 2: Semester 3</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NUR3535</field>
+            <field name="bucketName">Senior 3: Semester 1</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NUR3535L</field>
+            <field name="bucketName">Senior 3: Semester 1</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NUR4355</field>
+            <field name="bucketName">Senior 3: Semester 1</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NUR4355L</field>
+            <field name="bucketName">Senior 3: Semester 1</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NUR4686L</field>
+            <field name="bucketName">Senior 3: Semester 1</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NUR4667</field>
+            <field name="bucketName">Senior 3: Semester 1</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NUR4636C</field>
+            <field name="bucketName">Senior 4: Semester 2</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NUR4286</field>
+            <field name="bucketName">Senior 4: Semester 2</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NUR4940</field>
+            <field name="bucketName">Senior 4: Semester 2</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>
+    <table_data name="MajorBucketRequiredCourses">
+        <row>
+            <field name="courseID">NUR4945L</field>
+            <field name="bucketName">Senior 4: Semester 2</field>
+            <field name="minGrade">C</field>
+        </row>
+    </table_data>-->
+

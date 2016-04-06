@@ -140,33 +140,33 @@ class DBTest extends PHPUnit_Framework_TestCase
       $sc = new SettingsController('29', 'g');
 
       $taken = array();
-      array_push($taken, "Fall$$&&2013$$&&COP2210$$&&Programming I$$&&A-$$&&4.00");
-      array_push($taken, "Fall$$&&2013$$&&ENC3249$$&&Prof Tech Writing Comp$$&&B-$$&&3.00");
-      array_push($taken, "Fall$$&&2013$$&&MAD2104$$&&Discrete Mathematics$$&&D-$$&&3.00");
-      array_push($taken, "Fall$$&&2013$$&&STA3033$$&&Prob & Stat For Cs$$&&C$$&&3.00");
-      array_push($taken, "Fall$$&&2013$$&&SYG2000$$&&Intro Sociology$$&&C$$&&3.00");
-      array_push($taken, "Spring$$&&2014$$&&CDA3103$$&&Fund Computer System$$&&B+$$&&3.00");
-      array_push($taken, "Spring$$&&2014$$&&CGS3095$$&&Technology in the Global Arena$$&&C$$&&3.00");
-      array_push($taken, "Spring$$&&2014$$&&COP3337$$&&Programming II$$&&C+$$&&3.00");
-      array_push($taken, "Spring$$&&2014$$&&MAD2104$$&&Discrete Mathematics$$&&C$$&&3.00");
-      array_push($taken, "Summer$$&&2014$$&&CDA4101$$&&Structure Comp Org$$&&DR$$&&3.00");
-      array_push($taken, "Summer$$&&2014$$&&COP4710$$&&Database Management$$&&F$$&&3.00");
-      array_push($taken, "Summer$$&&2014$$&&COP3530$$&&Data Structures$$&&F$$&&3.00");
-      array_push($taken, "Fall$$&&2014$$&&CDA4101$$&&Structure Comp Org$$&&B$$&&3.00");
-      array_push($taken, "Fall$$&&2014$$&&COP3530$$&&Data Structures$$&&D$$&&3.00");
-      array_push($taken, "Fall$$&&2014$$&&COP4710$$&&Database Management$$&&B+$$&&3.00");
-      array_push($taken, "Fall$$&&2014$$&&COT3541$$&&Logic For Comp Sci$$&&B$$&&3.00");
-      array_push($taken, "Summer$$&&2015$$&&COP4555$$&&Prin Of Prog Lang$$&&C+$$&&3.00");
-      array_push($taken, "Summer$$&&2015$$&&MAD3512$$&&Theory Algorithms$$&&B$$&&3.00");
-      array_push($taken, "Fall$$&&2015$$&&CEN4010$$&&Software Eng I$$&&A$$&&3.00");
-      array_push($taken, "Fall$$&&2015$$&&CNT4713$$&&Net-centric Computing$$&&C+$$&&3.00");
-      array_push($taken, "Fall$$&&2015$$&&COP4610$$&&Operating Syst Princ$$&&B+$$&&3.00");
-      array_push($taken, "Spring$$&&2016$$&&CIS4911$$&&Senior Project$$&&A$$&&3.00");
-      array_push($taken, "Spring$$&&2016$$&&COP4520$$&&Parallel Computing$$&&B$$&&3.00");
-      array_push($taken, "Spring$$&&2016$$&&MAD3305$$&&Graph Theory$$&&C+$$&&3.00");
-      array_push($taken, "Spring$$&&2015$$&&COP3530$$&&Data Structures$$&&IP$$&&3.00");
-      array_push($taken, "Spring$$&&2015$$&&COP4338$$&&Programming III$$&&IP$$&&3.00");
-      array_push($taken, "Spring$$&&2015$$&&COP4722$$&&Survey Database Sys$$&&IP$$&&3.00");
+      array_push($taken, "Fall$$&&2013$$&&COP2210$$&&Programming I$$&&A-$$&&4.00$$&&EN");
+      array_push($taken, "Fall$$&&2013$$&&ENC3249$$&&Prof Tech Writing Comp$$&&B-$$&&3.00$$&&EN");
+      array_push($taken, "Fall$$&&2013$$&&MAD2104$$&&Discrete Mathematics$$&&D-$$&&3.00$$&&EN");
+      array_push($taken, "Fall$$&&2013$$&&STA3033$$&&Prob & Stat For Cs$$&&C$$&&3.00$$&&EN");
+      array_push($taken, "Fall$$&&2013$$&&SYG2000$$&&Intro Sociology$$&&C$$&&3.00$$&&EN");
+      array_push($taken, "Spring$$&&2014$$&&CDA3103$$&&Fund Computer System$$&&B+$$&&3.00$$&&EN");
+      array_push($taken, "Spring$$&&2014$$&&CGS3095$$&&Technology in the Global Arena$$&&C$$&&3.00$$&&EN");
+      array_push($taken, "Spring$$&&2014$$&&COP3337$$&&Programming II$$&&C+$$&&3.00$$&&EN");
+      array_push($taken, "Spring$$&&2014$$&&MAD2104$$&&Discrete Mathematics$$&&C$$&&3.00$$&&EN");
+      array_push($taken, "Summer$$&&2014$$&&CDA4101$$&&Structure Comp Org$$&&DR$$&&3.00$$&&EN");
+      array_push($taken, "Summer$$&&2014$$&&COP4710$$&&Database Management$$&&F$$&&3.00$$&&EN");
+      array_push($taken, "Summer$$&&2014$$&&COP3530$$&&Data Structures$$&&F$$&&3.00$$&&EN");
+      array_push($taken, "Fall$$&&2014$$&&CDA4101$$&&Structure Comp Org$$&&B$$&&3.00$$&&EN");
+      array_push($taken, "Fall$$&&2014$$&&COP3530$$&&Data Structures$$&&D$$&&3.00$$&&EN");
+      array_push($taken, "Fall$$&&2014$$&&COP4710$$&&Database Management$$&&B+$$&&3.00$$&&EN");
+      array_push($taken, "Fall$$&&2014$$&&COT3541$$&&Logic For Comp Sci$$&&B$$&&3.00$$&&EN");
+      array_push($taken, "Summer$$&&2015$$&&COP4555$$&&Prin Of Prog Lang$$&&C+$$&&3.00$$&&EN");
+      array_push($taken, "Summer$$&&2015$$&&MAD3512$$&&Theory Algorithms$$&&B$$&&3.00$$&&EN");
+      array_push($taken, "Fall$$&&2015$$&&CEN4010$$&&Software Eng I$$&&A$$&&3.00$$&&EN");
+      array_push($taken, "Fall$$&&2015$$&&CNT4713$$&&Net-centric Computing$$&&C+$$&&3.00$$&&EN");
+      array_push($taken, "Fall$$&&2015$$&&COP4610$$&&Operating Syst Princ$$&&B+$$&&3.00$$&&EN");
+      array_push($taken, "Spring$$&&2016$$&&CIS4911$$&&Senior Project$$&&A$$&&3.00$$&&EN");
+      array_push($taken, "Spring$$&&2016$$&&COP4520$$&&Parallel Computing$$&&B$$&&3.00$$&&EN");
+      array_push($taken, "Spring$$&&2016$$&&MAD3305$$&&Graph Theory$$&&C+$$&&3.00$$&&EN");
+      array_push($taken, "Spring$$&&2015$$&&COP3530$$&&Data Structures$$&&IP$$&&3.00$$&&EN");
+      array_push($taken, "Spring$$&&2015$$&&COP4338$$&&Programming III$$&&IP$$&&3.00$$&&EN");
+      array_push($taken, "Spring$$&&2015$$&&COP4722$$&&Survey Database Sys$$&&IP$$&&3.00$$&&EN");
 
       $sc->testStub($taken, true);
 
@@ -228,6 +228,101 @@ class DBTest extends PHPUnit_Framework_TestCase
       ];
 
       $this->assertEquals($expected, $out);
+   }
+
+   function test005()
+   {
+      $sc = new SettingsController(12, 'newuser20');
+
+      $sc->importReq('nursing.xml');
+
+      $db = new DatabaseConnector();
+
+      $params = array(4);
+      $buckets = $db->select("Select description from MajorBucket Where majorID = ?",$params);
+
+      $output = array();
+      $b = array();
+      foreach($buckets as $bucket)
+      {
+         array_push($b, $bucket[0]);
+      }
+      array_push($output, $b);
+
+      $courses = $db->select("SELECT CourseInfo.courseID FROM CourseInfo
+          INNER JOIN MajorBucketRequiredCourses ON MajorBucketRequiredCourses.courseInfoID = CourseInfo.courseInfoID
+          WHERE MajorBucketRequiredCourses.bucketID IN (SELECT bucketID FROM MajorBucket WHERE majorID = ?)", $params);
+
+      $c = array();
+      foreach ($courses as $course)
+      {
+         array_push($c, $course[0]);
+      }
+      array_push($output, $c);
+
+      $expected = [
+          [
+              "Chemistry & Lab",
+              "Human Anatomy & Lab",
+              "Human Growth & Development",
+              "Human Physiology & Lab",
+              "Intro to Ethics",
+              "Intro to Psychology",
+              "Junior 1: Semester 1",
+              "Junior 2: Semester 2",
+              "Junior 2: Semester 3",
+              "Microbiology & Lab",
+              "Nursing Core",
+              "Nutrition",
+              "Prerequisites",
+              "Senior 3: Semester 1",
+              "Senior 4: Semester 2",
+              "Statistics"
+          ],
+          [
+              "ZOO3731",
+              "ZOO3731L",
+              "PCB2099",
+              "PCB2099L",
+              "MCB2000",
+              "MCB2000L",
+              "CHM1045L",
+              "CHM1045",
+              "STA2023",
+              "HUN2201",
+              "DEP2000",
+              "PSY2012",
+              "PHI2600",
+              "NUR3029",
+              "NUR3029C",
+              "NUR3029L",
+              "NUR3125",
+              "NUR3066C",
+              "NUR3226",
+              "NUR3226L",
+              "NUR3145",
+              "NUR3666",
+              "NSP3801",
+              "NUR3821",
+              "NUR3227",
+              "NUR3227L",
+              "NUR4455",
+              "NUR4455L",
+              "NUR3685L",
+              "NUR3535",
+              "NUR3535L",
+              "NUR4355",
+              "NUR4355L",
+              "NUR4686L",
+              "NUR4667",
+              "NUR4636C",
+              "NUR4286",
+              "NUR4940",
+              "NUR4945L"
+          ]
+      ];
+
+      $this->assertEquals($output, $expected);
    }
 
 }

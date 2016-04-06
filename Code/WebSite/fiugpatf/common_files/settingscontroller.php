@@ -11,7 +11,7 @@ class SettingsController
    {
       $this->user = $user;
       $this->userName = $userName;
-      //$this->log = new ErrorLog();
+      $this->log = new ErrorLog();
    }
 
    public function importAudit()
@@ -44,7 +44,7 @@ class SettingsController
 
          shell_exec('rm -rf ' . $username);
 
-         toLog(1, "Info", "settings.php/gpaImport", "GPA Audit Imported");
+         $this->log->toLog(1, __METHOD__ , "GPA Audit Imported");
       }
    }
 
@@ -111,7 +111,7 @@ class SettingsController
          $conn->query("INSERT INTO StudentCourse (grade, weight, relevance, semester, year,
            courseInfoID, selected, userID) VALUES (?, 0, 0, ?, ?, (SELECT CourseInfoID FROM CourseInfo
            WHERE courseID = ?), 0, ?)", $params);
-         toLog(0, "DEBUG", "SC/insertCourses", "Course: $courseID inserted for user: $this->user");
+         $this->log->toLog(0, __METHOD__, "Course: $courseID inserted for user: $this->user");
       }
    }
 
@@ -195,14 +195,14 @@ class SettingsController
             if ($counter >= $bucket[2])
             {
                $bucketCompleted = true;
-               toLog("0", "DEBUG", "SC/checkBucket", "Bucket: $bucket[0] Completed");
+               $this->log->toLog("0", __METHOD__, "Bucket: $bucket[0] Completed");
                break;
             }
          }
 
          if (!$bucketCompleted)
          {
-            toLog("0", "DEBUG", "SC/checkBucket", "Bucket: $bucket[0] not completed");
+            $this->log->toLog("0", __METHOD__, "Bucket: $bucket[0] not completed");
             foreach ($coursesNotTaken as $courseNotTaken)
             {
                $params = array($courseNotTaken, $this->user);
@@ -323,7 +323,7 @@ class SettingsController
                $params = array($out[1], $out[2], $out[6], $this->user);
                $conn->query("INSERT INTO StudentCourse (grade, weight, relevance, semester, year, courseInfoID,
                 selected, userID) VALUES ('ND', ?, ?, '', '', ?, 0, ?)", $params);
-               toLog(0, "DEBUG", "SC/update", "Updated course $courseID");
+               $this->log->toLog(0, __METHOD__, "Updated course $courseID");
                continue;
             }
 
@@ -332,7 +332,7 @@ class SettingsController
 
          $params = array($courseID);
          $out = $conn->select("SELECT courseInfoID FROM CourseInfo WHERE courseID = ?", $params);
-         toLog(0, "DEBUG", "SC/update", "Insert course $courseID");
+         $this->log->toLog(0, __METHOD__, "Insert course $courseID");
 
          if (count($out) == 0)
          {
@@ -365,5 +365,185 @@ class SettingsController
          }
       }
       return $results;
+   }
+
+   public function prepareTable()
+   {
+      $db = new DatabaseConnector();
+      header('Content-type: application/json');
+
+      $params = array($this->user);
+      $stmt = $db->select("SELECT type FROM Users WHERE userID=?", $params);
+
+      $output = array();
+      array_push($output, array("Change Password", ""));
+      array_push($output, array("Change Major", ""));
+      array_push($output, array("Change Themes", ""));
+      array_push($output, array("Export Data", '<button type="button" id="ExportButton">Export Data</button>'));
+      array_push($output, array("Import Data", '<input type="file" id="ImportFile">'));
+      array_push($output, array("Delete Data", '<button type="button" id="DeleteButton">Delete Data</button>'));
+      array_push($output, array("Import GPA Audit (PDF)", '<form id="PDFimport" action="router.php"
+        enctype="multipart/form-data" method="post"><input type="file" name="file" id="Whatif"><input type="hidden"
+        name="action" value="importAudit"></form>'));
+
+      if ($stmt[0][0] == 1) {
+         array_push($output, array("Import Requirments", '<form id="Reqimport" action="router.php"
+            enctype="multipart/form-data" method="post" datatype="json"><input type="file" name="file" id="ImportReqirments"><input
+            type="hidden" name="action" value="importReq"></form>'));
+      }
+
+      echo json_encode($output);
+   }
+
+   public function importReq($fileName)
+   {
+      $file = file_get_contents($fileName);
+      libxml_use_internal_errors(true);
+      $adminData = simplexml_load_string($file);
+
+      if ($adminData === false) {
+         $response_array[0] = 'error';
+         echo json_encode($response_array);
+         return;
+      }
+
+      $db = new DatabaseConnector();
+      foreach ($adminData->children() as $details)
+      {
+         if ($details->getName() == 'programName') {
+            $params = array($details);
+            $db->query("INSERT INTO Major (majorName, majorID) VALUES (?, NULL)", $params);
+
+            $stmt = $db->select("SELECT majorID FROM Major WHERE majorName = ?", $params);
+            $majorID = $stmt[0][0];
+            $this->log->toLog(0, __METHOD__, "programName: $details");
+         }
+         elseif ($details->getName() == "minGPA")
+            $this->log->toLog(0, __METHOD__, "minGPA: $details->minGPA");
+         elseif ($details->getName() == 'bucket') {
+            $this->importBucket($details, null, $majorID);
+         }
+      }
+      /*$params = array($adminData->programName);
+      $db->query("INSERT INTO Major (majorName, majorID) VALUES (?, NULL)", $params);
+
+      $stmt = $db->select("SELECT majorID FROM Major WHERE majorName = ?", $params);
+      $majorID = $stmt[0][0];*/
+
+      /*foreach ($adminData->children() as $table_data) {
+         $this->log->toLog(0, __METHOD__, "made it this far");
+         foreach ($table_data->children() as $rows) {
+            if ($table_data['name'] == 'MajorBucket') {
+               if ($rows->field[7] == "null") {
+                  $majorID = $rows->field[0];
+
+                  $params = array($rows->field[0], $rows->field[1], $rows->field[2], $rows->field[3],
+                      $rows->field[4], $rows->field[5], $rows->field[6]);
+                  $db->query("INSERT INTO MajorBucket (majorID, dateStart, dateEnd, description, allRequired,
+                          quantityNeeded, quantification, parentID) VALUES (?, ?, ?, ?, ?, ?, ?, null) ON DUPLICATE
+                          KEY UPDATE dateStart=VALUES(dateStart), dateEnd=VALUES(dateEnd), allRequired = VALUES
+                          (allRequired), quantification=VALUES(quantification), parentID=VALUES(parentID)", $params);
+
+                  $this->log->toLog(0, __METHOD__, "Major Bucket imported: $params[0], $params[1], $params[2], $params[3], $params[4], $params[5], $params[6]");
+               }
+               else {
+                  $params = array($rows->field[0], $rows->field[7]);
+                  $stmt = $db->select("SELECT bucketID FROM MajorBucket WHERE majorID = ? and
+                          description = ?", $params);
+
+                  $parentID = $stmt[0][0];
+
+                  $params = array($rows->field[0], $rows->field[1], $rows->field[2], $rows->field[3],
+                      $rows->field[4], $rows->field[5], $rows->field[6], $parentID);
+
+                  $db->query("INSERT INTO MajorBucket (majorID, dateStart, dateEnd, description, allRequired,
+                        quantityNeeded, quantification, parentID) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ON DUPLICATE KEY
+                        UPDATE dateStart=VALUES(dateStart), dateEnd=VALUES(dateEnd), allRequired=VALUES(allRequired),
+                        quantification=VALUES(quantification), parentID=VALUES(parentID)", $params);
+
+                  $this->log->toLog(0, __METHOD__, "Major Bucket imported: $params[0], $params[1], $params[2], $params[3], $params[4], $params[5], $params[6], $parentID");
+               }
+            }
+            else if ($table_data['name'] == 'CourseInfo') {
+               $params = array($rows->field[0], $rows->field[1], $rows->field[2]);
+               $db->query("INSERT INTO CourseInfo (courseID, courseName, credits) VALUES (?, ?, ?)
+                      ON DUPLICATE KEY UPDATE courseName=VALUES(courseName), credits=VALUES(credits)", $params);
+
+               $this->log->toLog(0, __METHOD__, "Course Imported: $params[0], $params[1], $params[2],");
+            }
+            else if ($table_data['name'] == 'MajorBucketRequiredCourses') {
+               $params = array($rows->field[0], $majorID, $rows->field[1], $rows->field[2]);
+               $db->query("INSERT INTO MajorBucketRequiredCourses (courseInfoID, bucketID, minimumGrade) VALUES
+                      ((SELECT courseInfoID FROM CourseInfo WHERE courseID = ?), (SELECT bucketID FROM MajorBucket
+                      WHERE majorID = ? and description = ?), ?) ON DUPLICATE KEY UPDATE courseInfoID = VALUES
+                      (courseInfoID), bucketID=VALUES(bucketID), minimumGrade=VALUES(minimumGrade)", $params);
+
+               $this->log->toLog(0, __METHOD__, "Major Bucket imported: $params[0], $params[1], $params[2]");
+            }
+         }
+      }*/
+
+      $response_array[0] = 'success';
+      echo json_encode($response_array);
+   }
+
+   public function importBucket($bucket, $parentID, $majorID){
+      $count = $bucket->count();
+      $allRequired = 0;
+      $db = new DatabaseConnector();
+
+      if ($bucket->course[0] != null)
+         $quantification = 'courses';
+      else
+         $quantification = 'buckets';
+
+      foreach ($bucket->children() as $details)
+      {
+         if ($details->getName() == 'data') {
+            if ($count-1 == $quantification)
+               $allRequired = 1;
+
+            if ($parentID == null) {
+               $params = array($majorID, $details->dateStart, $details->dateEnd, $details->description, $allRequired,
+                   $details->quantity, $quantification);
+               $db->query("INSERT INTO MajorBucket (majorID, dateStart, dateEnd, description, allRequired,
+                          quantityNeeded, quantification, parentID) VALUES (?, ?, ?, ?, ?, ?, ?, null) ON DUPLICATE
+                          KEY UPDATE dateStart=VALUES(dateStart), dateEnd=VALUES(dateEnd), allRequired = VALUES
+                          (allRequired), quantification=VALUES(quantification), parentID=VALUES(parentID)", $params);
+               $this->log->toLog(0, __METHOD__, "bucket imported majorID: $majorID, start:$details->dateStart, end:$details->dateEnd, description: $details->description, req:$allRequired, quantity:$details->quantity, quantification$quantification");
+            }
+            else {
+               $params = array($majorID, $details->dateStart, $details->dateEnd, $details->description, $allRequired,
+                   $details->quantity, $quantification, $parentID);
+               $db->query("INSERT INTO MajorBucket (majorID, dateStart, dateEnd, description, allRequired,
+                        quantityNeeded, quantification, parentID) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ON DUPLICATE KEY
+                        UPDATE dateStart=VALUES(dateStart), dateEnd=VALUES(dateEnd), allRequired=VALUES(allRequired),
+                        quantification=VALUES(quantification), parentID=VALUES(parentID)", $params);
+               $this->log->toLog(0, __METHOD__, "bucket imported - majorID: $majorID, start:$details->dateStart, end:$details->dateEnd, description: $details->description, req:$allRequired, quantity:$details->quantity, quantification$quantification, parent: $parentID");
+            }
+
+            $params = array($majorID, $details->description);
+            $stmt = $db->select("SELECT bucketID FROM MajorBucket Where majorID = ? and description = ?", $params);
+
+            $bucketID = $stmt[0][0];
+         }
+         elseif ($details->getName() == "course"){
+            $params = array($details->courseID, $details->courseName, $details->credits);
+            $db->query("INSERT INTO CourseInfo (courseID, courseName, credits) VALUES (?, ?, ?)
+                      ON DUPLICATE KEY UPDATE courseName=VALUES(courseName), credits=VALUES(credits)", $params);
+
+            $this->log->toLog(0, __METHOD__, "course imported ID: $details->courseID, $details->courseName, credits: $details->credits");
+
+            $params = array($details->courseID, $bucketID, $details->minGrade);
+            $db->query("INSERT INTO MajorBucketRequiredCourses (courseInfoID, bucketID, minimumGrade) VALUES
+                      (?, ?, ?) ON DUPLICATE KEY UPDATE courseInfoID = VALUES
+                      (courseInfoID), bucketID=VALUES(bucketID), minimumGrade=VALUES(minimumGrade)", $params);
+
+            $this->log->toLog(0, __METHOD__, "bucketreq imported ID: $details->courseID, bucket:$bucketID, minGrade: $details->minGrade");
+         }
+         elseif ($details->getName() == 'bucket') {
+            $this->importBucket($details, $bucketID, $majorID);
+         }
+      }
    }
 }

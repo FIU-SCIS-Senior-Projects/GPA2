@@ -12,11 +12,11 @@ class DatabaseConnector
    public function __construct()
    {
       $this->mysqli = new mysqli($this->host, $this->user, $this->pass, $this->dbse);
-      //$this->log = new ErrorLog();
+      $this->log = new ErrorLog();
 
       if(!$this->mysqli)
       {
-         $this->log->toLog(2, "ERROR", "DBCONNECTOR", "Error connection $this->mysqli->error");
+         $this->log->toLog(2, __METHOD__, "Error connection $this->mysqli->error");
       }
    }
 
@@ -27,7 +27,7 @@ class DatabaseConnector
       if (!$conn)
       {
          $err = $this->mysqli->error;
-         $this->log->toLog(2, "ERROR", "DatabaseConnector", "Prepare stmt failed $err");
+         $this->log->toLog(2, __METHOD__, "Prepare stmt failed $err");
          return -1;
       }
 
@@ -47,14 +47,14 @@ class DatabaseConnector
 
       if ($n > 0) {
          if (!(call_user_func_array(array($conn, 'bind_param'), $aParams))) {
-            $this->log->toLog(2, "ERROR", "DatabaseConnector", "Error binding $conn->error");
+            $this->log->toLog(2, __METHOD__, "Error binding $conn->error");
             return -1;
          }
       }
 
       if (!($conn->execute()))
       {
-         $this->log->toLog(2, "ERROR", "DatabaseConnector", "Error executing $conn->error");
+         $this->log->toLog(2, __METHOD__, "Error executing $conn->error");
          return -1;
       }
 
@@ -75,7 +75,7 @@ class DatabaseConnector
       if (!$conn)
       {
          $err = $this->mysqli->error;
-         $this->log->toLog(2, "ERROR", "DatabaseConnector", "Prepare stmt failed $err");
+         $this->log->toLog(2, __METHOD__, "Prepare stmt failed $err");
          return -1;
       }
 
@@ -95,13 +95,13 @@ class DatabaseConnector
 
       if (!(call_user_func_array(array($conn, 'bind_param'), $aParams)))
       {
-         $this->log->toLog(2, "ERROR", "DatabaseConnector", "Error binding $conn->error");
+         $this->log->toLog(2, __METHOD__, "Error binding $conn->error");
          return -1;
       }
 
       if ($conn->execute() == false)
       {
-         $this->log->toLog(2, "ERROR", "DatabaseConnector", "Error executing $conn->error");
+         $this->log->toLog(2, __METHOD__, "Error executing $conn->error");
          return -1;
       }
       $conn->close();

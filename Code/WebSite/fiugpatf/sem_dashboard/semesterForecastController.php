@@ -12,11 +12,13 @@ class SemesterForecastController {
 
     protected $userID;
     protected $username;
+    protected $log;
 
     public function __construct($userID, $username)
     {
         $this->userID = $userID;
         $this->username = $username;
+        $this->log = new ErrorLog();
     }
 
     function GPAGoal() {
@@ -28,7 +30,7 @@ class SemesterForecastController {
         $output = $db->select($stmt, $params);
 
         if($output[0][0] == "") {
-            toLog(2, "ERROR", "SemesterForecastController/GPAGoal", "GPA Goal is null");
+            $this->log->toLog(2, __METHOD__, "GPA Goal is null");
         }
 
         for ($i = 0, $c = count($output); $i < $c; $i++) {
@@ -49,8 +51,8 @@ class SemesterForecastController {
         $params = array($this->userID);
         $output = $db->select($stmt, $params);
 
-        if($output[0][0] == '') {
-            toLog(2, 'ERROR', __METHOD__, "No courses remaining");
+        if($output[0][0] == "") {
+            $this->log->toLog(2, __METHOD__, "creditsTaken is null");
             echo json_encode('No courses remaining');
             return;
         }
@@ -78,7 +80,7 @@ class SemesterForecastController {
         $output = $db->select($stmt, $params);
 
         if(count($output) == 0) {
-            toLog(2, 'ERROR', __METHOD__, "No course grades or course credits");
+            $this->log->toLog(2, __METHOD__, "No course grades or course credits");
             echo json_encode('No grades');
             return;
         }
@@ -103,7 +105,7 @@ class SemesterForecastController {
         $output = $db->select($stmt, $params);
 
         if(count($output) == 0) {
-            toLog(2, 'ERROR', __METHOD__, "No current course information");
+            $this->log->toLog(2, __METHOD__, "No current course information");
             echo json_encode([]);
             return;
         }
@@ -111,10 +113,10 @@ class SemesterForecastController {
         for ($i = 0, $c = count($output); $i < $c; $i++) {
 
             if($output[$i][3] == "") {
-                toLog(3, "WARNING", __METHOD__, "weight is null");
+                $this->log->toLog(3, __METHOD__, "weight is null");
             }
             if($output[$i][4] == "") {
-                toLog(3, "WARNING", __METHOD__, "relevance is null");
+                $this->log->toLog(3, __METHOD__, "relevance is null");
             }
 
             $courseID = $output[$i][0];
@@ -156,7 +158,7 @@ class SemesterForecastController {
         $stmt = "UPDATE StudentCourse SET relevance = ?, weight = ? WHERE courseInfoID = (SELECT courseInfoID FROM CourseInfo WHERE courseID = ?) AND userID = ?";
         $params = array($modifiedRelevance, $modifiedWeight, $courseID, $this->userID);
         $db->query($stmt, $params);
-        toLog(1, "INFO", "SemesterForecastController/modifyWeightAndRelevance", "weight and relevance have been modified");
+        $this->log->toLog(1, __METHOD__, "weight and relevance have been modified");
     }
 
 

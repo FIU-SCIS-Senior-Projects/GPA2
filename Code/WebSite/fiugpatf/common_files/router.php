@@ -43,6 +43,14 @@ class Router
             $controller = new SettingsController($_SESSION['userID'], $_SESSION['username']);
             $controller-> $action();
             break;
+         case "prepareTable":
+            $controller = new SettingsController($_SESSION['userID'], $_SESSION['username']);
+            $controller-> $action();
+            break;
+         case "importReq":
+            $controller = new SettingsController($_SESSION['userID'], $_SESSION['username']);
+            $controller-> $action($_FILES['file']['tmp_name']);
+            break;
       }
    }
 }

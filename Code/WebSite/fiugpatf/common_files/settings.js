@@ -7,7 +7,7 @@ function start() {
 
     $.ajax({
         type: 'POST',
-        url: 'settings.php',
+        url: 'router.php',
         data: {
             action: 'prepareTable'},
         dataType: 'json',
@@ -49,14 +49,30 @@ function start() {
 				//$('#PDFimport').ajaxSubmit();
 				return false;
 			});
+
+			var options1 = {
+				success:    function(data) {
+					if (data[3] == 's')
+						alert('Program imported successfully!');
+					else
+						alert("Error loading XML file");
+				},
+				error:      function(){
+					alert('Error in loading php file.');
+				}
+			};
+
+			$('#Reqimport').ajaxForm(options1);
+
 			var control = document.getElementById("Whatif");
 				control.addEventListener("change", function(){
 					$('#PDFimport').trigger("submit");
 				}, false);
-			$('#Reqimport').ajaxForm();
+
+
 			var control = document.getElementById("ImportReqirments");
 				control.addEventListener("change", function(){
-					$('#Reqimport').ajaxSubmit();
+					$('#Reqimport').trigger("submit");
 				}, false);
         }
     });
