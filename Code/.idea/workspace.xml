@@ -21,81 +21,7 @@
     <favorites_list name="Code" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="settingscontroller.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/common_files/settingscontroller.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.442307">
-              <caret line="543" column="51" selection-start-line="543" selection-start-column="51" selection-end-line="543" selection-end-column="51" />
-              <folding>
-                <element signature="n#__construct#0;n#SettingsController#0;n#!!top" expanded="false" />
-                <element signature="n#importAudit#0;n#SettingsController#0;n#!!top" expanded="false" />
-                <element signature="n#testStub#0;n#SettingsController#0;n#!!top" expanded="false" />
-                <element signature="n#insertMajor#0;n#SettingsController#0;n#!!top" expanded="false" />
-                <element signature="n#insertCourses#0;n#SettingsController#0;n#!!top" expanded="false" />
-                <element signature="n#instantiateNeeded#0;n#SettingsController#0;n#!!top" expanded="false" />
-                <element signature="n#checkBucket#0;n#SettingsController#0;n#!!top" expanded="false" />
-                <element signature="n#checkFirstTime#0;n#SettingsController#0;n#!!top" expanded="false" />
-                <element signature="n#convertGrade#0;n#SettingsController#0;n#!!top" expanded="false" />
-                <element signature="n#update#0;n#SettingsController#0;n#!!top" expanded="false" />
-                <element signature="n#search#0;n#SettingsController#0;n#!!top" expanded="false" />
-                <element signature="n#prepareTable#0;n#SettingsController#0;n#!!top" expanded="false" />
-                <marker date="1459895729891" expanded="true" signature="1833:1935" placeholder="INSERT INTO StudentMajor... " />
-                <marker date="1459895729891" expanded="true" signature="1888:1933" placeholder="SELECT major... Major" />
-                <marker date="1459895729891" expanded="true" signature="2749:2803" placeholder="SELECT cours... CourseInfo" />
-                <marker date="1459895729891" expanded="true" signature="3010:3081" placeholder="INSERT INTO CourseInfo... " />
-                <marker date="1459895729891" expanded="true" signature="3230:3439" placeholder="INSERT INTO StudentCourse... " />
-                <marker date="1459895729891" expanded="true" signature="3366:3431" placeholder="SELECT Cours... CourseInfo" />
-                <marker date="1459895729891" expanded="true" signature="4001:4369" placeholder="SELECT Major... MajorBucket" />
-                <marker date="1459895729891" expanded="true" signature="4267:4368" placeholder="SELECT Stude... StudentMajor" />
-                <marker date="1459895729891" expanded="true" signature="4739:4868" placeholder="SELECT bucke... MajorBucket" />
-                <marker date="1459895729891" expanded="true" signature="5116:5433" placeholder="SELECT Cours... CourseInfo" />
-                <marker date="1459895729891" expanded="true" signature="6763:6916" placeholder="INSERT INTO StudentCourse... " />
-                <marker date="1459895729891" expanded="true" signature="7117:7175" placeholder="SELECT * FRO... StudentCourse" />
-                <marker date="1459895729891" expanded="true" signature="8901:9075" placeholder="SELECT * FRO... StudentCourse" />
-                <marker date="1459895729891" expanded="true" signature="9020:9074" placeholder="SELECT cours... CourseInfo" />
-                <marker date="1459895729891" expanded="true" signature="9262:9507" placeholder="SELECT grade... " />
-                <marker date="1459895729891" expanded="true" signature="9637:9697" placeholder="UPDATE Stude... " />
-                <marker date="1459895729891" expanded="true" signature="9790:9933" placeholder="SELECT minim... MajorBucketRequiredCourses" />
-                <marker date="1459895729891" expanded="true" signature="9878:9932" placeholder="SELECT cours... CourseInfo" />
-                <marker date="1459895729891" expanded="true" signature="10143:10296" placeholder="INSERT INTO StudentCourse... " />
-                <marker date="1459895729891" expanded="true" signature="10528:10582" placeholder="SELECT cours... CourseInfo" />
-                <marker date="1459895729891" expanded="true" signature="10797:10868" placeholder="INSERT INTO CourseInfo... " />
-                <marker date="1459895729891" expanded="true" signature="10970:11024" placeholder="SELECT cours... CourseInfo" />
-                <marker date="1459895729891" expanded="true" signature="11149:11297" placeholder="INSERT INTO StudentCourse... " />
-                <marker date="1459895729891" expanded="true" signature="11904:11941" placeholder="SELECT type Users" />
-                <marker date="1459895729891" expanded="true" signature="12559:12724" placeholder="..." />
-                <marker date="1459895729891" expanded="true" signature="12675:12717" placeholder="..." />
-                <marker date="1459895729891" expanded="true" signature="12859:13056" placeholder="..." />
-                <marker date="1459895729891" expanded="true" signature="12991:13049" placeholder="..." />
-                <marker date="1459895729891" expanded="true" signature="13644:13699" placeholder="INSERT INTO Major... " />
-                <marker date="1459895729891" expanded="true" signature="13746:13791" placeholder="SELECT major... Major" />
-                <marker date="1459895729891" expanded="true" signature="14244:14299" placeholder="INSERT INTO Major... " />
-                <marker date="1459895729891" expanded="true" signature="14340:14385" placeholder="SELECT major... Major" />
-                <marker date="1459895729891" expanded="true" signature="18717:18942" placeholder="INSERT INTO MajorBucket... " />
-                <marker date="1459895729891" expanded="true" signature="18943:19130" placeholder="UPDATE dateS... " />
-                <marker date="1459895729891" expanded="true" signature="19639:19833" placeholder="INSERT INTO MajorBucket... " />
-                <marker date="1459895729891" expanded="true" signature="19858:20040" placeholder="UPDATE dateS... " />
-                <marker date="1459895729891" expanded="true" signature="20434:20504" placeholder="SELECT bucke... MajorBucket" />
-                <marker date="1459895729891" expanded="true" signature="20731:20841" placeholder="INSERT INTO CourseInfo... " />
-                <marker date="1459895729891" expanded="true" signature="20842:20903" placeholder="UPDATE cours... " />
-                <marker date="1459895729891" expanded="true" signature="21160:21421" placeholder="INSERT INTO MajorBucketRequiredCourses... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nursing.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/common_files/tests/nursing.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4207317">
-              <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -117,7 +43,6 @@
         <option value="$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/semesterDashboardRouter.php" />
         <option value="$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/semesterDashboardControllerTest.php" />
         <option value="$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/GPAForecastControllerTest.php" />
-        <option value="$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/semesterDashboardController.php" />
         <option value="$PROJECT_DIR$/WebSite/fiugpatf/common_files/testing.php" />
         <option value="$PROJECT_DIR$/WebSite/fiugpatf/common_files/jsjs.js" />
         <option value="$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/OvrlDashControllerTest.php" />
@@ -133,11 +58,12 @@
         <option value="$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/OvrlDash.js" />
         <option value="$PROJECT_DIR$/WebSite/fiugpatf/common_files/dbconnector.php" />
         <option value="$PROJECT_DIR$/WebSite/fiugpatf/common_files/toLog.php" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/common_files/settingscontroller.php" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/common_files/tests/nursing.xml" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/OvrlDashController.php" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/semesterDashboardController.php" />
         <option value="$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/semesterForecastController.php" />
         <option value="$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/GPAForecastController.php" />
-        <option value="$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/OvrlDashController.php" />
-        <option value="$PROJECT_DIR$/WebSite/fiugpatf/common_files/tests/nursing.xml" />
-        <option value="$PROJECT_DIR$/WebSite/fiugpatf/common_files/settingscontroller.php" />
       </list>
     </option>
   </component>
@@ -159,8 +85,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
     <option name="y" value="-4" />
-    <option name="width" value="1649" />
-    <option name="height" value="1032" />
+    <option name="width" value="1535" />
+    <option name="height" value="799" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -187,6 +113,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -256,7 +183,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="common_files" />
+              <option name="myItemId" value="sem_dashboard" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -278,17 +205,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="common_files" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
+              <option name="myItemId" value="overallgpadashboard" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -341,10 +263,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1649" height="1032" extended-state="6" />
-    <editor active="true" />
+    <frame x="65" y="-4" width="1535" height="799" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20212102" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20483546" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -386,127 +308,119 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/common_files/settingscontroller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="543" column="51" selection-start-line="543" selection-start-column="51" selection-end-line="543" selection-end-column="51" />
+          <folding>
+            <element signature="n#__construct#0;n#SettingsController#0;n#!!top" expanded="false" />
+            <element signature="n#importAudit#0;n#SettingsController#0;n#!!top" expanded="false" />
+            <element signature="n#testStub#0;n#SettingsController#0;n#!!top" expanded="false" />
+            <element signature="n#insertMajor#0;n#SettingsController#0;n#!!top" expanded="false" />
+            <element signature="n#insertCourses#0;n#SettingsController#0;n#!!top" expanded="false" />
+            <element signature="n#instantiateNeeded#0;n#SettingsController#0;n#!!top" expanded="false" />
+            <element signature="n#checkBucket#0;n#SettingsController#0;n#!!top" expanded="false" />
+            <element signature="n#checkFirstTime#0;n#SettingsController#0;n#!!top" expanded="false" />
+            <element signature="n#convertGrade#0;n#SettingsController#0;n#!!top" expanded="false" />
+            <element signature="n#update#0;n#SettingsController#0;n#!!top" expanded="false" />
+            <element signature="n#search#0;n#SettingsController#0;n#!!top" expanded="false" />
+            <element signature="n#prepareTable#0;n#SettingsController#0;n#!!top" expanded="false" />
+            <marker date="1459965681938" expanded="true" signature="1833:1935" placeholder="INSERT INTO StudentMajor... " />
+            <marker date="1459965681938" expanded="true" signature="1888:1933" placeholder="SELECT major... Major" />
+            <marker date="1459965681938" expanded="true" signature="2749:2803" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="3010:3081" placeholder="INSERT INTO CourseInfo... " />
+            <marker date="1459965681938" expanded="true" signature="3230:3439" placeholder="INSERT INTO StudentCourse... " />
+            <marker date="1459965681938" expanded="true" signature="3366:3431" placeholder="SELECT Cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="4001:4369" placeholder="SELECT Major... MajorBucket" />
+            <marker date="1459965681938" expanded="true" signature="4267:4368" placeholder="SELECT Stude... StudentMajor" />
+            <marker date="1459965681938" expanded="true" signature="4739:4868" placeholder="SELECT bucke... MajorBucket" />
+            <marker date="1459965681938" expanded="true" signature="5116:5433" placeholder="SELECT Cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="6763:6916" placeholder="INSERT INTO StudentCourse... " />
+            <marker date="1459965681938" expanded="true" signature="7117:7175" placeholder="SELECT * FRO... StudentCourse" />
+            <marker date="1459965681938" expanded="true" signature="8901:9075" placeholder="SELECT * FRO... StudentCourse" />
+            <marker date="1459965681938" expanded="true" signature="9020:9074" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="9262:9507" placeholder="SELECT grade... " />
+            <marker date="1459965681938" expanded="true" signature="9637:9697" placeholder="UPDATE Stude... " />
+            <marker date="1459965681938" expanded="true" signature="9790:9933" placeholder="SELECT minim... MajorBucketRequiredCourses" />
+            <marker date="1459965681938" expanded="true" signature="9878:9932" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="10143:10296" placeholder="INSERT INTO StudentCourse... " />
+            <marker date="1459965681938" expanded="true" signature="10528:10582" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="10797:10868" placeholder="INSERT INTO CourseInfo... " />
+            <marker date="1459965681938" expanded="true" signature="10970:11024" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="11149:11297" placeholder="INSERT INTO StudentCourse... " />
+            <marker date="1459965681938" expanded="true" signature="11904:11941" placeholder="SELECT type Users" />
+            <marker date="1459965681938" expanded="true" signature="12559:12724" placeholder="..." />
+            <marker date="1459965681938" expanded="true" signature="12675:12717" placeholder="..." />
+            <marker date="1459965681938" expanded="true" signature="12859:13056" placeholder="..." />
+            <marker date="1459965681938" expanded="true" signature="12991:13049" placeholder="..." />
+            <marker date="1459965681938" expanded="true" signature="13644:13699" placeholder="INSERT INTO Major... " />
+            <marker date="1459965681938" expanded="true" signature="13746:13791" placeholder="SELECT major... Major" />
+            <marker date="1459965681938" expanded="true" signature="18717:18942" placeholder="INSERT INTO MajorBucket... " />
+            <marker date="1459965681938" expanded="true" signature="18943:19130" placeholder="UPDATE dateS... " />
+            <marker date="1459965681938" expanded="true" signature="19639:19833" placeholder="INSERT INTO MajorBucket... " />
+            <marker date="1459965681938" expanded="true" signature="19858:20040" placeholder="UPDATE dateS... " />
+            <marker date="1459965681938" expanded="true" signature="20434:20504" placeholder="SELECT bucke... MajorBucket" />
+            <marker date="1459965681938" expanded="true" signature="20731:20841" placeholder="INSERT INTO CourseInfo... " />
+            <marker date="1459965681938" expanded="true" signature="20842:20903" placeholder="UPDATE cours... " />
+            <marker date="1459965681938" expanded="true" signature="21160:21421" placeholder="INSERT INTO MajorBucketRequiredCourses... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/common_files/tests/nursing.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/OvrlDashController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#__construct#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
             <element signature="n#getMajorBuckets#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#474#647#0#PHP" expanded="false" />
-            <element signature="e#685#1052#0#PHP" expanded="false" />
-            <element signature="e#737#842#0#PHP" expanded="false" />
             <element signature="n#getProgramInfo#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="n#calculateGpa#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#1649#2038#0#PHP" expanded="false" />
-            <element signature="e#2049#4678#0#PHP" expanded="false" />
-            <element signature="e#2194#4668#0#PHP" expanded="false" />
-            <element signature="e#2242#2412#0#PHP" expanded="false" />
-            <element signature="e#2429#2602#0#PHP" expanded="false" />
-            <element signature="e#2619#2792#0#PHP" expanded="false" />
-            <element signature="e#2809#2981#0#PHP" expanded="false" />
-            <element signature="e#2998#3171#0#PHP" expanded="false" />
-            <element signature="e#3188#3361#0#PHP" expanded="false" />
-            <element signature="e#3378#3550#0#PHP" expanded="false" />
-            <element signature="e#3567#3740#0#PHP" expanded="false" />
-            <element signature="e#3757#3930#0#PHP" expanded="false" />
-            <element signature="e#3947#4119#0#PHP" expanded="false" />
-            <element signature="e#4136#4308#0#PHP" expanded="false" />
-            <element signature="e#4325#4495#0#PHP" expanded="false" />
-            <element signature="e#4512#4654#0#PHP" expanded="false" />
-            <element signature="e#4688#4815#0#PHP" expanded="false" />
-            <element signature="n#getCurrProgram#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#5252#5391#0#PHP" expanded="false" />
-            <element signature="n#getGradPrograms#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#5754#5908#0#PHP" expanded="false" />
-            <element signature="n#getGraphData#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#7418#11217#0#PHP" expanded="false" />
-            <element signature="e#7760#8765#0#PHP" expanded="false" />
-            <element signature="e#8245#8581#0#PHP" expanded="false" />
-            <element signature="e#8373#8581#0#PHP" expanded="false" />
-            <element signature="e#8498#8581#0#PHP" expanded="false" />
-            <element signature="e#8779#10276#0#PHP" expanded="false" />
-            <element signature="e#8819#8895#0#PHP" expanded="false" />
-            <element signature="e#8912#8989#0#PHP" expanded="false" />
-            <element signature="e#9006#9083#0#PHP" expanded="false" />
-            <element signature="e#9100#9176#0#PHP" expanded="false" />
-            <element signature="e#9193#9270#0#PHP" expanded="false" />
-            <element signature="e#9287#9364#0#PHP" expanded="false" />
-            <element signature="e#9381#9457#0#PHP" expanded="false" />
-            <element signature="e#9474#9551#0#PHP" expanded="false" />
-            <element signature="e#9568#9645#0#PHP" expanded="false" />
-            <element signature="e#9662#9738#0#PHP" expanded="false" />
-            <element signature="e#9755#9832#0#PHP" expanded="false" />
-            <element signature="e#9849#9925#0#PHP" expanded="false" />
-            <element signature="e#9942#10020#0#PHP" expanded="false" />
-            <element signature="e#10037#10113#0#PHP" expanded="false" />
-            <element signature="e#10130#10262#0#PHP" expanded="false" />
-            <element signature="e#10405#11207#0#PHP" expanded="false" />
-            <element signature="e#10829#11150#0#PHP" expanded="false" />
-            <element signature="e#10951#11150#0#PHP" expanded="false" />
-            <element signature="e#11070#11150#0#PHP" expanded="false" />
-            <element signature="e#11227#11352#0#PHP" expanded="false" />
-            <element signature="n#checkWeightAndRelevance#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#12044#12567#0#PHP" expanded="false" />
-            <element signature="e#12108#12216#0#PHP" expanded="false" />
-            <element signature="e#12229#12340#0#PHP" expanded="false" />
-            <element signature="n#getGPA#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="n#findChildBuckets#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#12843#13038#0#PHP" expanded="false" />
-            <element signature="e#12932#13038#0#PHP" expanded="false" />
-            <element signature="e#13108#13366#0#PHP" expanded="false" />
-            <element signature="e#13377#13567#0#PHP" expanded="false" />
-            <element signature="e#13426#13556#0#PHP" expanded="false" />
-            <element signature="n#getMajorBucketsChildBuckets#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#13859#14054#0#PHP" expanded="false" />
-            <element signature="e#13948#14054#0#PHP" expanded="false" />
-            <element signature="e#14139#14482#0#PHP" expanded="false" />
-            <element signature="e#14520#14871#0#PHP" expanded="false" />
-            <element signature="e#14569#14673#0#PHP" expanded="false" />
-            <element signature="n#getMajorBucketsCourseNeeded#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#15020#15215#0#PHP" expanded="false" />
-            <element signature="e#15109#15215#0#PHP" expanded="false" />
-            <element signature="e#15315#16015#0#PHP" expanded="false" />
-            <element signature="e#16053#16908#0#PHP" expanded="false" />
-            <element signature="e#16097#16289#0#PHP" expanded="false" />
-            <element signature="e#16304#16898#0#PHP" expanded="false" />
-            <element signature="e#16635#16898#0#PHP" expanded="false" />
-            <element signature="e#16658#16883#0#PHP" expanded="false" />
-            <element signature="e#16678#16882#0#PHP" expanded="false" />
-            <element signature="n#getMajorBucketsCourse#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#17047#17242#0#PHP" expanded="false" />
-            <element signature="e#17136#17242#0#PHP" expanded="false" />
-            <element signature="e#17327#17955#0#PHP" expanded="false" />
-            <element signature="e#17994#18235#0#PHP" expanded="false" />
-            <element signature="e#18039#18147#0#PHP" expanded="false" />
-            <element signature="n#deleteCourseNeeded#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#18370#18565#0#PHP" expanded="false" />
-            <element signature="e#18457#18565#0#PHP" expanded="false" />
-            <element signature="n#addCourse#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#19037#19232#0#PHP" expanded="false" />
-            <element signature="e#19124#19232#0#PHP" expanded="false" />
-            <element signature="n#editStudent#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#19758#20521#0#PHP" expanded="false" />
-            <element signature="e#19970#20218#0#PHP" expanded="false" />
-            <element signature="e#20276#20521#0#PHP" expanded="false" />
-            <element signature="e#20303#20436#0#PHP" expanded="false" />
-            <element signature="n#modCourse#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#20612#20807#0#PHP" expanded="false" />
-            <element signature="e#20699#20807#0#PHP" expanded="false" />
-            <element signature="e#20816#21030#0#PHP" expanded="false" />
-            <element signature="e#20918#21030#0#PHP" expanded="false" />
-            <element signature="e#21107#21270#0#PHP" expanded="false" />
-            <element signature="n#modWeight#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#21442#21637#0#PHP" expanded="false" />
-            <element signature="e#21529#21637#0#PHP" expanded="false" />
-            <element signature="e#21646#21865#0#PHP" expanded="false" />
-            <element signature="e#21751#21865#0#PHP" expanded="false" />
-            <element signature="e#21874#22108#0#PHP" expanded="false" />
-            <element signature="e#21988#22108#0#PHP" expanded="false" />
             <element signature="n#deleteItem#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#22644#22839#0#PHP" expanded="false" />
-            <element signature="e#22731#22839#0#PHP" expanded="false" />
-            <element signature="e#22900#23065#0#PHP" expanded="false" />
+            <marker date="1459967894877" expanded="true" signature="488:636" placeholder="SELECT descr... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="555:614" placeholder="SELECT major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="1663:2027" placeholder="SELECT Stude... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="1856:1938" placeholder="Select grade... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="1969:2026" placeholder="select userI... Users" />
+            <marker date="1459967894877" expanded="true" signature="5134:5230" placeholder="SELECT major... Major" />
+            <marker date="1459967894877" expanded="true" signature="5180:5229" placeholder="Select major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="5675:5732" placeholder="SELECT gradu... GraduatePrograms" />
+            <marker date="1459967894877" expanded="true" signature="6064:6563" placeholder="SELECT Stude... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="11568:11790" placeholder="SELECT Cours... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="13186:13419" placeholder="SELECT descr... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="13280:13329" placeholder="SELECT major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="13348:13418" placeholder="select bucke... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="14217:14535" placeholder="SELECT descr... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="14285:14354" placeholder="SELECT major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="14373:14534" placeholder="Select bucke... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="14464:14533" placeholder="select major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="15393:16058" placeholder="SELECT DISTI... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="15640:15854" placeholder="Select cours... MajorBucketRequiredCourses" />
+            <marker date="1459967894877" expanded="true" signature="15721:15853" placeholder="Select bucke... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="15793:15852" placeholder="Select major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="15887:15969" placeholder="SELECT cours... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="17407:18010" placeholder="SELECT DISTI... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="17657:17891" placeholder="Select cours... MajorBucketRequiredCourses" />
+            <marker date="1459967894877" expanded="true" signature="17749:17890" placeholder="Select bucke... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="17840:17889" placeholder="Select major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="17959:18009" placeholder="SELECT grade... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="18707:18762" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="18856:18919" placeholder="DELETE FROM " />
+            <marker date="1459967894877" expanded="true" signature="19374:19429" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="19525:19599" placeholder="UPDATE Stude... " />
+            <marker date="1459967894877" expanded="true" signature="19908:19979" placeholder="SELECT userN... Users" />
+            <marker date="1459967894877" expanded="true" signature="21186:21325" placeholder="UPDATE Stude... " />
+            <marker date="1459967894877" expanded="true" signature="21244:21309" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="22250:22306" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="22439:22526" placeholder="UPDATE Stude... " />
+            <marker date="1459967894877" expanded="true" signature="22979:23120" placeholder="UPDATE Stude... " />
+            <marker date="1459967894877" expanded="true" signature="23039:23104" placeholder="SELECT cours... CourseInfo" />
           </folding>
         </state>
       </provider>
@@ -516,122 +430,47 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#__construct#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
             <element signature="n#getMajorBuckets#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#474#647#0#PHP" expanded="false" />
-            <element signature="e#685#1052#0#PHP" expanded="false" />
-            <element signature="e#737#842#0#PHP" expanded="false" />
             <element signature="n#getProgramInfo#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="n#calculateGpa#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#1649#2038#0#PHP" expanded="false" />
-            <element signature="e#2049#4678#0#PHP" expanded="false" />
-            <element signature="e#2194#4668#0#PHP" expanded="false" />
-            <element signature="e#2242#2412#0#PHP" expanded="false" />
-            <element signature="e#2429#2602#0#PHP" expanded="false" />
-            <element signature="e#2619#2792#0#PHP" expanded="false" />
-            <element signature="e#2809#2981#0#PHP" expanded="false" />
-            <element signature="e#2998#3171#0#PHP" expanded="false" />
-            <element signature="e#3188#3361#0#PHP" expanded="false" />
-            <element signature="e#3378#3550#0#PHP" expanded="false" />
-            <element signature="e#3567#3740#0#PHP" expanded="false" />
-            <element signature="e#3757#3930#0#PHP" expanded="false" />
-            <element signature="e#3947#4119#0#PHP" expanded="false" />
-            <element signature="e#4136#4308#0#PHP" expanded="false" />
-            <element signature="e#4325#4495#0#PHP" expanded="false" />
-            <element signature="e#4512#4654#0#PHP" expanded="false" />
-            <element signature="e#4688#4815#0#PHP" expanded="false" />
-            <element signature="n#getCurrProgram#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#5252#5391#0#PHP" expanded="false" />
-            <element signature="n#getGradPrograms#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#5754#5908#0#PHP" expanded="false" />
-            <element signature="n#getGraphData#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#7418#11217#0#PHP" expanded="false" />
-            <element signature="e#7760#8765#0#PHP" expanded="false" />
-            <element signature="e#8245#8581#0#PHP" expanded="false" />
-            <element signature="e#8373#8581#0#PHP" expanded="false" />
-            <element signature="e#8498#8581#0#PHP" expanded="false" />
-            <element signature="e#8779#10276#0#PHP" expanded="false" />
-            <element signature="e#8819#8895#0#PHP" expanded="false" />
-            <element signature="e#8912#8989#0#PHP" expanded="false" />
-            <element signature="e#9006#9083#0#PHP" expanded="false" />
-            <element signature="e#9100#9176#0#PHP" expanded="false" />
-            <element signature="e#9193#9270#0#PHP" expanded="false" />
-            <element signature="e#9287#9364#0#PHP" expanded="false" />
-            <element signature="e#9381#9457#0#PHP" expanded="false" />
-            <element signature="e#9474#9551#0#PHP" expanded="false" />
-            <element signature="e#9568#9645#0#PHP" expanded="false" />
-            <element signature="e#9662#9738#0#PHP" expanded="false" />
-            <element signature="e#9755#9832#0#PHP" expanded="false" />
-            <element signature="e#9849#9925#0#PHP" expanded="false" />
-            <element signature="e#9942#10020#0#PHP" expanded="false" />
-            <element signature="e#10037#10113#0#PHP" expanded="false" />
-            <element signature="e#10130#10262#0#PHP" expanded="false" />
-            <element signature="e#10405#11207#0#PHP" expanded="false" />
-            <element signature="e#10829#11150#0#PHP" expanded="false" />
-            <element signature="e#10951#11150#0#PHP" expanded="false" />
-            <element signature="e#11070#11150#0#PHP" expanded="false" />
-            <element signature="e#11227#11352#0#PHP" expanded="false" />
-            <element signature="n#checkWeightAndRelevance#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#12044#12567#0#PHP" expanded="false" />
-            <element signature="e#12108#12216#0#PHP" expanded="false" />
-            <element signature="e#12229#12340#0#PHP" expanded="false" />
-            <element signature="n#getGPA#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="n#findChildBuckets#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#12843#13038#0#PHP" expanded="false" />
-            <element signature="e#12932#13038#0#PHP" expanded="false" />
-            <element signature="e#13108#13366#0#PHP" expanded="false" />
-            <element signature="e#13377#13567#0#PHP" expanded="false" />
-            <element signature="e#13426#13556#0#PHP" expanded="false" />
-            <element signature="n#getMajorBucketsChildBuckets#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#13859#14054#0#PHP" expanded="false" />
-            <element signature="e#13948#14054#0#PHP" expanded="false" />
-            <element signature="e#14139#14482#0#PHP" expanded="false" />
-            <element signature="e#14520#14871#0#PHP" expanded="false" />
-            <element signature="e#14569#14673#0#PHP" expanded="false" />
-            <element signature="n#getMajorBucketsCourseNeeded#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#15020#15215#0#PHP" expanded="false" />
-            <element signature="e#15109#15215#0#PHP" expanded="false" />
-            <element signature="e#15315#16015#0#PHP" expanded="false" />
-            <element signature="e#16053#16908#0#PHP" expanded="false" />
-            <element signature="e#16097#16289#0#PHP" expanded="false" />
-            <element signature="e#16304#16898#0#PHP" expanded="false" />
-            <element signature="e#16635#16898#0#PHP" expanded="false" />
-            <element signature="e#16658#16883#0#PHP" expanded="false" />
-            <element signature="e#16678#16882#0#PHP" expanded="false" />
-            <element signature="n#getMajorBucketsCourse#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#17047#17242#0#PHP" expanded="false" />
-            <element signature="e#17136#17242#0#PHP" expanded="false" />
-            <element signature="e#17327#17955#0#PHP" expanded="false" />
-            <element signature="e#17994#18235#0#PHP" expanded="false" />
-            <element signature="e#18039#18147#0#PHP" expanded="false" />
-            <element signature="n#deleteCourseNeeded#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#18370#18565#0#PHP" expanded="false" />
-            <element signature="e#18457#18565#0#PHP" expanded="false" />
-            <element signature="n#addCourse#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#19037#19232#0#PHP" expanded="false" />
-            <element signature="e#19124#19232#0#PHP" expanded="false" />
-            <element signature="n#editStudent#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#19758#20521#0#PHP" expanded="false" />
-            <element signature="e#19970#20218#0#PHP" expanded="false" />
-            <element signature="e#20276#20521#0#PHP" expanded="false" />
-            <element signature="e#20303#20436#0#PHP" expanded="false" />
-            <element signature="n#modCourse#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#20612#20807#0#PHP" expanded="false" />
-            <element signature="e#20699#20807#0#PHP" expanded="false" />
-            <element signature="e#20816#21030#0#PHP" expanded="false" />
-            <element signature="e#20918#21030#0#PHP" expanded="false" />
-            <element signature="e#21107#21270#0#PHP" expanded="false" />
-            <element signature="n#modWeight#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#21442#21637#0#PHP" expanded="false" />
-            <element signature="e#21529#21637#0#PHP" expanded="false" />
-            <element signature="e#21646#21865#0#PHP" expanded="false" />
-            <element signature="e#21751#21865#0#PHP" expanded="false" />
-            <element signature="e#21874#22108#0#PHP" expanded="false" />
-            <element signature="e#21988#22108#0#PHP" expanded="false" />
             <element signature="n#deleteItem#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#22644#22839#0#PHP" expanded="false" />
-            <element signature="e#22731#22839#0#PHP" expanded="false" />
-            <element signature="e#22900#23065#0#PHP" expanded="false" />
+            <marker date="1459967894877" expanded="true" signature="488:636" placeholder="SELECT descr... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="555:614" placeholder="SELECT major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="1663:2027" placeholder="SELECT Stude... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="1856:1938" placeholder="Select grade... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="1969:2026" placeholder="select userI... Users" />
+            <marker date="1459967894877" expanded="true" signature="5134:5230" placeholder="SELECT major... Major" />
+            <marker date="1459967894877" expanded="true" signature="5180:5229" placeholder="Select major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="5675:5732" placeholder="SELECT gradu... GraduatePrograms" />
+            <marker date="1459967894877" expanded="true" signature="6064:6563" placeholder="SELECT Stude... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="11568:11790" placeholder="SELECT Cours... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="13186:13419" placeholder="SELECT descr... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="13280:13329" placeholder="SELECT major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="13348:13418" placeholder="select bucke... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="14217:14535" placeholder="SELECT descr... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="14285:14354" placeholder="SELECT major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="14373:14534" placeholder="Select bucke... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="14464:14533" placeholder="select major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="15393:16058" placeholder="SELECT DISTI... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="15640:15854" placeholder="Select cours... MajorBucketRequiredCourses" />
+            <marker date="1459967894877" expanded="true" signature="15721:15853" placeholder="Select bucke... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="15793:15852" placeholder="Select major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="15887:15969" placeholder="SELECT cours... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="17407:18010" placeholder="SELECT DISTI... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="17657:17891" placeholder="Select cours... MajorBucketRequiredCourses" />
+            <marker date="1459967894877" expanded="true" signature="17749:17890" placeholder="Select bucke... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="17840:17889" placeholder="Select major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="17959:18009" placeholder="SELECT grade... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="18707:18762" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="18856:18919" placeholder="DELETE FROM " />
+            <marker date="1459967894877" expanded="true" signature="19374:19429" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="19525:19599" placeholder="UPDATE Stude... " />
+            <marker date="1459967894877" expanded="true" signature="19908:19979" placeholder="SELECT userN... Users" />
+            <marker date="1459967894877" expanded="true" signature="21186:21325" placeholder="UPDATE Stude... " />
+            <marker date="1459967894877" expanded="true" signature="21244:21309" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="22250:22306" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="22439:22526" placeholder="UPDATE Stude... " />
+            <marker date="1459967894877" expanded="true" signature="22979:23120" placeholder="UPDATE Stude... " />
+            <marker date="1459967894877" expanded="true" signature="23039:23104" placeholder="SELECT cours... CourseInfo" />
           </folding>
         </state>
       </provider>
@@ -661,46 +500,44 @@
             <element signature="n#update#0;n#SettingsController#0;n#!!top" expanded="false" />
             <element signature="n#search#0;n#SettingsController#0;n#!!top" expanded="false" />
             <element signature="n#prepareTable#0;n#SettingsController#0;n#!!top" expanded="false" />
-            <marker date="1459895729891" expanded="true" signature="1833:1935" placeholder="INSERT INTO StudentMajor... " />
-            <marker date="1459895729891" expanded="true" signature="1888:1933" placeholder="SELECT major... Major" />
-            <marker date="1459895729891" expanded="true" signature="2749:2803" placeholder="SELECT cours... CourseInfo" />
-            <marker date="1459895729891" expanded="true" signature="3010:3081" placeholder="INSERT INTO CourseInfo... " />
-            <marker date="1459895729891" expanded="true" signature="3230:3439" placeholder="INSERT INTO StudentCourse... " />
-            <marker date="1459895729891" expanded="true" signature="3366:3431" placeholder="SELECT Cours... CourseInfo" />
-            <marker date="1459895729891" expanded="true" signature="4001:4369" placeholder="SELECT Major... MajorBucket" />
-            <marker date="1459895729891" expanded="true" signature="4267:4368" placeholder="SELECT Stude... StudentMajor" />
-            <marker date="1459895729891" expanded="true" signature="4739:4868" placeholder="SELECT bucke... MajorBucket" />
-            <marker date="1459895729891" expanded="true" signature="5116:5433" placeholder="SELECT Cours... CourseInfo" />
-            <marker date="1459895729891" expanded="true" signature="6763:6916" placeholder="INSERT INTO StudentCourse... " />
-            <marker date="1459895729891" expanded="true" signature="7117:7175" placeholder="SELECT * FRO... StudentCourse" />
-            <marker date="1459895729891" expanded="true" signature="8901:9075" placeholder="SELECT * FRO... StudentCourse" />
-            <marker date="1459895729891" expanded="true" signature="9020:9074" placeholder="SELECT cours... CourseInfo" />
-            <marker date="1459895729891" expanded="true" signature="9262:9507" placeholder="SELECT grade... " />
-            <marker date="1459895729891" expanded="true" signature="9637:9697" placeholder="UPDATE Stude... " />
-            <marker date="1459895729891" expanded="true" signature="9790:9933" placeholder="SELECT minim... MajorBucketRequiredCourses" />
-            <marker date="1459895729891" expanded="true" signature="9878:9932" placeholder="SELECT cours... CourseInfo" />
-            <marker date="1459895729891" expanded="true" signature="10143:10296" placeholder="INSERT INTO StudentCourse... " />
-            <marker date="1459895729891" expanded="true" signature="10528:10582" placeholder="SELECT cours... CourseInfo" />
-            <marker date="1459895729891" expanded="true" signature="10797:10868" placeholder="INSERT INTO CourseInfo... " />
-            <marker date="1459895729891" expanded="true" signature="10970:11024" placeholder="SELECT cours... CourseInfo" />
-            <marker date="1459895729891" expanded="true" signature="11149:11297" placeholder="INSERT INTO StudentCourse... " />
-            <marker date="1459895729891" expanded="true" signature="11904:11941" placeholder="SELECT type Users" />
-            <marker date="1459895729891" expanded="true" signature="12559:12724" placeholder="..." />
-            <marker date="1459895729891" expanded="true" signature="12675:12717" placeholder="..." />
-            <marker date="1459895729891" expanded="true" signature="12859:13056" placeholder="..." />
-            <marker date="1459895729891" expanded="true" signature="12991:13049" placeholder="..." />
-            <marker date="1459895729891" expanded="true" signature="13644:13699" placeholder="INSERT INTO Major... " />
-            <marker date="1459895729891" expanded="true" signature="13746:13791" placeholder="SELECT major... Major" />
-            <marker date="1459895729891" expanded="true" signature="14244:14299" placeholder="INSERT INTO Major... " />
-            <marker date="1459895729891" expanded="true" signature="14340:14385" placeholder="SELECT major... Major" />
-            <marker date="1459895729891" expanded="true" signature="18717:18942" placeholder="INSERT INTO MajorBucket... " />
-            <marker date="1459895729891" expanded="true" signature="18943:19130" placeholder="UPDATE dateS... " />
-            <marker date="1459895729891" expanded="true" signature="19639:19833" placeholder="INSERT INTO MajorBucket... " />
-            <marker date="1459895729891" expanded="true" signature="19858:20040" placeholder="UPDATE dateS... " />
-            <marker date="1459895729891" expanded="true" signature="20434:20504" placeholder="SELECT bucke... MajorBucket" />
-            <marker date="1459895729891" expanded="true" signature="20731:20841" placeholder="INSERT INTO CourseInfo... " />
-            <marker date="1459895729891" expanded="true" signature="20842:20903" placeholder="UPDATE cours... " />
-            <marker date="1459895729891" expanded="true" signature="21160:21421" placeholder="INSERT INTO MajorBucketRequiredCourses... " />
+            <marker date="1459965681938" expanded="true" signature="1833:1935" placeholder="INSERT INTO StudentMajor... " />
+            <marker date="1459965681938" expanded="true" signature="1888:1933" placeholder="SELECT major... Major" />
+            <marker date="1459965681938" expanded="true" signature="2749:2803" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="3010:3081" placeholder="INSERT INTO CourseInfo... " />
+            <marker date="1459965681938" expanded="true" signature="3230:3439" placeholder="INSERT INTO StudentCourse... " />
+            <marker date="1459965681938" expanded="true" signature="3366:3431" placeholder="SELECT Cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="4001:4369" placeholder="SELECT Major... MajorBucket" />
+            <marker date="1459965681938" expanded="true" signature="4267:4368" placeholder="SELECT Stude... StudentMajor" />
+            <marker date="1459965681938" expanded="true" signature="4739:4868" placeholder="SELECT bucke... MajorBucket" />
+            <marker date="1459965681938" expanded="true" signature="5116:5433" placeholder="SELECT Cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="6763:6916" placeholder="INSERT INTO StudentCourse... " />
+            <marker date="1459965681938" expanded="true" signature="7117:7175" placeholder="SELECT * FRO... StudentCourse" />
+            <marker date="1459965681938" expanded="true" signature="8901:9075" placeholder="SELECT * FRO... StudentCourse" />
+            <marker date="1459965681938" expanded="true" signature="9020:9074" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="9262:9507" placeholder="SELECT grade... " />
+            <marker date="1459965681938" expanded="true" signature="9637:9697" placeholder="UPDATE Stude... " />
+            <marker date="1459965681938" expanded="true" signature="9790:9933" placeholder="SELECT minim... MajorBucketRequiredCourses" />
+            <marker date="1459965681938" expanded="true" signature="9878:9932" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="10143:10296" placeholder="INSERT INTO StudentCourse... " />
+            <marker date="1459965681938" expanded="true" signature="10528:10582" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="10797:10868" placeholder="INSERT INTO CourseInfo... " />
+            <marker date="1459965681938" expanded="true" signature="10970:11024" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="11149:11297" placeholder="INSERT INTO StudentCourse... " />
+            <marker date="1459965681938" expanded="true" signature="11904:11941" placeholder="SELECT type Users" />
+            <marker date="1459965681938" expanded="true" signature="12559:12724" placeholder="..." />
+            <marker date="1459965681938" expanded="true" signature="12675:12717" placeholder="..." />
+            <marker date="1459965681938" expanded="true" signature="12859:13056" placeholder="..." />
+            <marker date="1459965681938" expanded="true" signature="12991:13049" placeholder="..." />
+            <marker date="1459965681938" expanded="true" signature="13644:13699" placeholder="INSERT INTO Major... " />
+            <marker date="1459965681938" expanded="true" signature="13746:13791" placeholder="SELECT major... Major" />
+            <marker date="1459965681938" expanded="true" signature="18717:18942" placeholder="INSERT INTO MajorBucket... " />
+            <marker date="1459965681938" expanded="true" signature="18943:19130" placeholder="UPDATE dateS... " />
+            <marker date="1459965681938" expanded="true" signature="19639:19833" placeholder="INSERT INTO MajorBucket... " />
+            <marker date="1459965681938" expanded="true" signature="19858:20040" placeholder="UPDATE dateS... " />
+            <marker date="1459965681938" expanded="true" signature="20434:20504" placeholder="SELECT bucke... MajorBucket" />
+            <marker date="1459965681938" expanded="true" signature="20731:20841" placeholder="INSERT INTO CourseInfo... " />
+            <marker date="1459965681938" expanded="true" signature="20842:20903" placeholder="UPDATE cours... " />
+            <marker date="1459965681938" expanded="true" signature="21160:21421" placeholder="INSERT INTO MajorBucketRequiredCourses... " />
           </folding>
         </state>
       </provider>
@@ -717,122 +554,47 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
           <folding>
-            <element signature="n#__construct#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
             <element signature="n#getMajorBuckets#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#474#647#0#PHP" expanded="false" />
-            <element signature="e#685#1052#0#PHP" expanded="false" />
-            <element signature="e#737#842#0#PHP" expanded="false" />
             <element signature="n#getProgramInfo#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="n#calculateGpa#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#1649#2038#0#PHP" expanded="false" />
-            <element signature="e#2049#4678#0#PHP" expanded="false" />
-            <element signature="e#2194#4668#0#PHP" expanded="false" />
-            <element signature="e#2242#2412#0#PHP" expanded="false" />
-            <element signature="e#2429#2602#0#PHP" expanded="false" />
-            <element signature="e#2619#2792#0#PHP" expanded="false" />
-            <element signature="e#2809#2981#0#PHP" expanded="false" />
-            <element signature="e#2998#3171#0#PHP" expanded="false" />
-            <element signature="e#3188#3361#0#PHP" expanded="false" />
-            <element signature="e#3378#3550#0#PHP" expanded="false" />
-            <element signature="e#3567#3740#0#PHP" expanded="false" />
-            <element signature="e#3757#3930#0#PHP" expanded="false" />
-            <element signature="e#3947#4119#0#PHP" expanded="false" />
-            <element signature="e#4136#4308#0#PHP" expanded="false" />
-            <element signature="e#4325#4495#0#PHP" expanded="false" />
-            <element signature="e#4512#4654#0#PHP" expanded="false" />
-            <element signature="e#4688#4815#0#PHP" expanded="false" />
-            <element signature="n#getCurrProgram#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#5252#5391#0#PHP" expanded="false" />
-            <element signature="n#getGradPrograms#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#5754#5908#0#PHP" expanded="false" />
-            <element signature="n#getGraphData#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#7418#11217#0#PHP" expanded="false" />
-            <element signature="e#7760#8765#0#PHP" expanded="false" />
-            <element signature="e#8245#8581#0#PHP" expanded="false" />
-            <element signature="e#8373#8581#0#PHP" expanded="false" />
-            <element signature="e#8498#8581#0#PHP" expanded="false" />
-            <element signature="e#8779#10276#0#PHP" expanded="false" />
-            <element signature="e#8819#8895#0#PHP" expanded="false" />
-            <element signature="e#8912#8989#0#PHP" expanded="false" />
-            <element signature="e#9006#9083#0#PHP" expanded="false" />
-            <element signature="e#9100#9176#0#PHP" expanded="false" />
-            <element signature="e#9193#9270#0#PHP" expanded="false" />
-            <element signature="e#9287#9364#0#PHP" expanded="false" />
-            <element signature="e#9381#9457#0#PHP" expanded="false" />
-            <element signature="e#9474#9551#0#PHP" expanded="false" />
-            <element signature="e#9568#9645#0#PHP" expanded="false" />
-            <element signature="e#9662#9738#0#PHP" expanded="false" />
-            <element signature="e#9755#9832#0#PHP" expanded="false" />
-            <element signature="e#9849#9925#0#PHP" expanded="false" />
-            <element signature="e#9942#10020#0#PHP" expanded="false" />
-            <element signature="e#10037#10113#0#PHP" expanded="false" />
-            <element signature="e#10130#10262#0#PHP" expanded="false" />
-            <element signature="e#10405#11207#0#PHP" expanded="false" />
-            <element signature="e#10829#11150#0#PHP" expanded="false" />
-            <element signature="e#10951#11150#0#PHP" expanded="false" />
-            <element signature="e#11070#11150#0#PHP" expanded="false" />
-            <element signature="e#11227#11352#0#PHP" expanded="false" />
-            <element signature="n#checkWeightAndRelevance#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#12044#12567#0#PHP" expanded="false" />
-            <element signature="e#12108#12216#0#PHP" expanded="false" />
-            <element signature="e#12229#12340#0#PHP" expanded="false" />
-            <element signature="n#getGPA#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="n#findChildBuckets#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#12843#13038#0#PHP" expanded="false" />
-            <element signature="e#12932#13038#0#PHP" expanded="false" />
-            <element signature="e#13108#13366#0#PHP" expanded="false" />
-            <element signature="e#13377#13567#0#PHP" expanded="false" />
-            <element signature="e#13426#13556#0#PHP" expanded="false" />
-            <element signature="n#getMajorBucketsChildBuckets#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#13859#14054#0#PHP" expanded="false" />
-            <element signature="e#13948#14054#0#PHP" expanded="false" />
-            <element signature="e#14139#14482#0#PHP" expanded="false" />
-            <element signature="e#14520#14871#0#PHP" expanded="false" />
-            <element signature="e#14569#14673#0#PHP" expanded="false" />
-            <element signature="n#getMajorBucketsCourseNeeded#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#15020#15215#0#PHP" expanded="false" />
-            <element signature="e#15109#15215#0#PHP" expanded="false" />
-            <element signature="e#15315#16015#0#PHP" expanded="false" />
-            <element signature="e#16053#16908#0#PHP" expanded="false" />
-            <element signature="e#16097#16289#0#PHP" expanded="false" />
-            <element signature="e#16304#16898#0#PHP" expanded="false" />
-            <element signature="e#16635#16898#0#PHP" expanded="false" />
-            <element signature="e#16658#16883#0#PHP" expanded="false" />
-            <element signature="e#16678#16882#0#PHP" expanded="false" />
-            <element signature="n#getMajorBucketsCourse#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#17047#17242#0#PHP" expanded="false" />
-            <element signature="e#17136#17242#0#PHP" expanded="false" />
-            <element signature="e#17327#17955#0#PHP" expanded="false" />
-            <element signature="e#17994#18235#0#PHP" expanded="false" />
-            <element signature="e#18039#18147#0#PHP" expanded="false" />
-            <element signature="n#deleteCourseNeeded#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#18370#18565#0#PHP" expanded="false" />
-            <element signature="e#18457#18565#0#PHP" expanded="false" />
-            <element signature="n#addCourse#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#19037#19232#0#PHP" expanded="false" />
-            <element signature="e#19124#19232#0#PHP" expanded="false" />
-            <element signature="n#editStudent#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#19758#20521#0#PHP" expanded="false" />
-            <element signature="e#19970#20218#0#PHP" expanded="false" />
-            <element signature="e#20276#20521#0#PHP" expanded="false" />
-            <element signature="e#20303#20436#0#PHP" expanded="false" />
-            <element signature="n#modCourse#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#20612#20807#0#PHP" expanded="false" />
-            <element signature="e#20699#20807#0#PHP" expanded="false" />
-            <element signature="e#20816#21030#0#PHP" expanded="false" />
-            <element signature="e#20918#21030#0#PHP" expanded="false" />
-            <element signature="e#21107#21270#0#PHP" expanded="false" />
-            <element signature="n#modWeight#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#21442#21637#0#PHP" expanded="false" />
-            <element signature="e#21529#21637#0#PHP" expanded="false" />
-            <element signature="e#21646#21865#0#PHP" expanded="false" />
-            <element signature="e#21751#21865#0#PHP" expanded="false" />
-            <element signature="e#21874#22108#0#PHP" expanded="false" />
-            <element signature="e#21988#22108#0#PHP" expanded="false" />
             <element signature="n#deleteItem#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#22644#22839#0#PHP" expanded="false" />
-            <element signature="e#22731#22839#0#PHP" expanded="false" />
-            <element signature="e#22900#23065#0#PHP" expanded="false" />
+            <marker date="1459967894877" expanded="true" signature="488:636" placeholder="SELECT descr... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="555:614" placeholder="SELECT major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="1663:2027" placeholder="SELECT Stude... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="1856:1938" placeholder="Select grade... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="1969:2026" placeholder="select userI... Users" />
+            <marker date="1459967894877" expanded="true" signature="5134:5230" placeholder="SELECT major... Major" />
+            <marker date="1459967894877" expanded="true" signature="5180:5229" placeholder="Select major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="5675:5732" placeholder="SELECT gradu... GraduatePrograms" />
+            <marker date="1459967894877" expanded="true" signature="6064:6563" placeholder="SELECT Stude... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="11568:11790" placeholder="SELECT Cours... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="13186:13419" placeholder="SELECT descr... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="13280:13329" placeholder="SELECT major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="13348:13418" placeholder="select bucke... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="14217:14535" placeholder="SELECT descr... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="14285:14354" placeholder="SELECT major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="14373:14534" placeholder="Select bucke... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="14464:14533" placeholder="select major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="15393:16058" placeholder="SELECT DISTI... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="15640:15854" placeholder="Select cours... MajorBucketRequiredCourses" />
+            <marker date="1459967894877" expanded="true" signature="15721:15853" placeholder="Select bucke... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="15793:15852" placeholder="Select major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="15887:15969" placeholder="SELECT cours... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="17407:18010" placeholder="SELECT DISTI... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="17657:17891" placeholder="Select cours... MajorBucketRequiredCourses" />
+            <marker date="1459967894877" expanded="true" signature="17749:17890" placeholder="Select bucke... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="17840:17889" placeholder="Select major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="17959:18009" placeholder="SELECT grade... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="18707:18762" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="18856:18919" placeholder="DELETE FROM " />
+            <marker date="1459967894877" expanded="true" signature="19374:19429" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="19525:19599" placeholder="UPDATE Stude... " />
+            <marker date="1459967894877" expanded="true" signature="19908:19979" placeholder="SELECT userN... Users" />
+            <marker date="1459967894877" expanded="true" signature="21186:21325" placeholder="UPDATE Stude... " />
+            <marker date="1459967894877" expanded="true" signature="21244:21309" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="22250:22306" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="22439:22526" placeholder="UPDATE Stude... " />
+            <marker date="1459967894877" expanded="true" signature="22979:23120" placeholder="UPDATE Stude... " />
+            <marker date="1459967894877" expanded="true" signature="23039:23104" placeholder="SELECT cours... CourseInfo" />
           </folding>
         </state>
       </provider>
@@ -869,46 +631,44 @@
             <element signature="n#update#0;n#SettingsController#0;n#!!top" expanded="false" />
             <element signature="n#search#0;n#SettingsController#0;n#!!top" expanded="false" />
             <element signature="n#prepareTable#0;n#SettingsController#0;n#!!top" expanded="false" />
-            <marker date="1459895729891" expanded="true" signature="1833:1935" placeholder="INSERT INTO StudentMajor... " />
-            <marker date="1459895729891" expanded="true" signature="1888:1933" placeholder="SELECT major... Major" />
-            <marker date="1459895729891" expanded="true" signature="2749:2803" placeholder="SELECT cours... CourseInfo" />
-            <marker date="1459895729891" expanded="true" signature="3010:3081" placeholder="INSERT INTO CourseInfo... " />
-            <marker date="1459895729891" expanded="true" signature="3230:3439" placeholder="INSERT INTO StudentCourse... " />
-            <marker date="1459895729891" expanded="true" signature="3366:3431" placeholder="SELECT Cours... CourseInfo" />
-            <marker date="1459895729891" expanded="true" signature="4001:4369" placeholder="SELECT Major... MajorBucket" />
-            <marker date="1459895729891" expanded="true" signature="4267:4368" placeholder="SELECT Stude... StudentMajor" />
-            <marker date="1459895729891" expanded="true" signature="4739:4868" placeholder="SELECT bucke... MajorBucket" />
-            <marker date="1459895729891" expanded="true" signature="5116:5433" placeholder="SELECT Cours... CourseInfo" />
-            <marker date="1459895729891" expanded="true" signature="6763:6916" placeholder="INSERT INTO StudentCourse... " />
-            <marker date="1459895729891" expanded="true" signature="7117:7175" placeholder="SELECT * FRO... StudentCourse" />
-            <marker date="1459895729891" expanded="true" signature="8901:9075" placeholder="SELECT * FRO... StudentCourse" />
-            <marker date="1459895729891" expanded="true" signature="9020:9074" placeholder="SELECT cours... CourseInfo" />
-            <marker date="1459895729891" expanded="true" signature="9262:9507" placeholder="SELECT grade... " />
-            <marker date="1459895729891" expanded="true" signature="9637:9697" placeholder="UPDATE Stude... " />
-            <marker date="1459895729891" expanded="true" signature="9790:9933" placeholder="SELECT minim... MajorBucketRequiredCourses" />
-            <marker date="1459895729891" expanded="true" signature="9878:9932" placeholder="SELECT cours... CourseInfo" />
-            <marker date="1459895729891" expanded="true" signature="10143:10296" placeholder="INSERT INTO StudentCourse... " />
-            <marker date="1459895729891" expanded="true" signature="10528:10582" placeholder="SELECT cours... CourseInfo" />
-            <marker date="1459895729891" expanded="true" signature="10797:10868" placeholder="INSERT INTO CourseInfo... " />
-            <marker date="1459895729891" expanded="true" signature="10970:11024" placeholder="SELECT cours... CourseInfo" />
-            <marker date="1459895729891" expanded="true" signature="11149:11297" placeholder="INSERT INTO StudentCourse... " />
-            <marker date="1459895729891" expanded="true" signature="11904:11941" placeholder="SELECT type Users" />
-            <marker date="1459895729891" expanded="true" signature="12559:12724" placeholder="..." />
-            <marker date="1459895729891" expanded="true" signature="12675:12717" placeholder="..." />
-            <marker date="1459895729891" expanded="true" signature="12859:13056" placeholder="..." />
-            <marker date="1459895729891" expanded="true" signature="12991:13049" placeholder="..." />
-            <marker date="1459895729891" expanded="true" signature="13644:13699" placeholder="INSERT INTO Major... " />
-            <marker date="1459895729891" expanded="true" signature="13746:13791" placeholder="SELECT major... Major" />
-            <marker date="1459895729891" expanded="true" signature="14244:14299" placeholder="INSERT INTO Major... " />
-            <marker date="1459895729891" expanded="true" signature="14340:14385" placeholder="SELECT major... Major" />
-            <marker date="1459895729891" expanded="true" signature="18717:18942" placeholder="INSERT INTO MajorBucket... " />
-            <marker date="1459895729891" expanded="true" signature="18943:19130" placeholder="UPDATE dateS... " />
-            <marker date="1459895729891" expanded="true" signature="19639:19833" placeholder="INSERT INTO MajorBucket... " />
-            <marker date="1459895729891" expanded="true" signature="19858:20040" placeholder="UPDATE dateS... " />
-            <marker date="1459895729891" expanded="true" signature="20434:20504" placeholder="SELECT bucke... MajorBucket" />
-            <marker date="1459895729891" expanded="true" signature="20731:20841" placeholder="INSERT INTO CourseInfo... " />
-            <marker date="1459895729891" expanded="true" signature="20842:20903" placeholder="UPDATE cours... " />
-            <marker date="1459895729891" expanded="true" signature="21160:21421" placeholder="INSERT INTO MajorBucketRequiredCourses... " />
+            <marker date="1459965681938" expanded="true" signature="1833:1935" placeholder="INSERT INTO StudentMajor... " />
+            <marker date="1459965681938" expanded="true" signature="1888:1933" placeholder="SELECT major... Major" />
+            <marker date="1459965681938" expanded="true" signature="2749:2803" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="3010:3081" placeholder="INSERT INTO CourseInfo... " />
+            <marker date="1459965681938" expanded="true" signature="3230:3439" placeholder="INSERT INTO StudentCourse... " />
+            <marker date="1459965681938" expanded="true" signature="3366:3431" placeholder="SELECT Cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="4001:4369" placeholder="SELECT Major... MajorBucket" />
+            <marker date="1459965681938" expanded="true" signature="4267:4368" placeholder="SELECT Stude... StudentMajor" />
+            <marker date="1459965681938" expanded="true" signature="4739:4868" placeholder="SELECT bucke... MajorBucket" />
+            <marker date="1459965681938" expanded="true" signature="5116:5433" placeholder="SELECT Cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="6763:6916" placeholder="INSERT INTO StudentCourse... " />
+            <marker date="1459965681938" expanded="true" signature="7117:7175" placeholder="SELECT * FRO... StudentCourse" />
+            <marker date="1459965681938" expanded="true" signature="8901:9075" placeholder="SELECT * FRO... StudentCourse" />
+            <marker date="1459965681938" expanded="true" signature="9020:9074" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="9262:9507" placeholder="SELECT grade... " />
+            <marker date="1459965681938" expanded="true" signature="9637:9697" placeholder="UPDATE Stude... " />
+            <marker date="1459965681938" expanded="true" signature="9790:9933" placeholder="SELECT minim... MajorBucketRequiredCourses" />
+            <marker date="1459965681938" expanded="true" signature="9878:9932" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="10143:10296" placeholder="INSERT INTO StudentCourse... " />
+            <marker date="1459965681938" expanded="true" signature="10528:10582" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="10797:10868" placeholder="INSERT INTO CourseInfo... " />
+            <marker date="1459965681938" expanded="true" signature="10970:11024" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="11149:11297" placeholder="INSERT INTO StudentCourse... " />
+            <marker date="1459965681938" expanded="true" signature="11904:11941" placeholder="SELECT type Users" />
+            <marker date="1459965681938" expanded="true" signature="12559:12724" placeholder="..." />
+            <marker date="1459965681938" expanded="true" signature="12675:12717" placeholder="..." />
+            <marker date="1459965681938" expanded="true" signature="12859:13056" placeholder="..." />
+            <marker date="1459965681938" expanded="true" signature="12991:13049" placeholder="..." />
+            <marker date="1459965681938" expanded="true" signature="13644:13699" placeholder="INSERT INTO Major... " />
+            <marker date="1459965681938" expanded="true" signature="13746:13791" placeholder="SELECT major... Major" />
+            <marker date="1459965681938" expanded="true" signature="18717:18942" placeholder="INSERT INTO MajorBucket... " />
+            <marker date="1459965681938" expanded="true" signature="18943:19130" placeholder="UPDATE dateS... " />
+            <marker date="1459965681938" expanded="true" signature="19639:19833" placeholder="INSERT INTO MajorBucket... " />
+            <marker date="1459965681938" expanded="true" signature="19858:20040" placeholder="UPDATE dateS... " />
+            <marker date="1459965681938" expanded="true" signature="20434:20504" placeholder="SELECT bucke... MajorBucket" />
+            <marker date="1459965681938" expanded="true" signature="20731:20841" placeholder="INSERT INTO CourseInfo... " />
+            <marker date="1459965681938" expanded="true" signature="20842:20903" placeholder="UPDATE cours... " />
+            <marker date="1459965681938" expanded="true" signature="21160:21421" placeholder="INSERT INTO MajorBucketRequiredCourses... " />
           </folding>
         </state>
       </provider>
@@ -925,122 +685,47 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#__construct#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
             <element signature="n#getMajorBuckets#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#474#647#0#PHP" expanded="false" />
-            <element signature="e#685#1052#0#PHP" expanded="false" />
-            <element signature="e#737#842#0#PHP" expanded="false" />
             <element signature="n#getProgramInfo#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="n#calculateGpa#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#1649#2038#0#PHP" expanded="false" />
-            <element signature="e#2049#4678#0#PHP" expanded="false" />
-            <element signature="e#2194#4668#0#PHP" expanded="false" />
-            <element signature="e#2242#2412#0#PHP" expanded="false" />
-            <element signature="e#2429#2602#0#PHP" expanded="false" />
-            <element signature="e#2619#2792#0#PHP" expanded="false" />
-            <element signature="e#2809#2981#0#PHP" expanded="false" />
-            <element signature="e#2998#3171#0#PHP" expanded="false" />
-            <element signature="e#3188#3361#0#PHP" expanded="false" />
-            <element signature="e#3378#3550#0#PHP" expanded="false" />
-            <element signature="e#3567#3740#0#PHP" expanded="false" />
-            <element signature="e#3757#3930#0#PHP" expanded="false" />
-            <element signature="e#3947#4119#0#PHP" expanded="false" />
-            <element signature="e#4136#4308#0#PHP" expanded="false" />
-            <element signature="e#4325#4495#0#PHP" expanded="false" />
-            <element signature="e#4512#4654#0#PHP" expanded="false" />
-            <element signature="e#4688#4815#0#PHP" expanded="false" />
-            <element signature="n#getCurrProgram#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#5252#5391#0#PHP" expanded="false" />
-            <element signature="n#getGradPrograms#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#5754#5908#0#PHP" expanded="false" />
-            <element signature="n#getGraphData#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#7418#11217#0#PHP" expanded="false" />
-            <element signature="e#7760#8765#0#PHP" expanded="false" />
-            <element signature="e#8245#8581#0#PHP" expanded="false" />
-            <element signature="e#8373#8581#0#PHP" expanded="false" />
-            <element signature="e#8498#8581#0#PHP" expanded="false" />
-            <element signature="e#8779#10276#0#PHP" expanded="false" />
-            <element signature="e#8819#8895#0#PHP" expanded="false" />
-            <element signature="e#8912#8989#0#PHP" expanded="false" />
-            <element signature="e#9006#9083#0#PHP" expanded="false" />
-            <element signature="e#9100#9176#0#PHP" expanded="false" />
-            <element signature="e#9193#9270#0#PHP" expanded="false" />
-            <element signature="e#9287#9364#0#PHP" expanded="false" />
-            <element signature="e#9381#9457#0#PHP" expanded="false" />
-            <element signature="e#9474#9551#0#PHP" expanded="false" />
-            <element signature="e#9568#9645#0#PHP" expanded="false" />
-            <element signature="e#9662#9738#0#PHP" expanded="false" />
-            <element signature="e#9755#9832#0#PHP" expanded="false" />
-            <element signature="e#9849#9925#0#PHP" expanded="false" />
-            <element signature="e#9942#10020#0#PHP" expanded="false" />
-            <element signature="e#10037#10113#0#PHP" expanded="false" />
-            <element signature="e#10130#10262#0#PHP" expanded="false" />
-            <element signature="e#10405#11207#0#PHP" expanded="false" />
-            <element signature="e#10829#11150#0#PHP" expanded="false" />
-            <element signature="e#10951#11150#0#PHP" expanded="false" />
-            <element signature="e#11070#11150#0#PHP" expanded="false" />
-            <element signature="e#11227#11352#0#PHP" expanded="false" />
-            <element signature="n#checkWeightAndRelevance#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#12044#12567#0#PHP" expanded="false" />
-            <element signature="e#12108#12216#0#PHP" expanded="false" />
-            <element signature="e#12229#12340#0#PHP" expanded="false" />
-            <element signature="n#getGPA#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="n#findChildBuckets#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#12843#13038#0#PHP" expanded="false" />
-            <element signature="e#12932#13038#0#PHP" expanded="false" />
-            <element signature="e#13108#13366#0#PHP" expanded="false" />
-            <element signature="e#13377#13567#0#PHP" expanded="false" />
-            <element signature="e#13426#13556#0#PHP" expanded="false" />
-            <element signature="n#getMajorBucketsChildBuckets#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#13859#14054#0#PHP" expanded="false" />
-            <element signature="e#13948#14054#0#PHP" expanded="false" />
-            <element signature="e#14139#14482#0#PHP" expanded="false" />
-            <element signature="e#14520#14871#0#PHP" expanded="false" />
-            <element signature="e#14569#14673#0#PHP" expanded="false" />
-            <element signature="n#getMajorBucketsCourseNeeded#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#15020#15215#0#PHP" expanded="false" />
-            <element signature="e#15109#15215#0#PHP" expanded="false" />
-            <element signature="e#15315#16015#0#PHP" expanded="false" />
-            <element signature="e#16053#16908#0#PHP" expanded="false" />
-            <element signature="e#16097#16289#0#PHP" expanded="false" />
-            <element signature="e#16304#16898#0#PHP" expanded="false" />
-            <element signature="e#16635#16898#0#PHP" expanded="false" />
-            <element signature="e#16658#16883#0#PHP" expanded="false" />
-            <element signature="e#16678#16882#0#PHP" expanded="false" />
-            <element signature="n#getMajorBucketsCourse#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#17047#17242#0#PHP" expanded="false" />
-            <element signature="e#17136#17242#0#PHP" expanded="false" />
-            <element signature="e#17327#17955#0#PHP" expanded="false" />
-            <element signature="e#17994#18235#0#PHP" expanded="false" />
-            <element signature="e#18039#18147#0#PHP" expanded="false" />
-            <element signature="n#deleteCourseNeeded#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#18370#18565#0#PHP" expanded="false" />
-            <element signature="e#18457#18565#0#PHP" expanded="false" />
-            <element signature="n#addCourse#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#19037#19232#0#PHP" expanded="false" />
-            <element signature="e#19124#19232#0#PHP" expanded="false" />
-            <element signature="n#editStudent#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#19758#20521#0#PHP" expanded="false" />
-            <element signature="e#19970#20218#0#PHP" expanded="false" />
-            <element signature="e#20276#20521#0#PHP" expanded="false" />
-            <element signature="e#20303#20436#0#PHP" expanded="false" />
-            <element signature="n#modCourse#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#20612#20807#0#PHP" expanded="false" />
-            <element signature="e#20699#20807#0#PHP" expanded="false" />
-            <element signature="e#20816#21030#0#PHP" expanded="false" />
-            <element signature="e#20918#21030#0#PHP" expanded="false" />
-            <element signature="e#21107#21270#0#PHP" expanded="false" />
-            <element signature="n#modWeight#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#21442#21637#0#PHP" expanded="false" />
-            <element signature="e#21529#21637#0#PHP" expanded="false" />
-            <element signature="e#21646#21865#0#PHP" expanded="false" />
-            <element signature="e#21751#21865#0#PHP" expanded="false" />
-            <element signature="e#21874#22108#0#PHP" expanded="false" />
-            <element signature="e#21988#22108#0#PHP" expanded="false" />
             <element signature="n#deleteItem#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#22644#22839#0#PHP" expanded="false" />
-            <element signature="e#22731#22839#0#PHP" expanded="false" />
-            <element signature="e#22900#23065#0#PHP" expanded="false" />
+            <marker date="1459967894877" expanded="true" signature="488:636" placeholder="SELECT descr... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="555:614" placeholder="SELECT major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="1663:2027" placeholder="SELECT Stude... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="1856:1938" placeholder="Select grade... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="1969:2026" placeholder="select userI... Users" />
+            <marker date="1459967894877" expanded="true" signature="5134:5230" placeholder="SELECT major... Major" />
+            <marker date="1459967894877" expanded="true" signature="5180:5229" placeholder="Select major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="5675:5732" placeholder="SELECT gradu... GraduatePrograms" />
+            <marker date="1459967894877" expanded="true" signature="6064:6563" placeholder="SELECT Stude... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="11568:11790" placeholder="SELECT Cours... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="13186:13419" placeholder="SELECT descr... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="13280:13329" placeholder="SELECT major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="13348:13418" placeholder="select bucke... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="14217:14535" placeholder="SELECT descr... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="14285:14354" placeholder="SELECT major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="14373:14534" placeholder="Select bucke... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="14464:14533" placeholder="select major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="15393:16058" placeholder="SELECT DISTI... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="15640:15854" placeholder="Select cours... MajorBucketRequiredCourses" />
+            <marker date="1459967894877" expanded="true" signature="15721:15853" placeholder="Select bucke... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="15793:15852" placeholder="Select major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="15887:15969" placeholder="SELECT cours... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="17407:18010" placeholder="SELECT DISTI... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="17657:17891" placeholder="Select cours... MajorBucketRequiredCourses" />
+            <marker date="1459967894877" expanded="true" signature="17749:17890" placeholder="Select bucke... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="17840:17889" placeholder="Select major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="17959:18009" placeholder="SELECT grade... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="18707:18762" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="18856:18919" placeholder="DELETE FROM " />
+            <marker date="1459967894877" expanded="true" signature="19374:19429" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="19525:19599" placeholder="UPDATE Stude... " />
+            <marker date="1459967894877" expanded="true" signature="19908:19979" placeholder="SELECT userN... Users" />
+            <marker date="1459967894877" expanded="true" signature="21186:21325" placeholder="UPDATE Stude... " />
+            <marker date="1459967894877" expanded="true" signature="21244:21309" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="22250:22306" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="22439:22526" placeholder="UPDATE Stude... " />
+            <marker date="1459967894877" expanded="true" signature="22979:23120" placeholder="UPDATE Stude... " />
+            <marker date="1459967894877" expanded="true" signature="23039:23104" placeholder="SELECT cours... CourseInfo" />
           </folding>
         </state>
       </provider>
@@ -1186,149 +871,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/semesterForecastController.php">
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/common_files/tests/nursing.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5614035">
-          <caret line="56" column="19" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/GPAForecastController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5263158">
-          <caret line="108" column="32" selection-start-line="108" selection-start-column="32" selection-end-line="108" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/OvrlDashController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3859649">
-          <caret line="306" column="47" selection-start-line="306" selection-start-column="47" selection-end-line="306" selection-end-column="47" />
-          <folding>
-            <element signature="n#__construct#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="n#getMajorBuckets#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#474#647#0#PHP" expanded="false" />
-            <element signature="e#685#1052#0#PHP" expanded="false" />
-            <element signature="e#737#842#0#PHP" expanded="false" />
-            <element signature="n#getProgramInfo#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="n#calculateGpa#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#1649#2038#0#PHP" expanded="false" />
-            <element signature="e#2049#4678#0#PHP" expanded="false" />
-            <element signature="e#2194#4668#0#PHP" expanded="false" />
-            <element signature="e#2242#2412#0#PHP" expanded="false" />
-            <element signature="e#2429#2602#0#PHP" expanded="false" />
-            <element signature="e#2619#2792#0#PHP" expanded="false" />
-            <element signature="e#2809#2981#0#PHP" expanded="false" />
-            <element signature="e#2998#3171#0#PHP" expanded="false" />
-            <element signature="e#3188#3361#0#PHP" expanded="false" />
-            <element signature="e#3378#3550#0#PHP" expanded="false" />
-            <element signature="e#3567#3740#0#PHP" expanded="false" />
-            <element signature="e#3757#3930#0#PHP" expanded="false" />
-            <element signature="e#3947#4119#0#PHP" expanded="false" />
-            <element signature="e#4136#4308#0#PHP" expanded="false" />
-            <element signature="e#4325#4495#0#PHP" expanded="false" />
-            <element signature="e#4512#4654#0#PHP" expanded="false" />
-            <element signature="e#4688#4815#0#PHP" expanded="false" />
-            <element signature="n#getCurrProgram#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#5252#5391#0#PHP" expanded="false" />
-            <element signature="n#getGradPrograms#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#5754#5908#0#PHP" expanded="false" />
-            <element signature="n#getGraphData#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#7418#11217#0#PHP" expanded="false" />
-            <element signature="e#7760#8765#0#PHP" expanded="false" />
-            <element signature="e#8245#8581#0#PHP" expanded="false" />
-            <element signature="e#8373#8581#0#PHP" expanded="false" />
-            <element signature="e#8498#8581#0#PHP" expanded="false" />
-            <element signature="e#8779#10276#0#PHP" expanded="false" />
-            <element signature="e#8819#8895#0#PHP" expanded="false" />
-            <element signature="e#8912#8989#0#PHP" expanded="false" />
-            <element signature="e#9006#9083#0#PHP" expanded="false" />
-            <element signature="e#9100#9176#0#PHP" expanded="false" />
-            <element signature="e#9193#9270#0#PHP" expanded="false" />
-            <element signature="e#9287#9364#0#PHP" expanded="false" />
-            <element signature="e#9381#9457#0#PHP" expanded="false" />
-            <element signature="e#9474#9551#0#PHP" expanded="false" />
-            <element signature="e#9568#9645#0#PHP" expanded="false" />
-            <element signature="e#9662#9738#0#PHP" expanded="false" />
-            <element signature="e#9755#9832#0#PHP" expanded="false" />
-            <element signature="e#9849#9925#0#PHP" expanded="false" />
-            <element signature="e#9942#10020#0#PHP" expanded="false" />
-            <element signature="e#10037#10113#0#PHP" expanded="false" />
-            <element signature="e#10130#10262#0#PHP" expanded="false" />
-            <element signature="e#10405#11207#0#PHP" expanded="false" />
-            <element signature="e#10829#11150#0#PHP" expanded="false" />
-            <element signature="e#10951#11150#0#PHP" expanded="false" />
-            <element signature="e#11070#11150#0#PHP" expanded="false" />
-            <element signature="e#11227#11352#0#PHP" expanded="false" />
-            <element signature="n#checkWeightAndRelevance#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#12044#12567#0#PHP" expanded="false" />
-            <element signature="e#12108#12216#0#PHP" expanded="false" />
-            <element signature="e#12229#12340#0#PHP" expanded="false" />
-            <element signature="n#getGPA#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="n#findChildBuckets#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#12843#13038#0#PHP" expanded="false" />
-            <element signature="e#12932#13038#0#PHP" expanded="false" />
-            <element signature="e#13108#13366#0#PHP" expanded="false" />
-            <element signature="e#13377#13567#0#PHP" expanded="false" />
-            <element signature="e#13426#13556#0#PHP" expanded="false" />
-            <element signature="n#getMajorBucketsChildBuckets#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#13859#14054#0#PHP" expanded="false" />
-            <element signature="e#13948#14054#0#PHP" expanded="false" />
-            <element signature="e#14139#14482#0#PHP" expanded="false" />
-            <element signature="e#14520#14871#0#PHP" expanded="false" />
-            <element signature="e#14569#14673#0#PHP" expanded="false" />
-            <element signature="n#getMajorBucketsCourseNeeded#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#15020#15215#0#PHP" expanded="false" />
-            <element signature="e#15109#15215#0#PHP" expanded="false" />
-            <element signature="e#15315#16015#0#PHP" expanded="false" />
-            <element signature="e#16053#16908#0#PHP" expanded="false" />
-            <element signature="e#16097#16289#0#PHP" expanded="false" />
-            <element signature="e#16304#16898#0#PHP" expanded="false" />
-            <element signature="e#16635#16898#0#PHP" expanded="false" />
-            <element signature="e#16658#16883#0#PHP" expanded="false" />
-            <element signature="e#16678#16882#0#PHP" expanded="false" />
-            <element signature="n#getMajorBucketsCourse#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#17047#17242#0#PHP" expanded="false" />
-            <element signature="e#17136#17242#0#PHP" expanded="false" />
-            <element signature="e#17327#17955#0#PHP" expanded="false" />
-            <element signature="e#17994#18235#0#PHP" expanded="false" />
-            <element signature="e#18039#18147#0#PHP" expanded="false" />
-            <element signature="n#deleteCourseNeeded#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#18370#18565#0#PHP" expanded="false" />
-            <element signature="e#18457#18565#0#PHP" expanded="false" />
-            <element signature="n#addCourse#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#19037#19232#0#PHP" expanded="false" />
-            <element signature="e#19124#19232#0#PHP" expanded="false" />
-            <element signature="n#editStudent#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#19758#20521#0#PHP" expanded="false" />
-            <element signature="e#19970#20218#0#PHP" expanded="false" />
-            <element signature="e#20276#20521#0#PHP" expanded="false" />
-            <element signature="e#20303#20436#0#PHP" expanded="false" />
-            <element signature="n#modCourse#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#20612#20807#0#PHP" expanded="false" />
-            <element signature="e#20699#20807#0#PHP" expanded="false" />
-            <element signature="e#20816#21030#0#PHP" expanded="false" />
-            <element signature="e#20918#21030#0#PHP" expanded="false" />
-            <element signature="e#21107#21270#0#PHP" expanded="false" />
-            <element signature="n#modWeight#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#21442#21637#0#PHP" expanded="false" />
-            <element signature="e#21529#21637#0#PHP" expanded="false" />
-            <element signature="e#21646#21865#0#PHP" expanded="false" />
-            <element signature="e#21751#21865#0#PHP" expanded="false" />
-            <element signature="e#21874#22108#0#PHP" expanded="false" />
-            <element signature="e#21988#22108#0#PHP" expanded="false" />
-            <element signature="n#deleteItem#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
-            <element signature="e#22644#22839#0#PHP" expanded="false" />
-            <element signature="e#22731#22839#0#PHP" expanded="false" />
-            <element signature="e#22900#23065#0#PHP" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.43729904">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/common_files/settingscontroller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.442307">
-          <caret line="543" column="51" selection-start-line="543" selection-start-column="51" selection-end-line="543" selection-end-column="51" />
+        <state vertical-scroll-proportion="-16.875">
+          <caret line="418" column="24" selection-start-line="418" selection-start-column="12" selection-end-line="418" selection-end-column="24" />
           <folding>
             <element signature="n#__construct#0;n#SettingsController#0;n#!!top" expanded="false" />
             <element signature="n#importAudit#0;n#SettingsController#0;n#!!top" expanded="false" />
@@ -1342,55 +896,182 @@
             <element signature="n#update#0;n#SettingsController#0;n#!!top" expanded="false" />
             <element signature="n#search#0;n#SettingsController#0;n#!!top" expanded="false" />
             <element signature="n#prepareTable#0;n#SettingsController#0;n#!!top" expanded="false" />
-            <marker date="1459895729891" expanded="true" signature="1833:1935" placeholder="INSERT INTO StudentMajor... " />
-            <marker date="1459895729891" expanded="true" signature="1888:1933" placeholder="SELECT major... Major" />
-            <marker date="1459895729891" expanded="true" signature="2749:2803" placeholder="SELECT cours... CourseInfo" />
-            <marker date="1459895729891" expanded="true" signature="3010:3081" placeholder="INSERT INTO CourseInfo... " />
-            <marker date="1459895729891" expanded="true" signature="3230:3439" placeholder="INSERT INTO StudentCourse... " />
-            <marker date="1459895729891" expanded="true" signature="3366:3431" placeholder="SELECT Cours... CourseInfo" />
-            <marker date="1459895729891" expanded="true" signature="4001:4369" placeholder="SELECT Major... MajorBucket" />
-            <marker date="1459895729891" expanded="true" signature="4267:4368" placeholder="SELECT Stude... StudentMajor" />
-            <marker date="1459895729891" expanded="true" signature="4739:4868" placeholder="SELECT bucke... MajorBucket" />
-            <marker date="1459895729891" expanded="true" signature="5116:5433" placeholder="SELECT Cours... CourseInfo" />
-            <marker date="1459895729891" expanded="true" signature="6763:6916" placeholder="INSERT INTO StudentCourse... " />
-            <marker date="1459895729891" expanded="true" signature="7117:7175" placeholder="SELECT * FRO... StudentCourse" />
-            <marker date="1459895729891" expanded="true" signature="8901:9075" placeholder="SELECT * FRO... StudentCourse" />
-            <marker date="1459895729891" expanded="true" signature="9020:9074" placeholder="SELECT cours... CourseInfo" />
-            <marker date="1459895729891" expanded="true" signature="9262:9507" placeholder="SELECT grade... " />
-            <marker date="1459895729891" expanded="true" signature="9637:9697" placeholder="UPDATE Stude... " />
-            <marker date="1459895729891" expanded="true" signature="9790:9933" placeholder="SELECT minim... MajorBucketRequiredCourses" />
-            <marker date="1459895729891" expanded="true" signature="9878:9932" placeholder="SELECT cours... CourseInfo" />
-            <marker date="1459895729891" expanded="true" signature="10143:10296" placeholder="INSERT INTO StudentCourse... " />
-            <marker date="1459895729891" expanded="true" signature="10528:10582" placeholder="SELECT cours... CourseInfo" />
-            <marker date="1459895729891" expanded="true" signature="10797:10868" placeholder="INSERT INTO CourseInfo... " />
-            <marker date="1459895729891" expanded="true" signature="10970:11024" placeholder="SELECT cours... CourseInfo" />
-            <marker date="1459895729891" expanded="true" signature="11149:11297" placeholder="INSERT INTO StudentCourse... " />
-            <marker date="1459895729891" expanded="true" signature="11904:11941" placeholder="SELECT type Users" />
-            <marker date="1459895729891" expanded="true" signature="12559:12724" placeholder="..." />
-            <marker date="1459895729891" expanded="true" signature="12675:12717" placeholder="..." />
-            <marker date="1459895729891" expanded="true" signature="12859:13056" placeholder="..." />
-            <marker date="1459895729891" expanded="true" signature="12991:13049" placeholder="..." />
-            <marker date="1459895729891" expanded="true" signature="13644:13699" placeholder="INSERT INTO Major... " />
-            <marker date="1459895729891" expanded="true" signature="13746:13791" placeholder="SELECT major... Major" />
-            <marker date="1459895729891" expanded="true" signature="14244:14299" placeholder="INSERT INTO Major... " />
-            <marker date="1459895729891" expanded="true" signature="14340:14385" placeholder="SELECT major... Major" />
-            <marker date="1459895729891" expanded="true" signature="18717:18942" placeholder="INSERT INTO MajorBucket... " />
-            <marker date="1459895729891" expanded="true" signature="18943:19130" placeholder="UPDATE dateS... " />
-            <marker date="1459895729891" expanded="true" signature="19639:19833" placeholder="INSERT INTO MajorBucket... " />
-            <marker date="1459895729891" expanded="true" signature="19858:20040" placeholder="UPDATE dateS... " />
-            <marker date="1459895729891" expanded="true" signature="20434:20504" placeholder="SELECT bucke... MajorBucket" />
-            <marker date="1459895729891" expanded="true" signature="20731:20841" placeholder="INSERT INTO CourseInfo... " />
-            <marker date="1459895729891" expanded="true" signature="20842:20903" placeholder="UPDATE cours... " />
-            <marker date="1459895729891" expanded="true" signature="21160:21421" placeholder="INSERT INTO MajorBucketRequiredCourses... " />
+            <marker date="1459965681938" expanded="true" signature="1833:1935" placeholder="INSERT INTO StudentMajor... " />
+            <marker date="1459965681938" expanded="true" signature="1888:1933" placeholder="SELECT major... Major" />
+            <marker date="1459965681938" expanded="true" signature="2749:2803" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="3010:3081" placeholder="INSERT INTO CourseInfo... " />
+            <marker date="1459965681938" expanded="true" signature="3230:3439" placeholder="INSERT INTO StudentCourse... " />
+            <marker date="1459965681938" expanded="true" signature="3366:3431" placeholder="SELECT Cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="4001:4369" placeholder="SELECT Major... MajorBucket" />
+            <marker date="1459965681938" expanded="true" signature="4267:4368" placeholder="SELECT Stude... StudentMajor" />
+            <marker date="1459965681938" expanded="true" signature="4739:4868" placeholder="SELECT bucke... MajorBucket" />
+            <marker date="1459965681938" expanded="true" signature="5116:5433" placeholder="SELECT Cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="6763:6916" placeholder="INSERT INTO StudentCourse... " />
+            <marker date="1459965681938" expanded="true" signature="7117:7175" placeholder="SELECT * FRO... StudentCourse" />
+            <marker date="1459965681938" expanded="true" signature="8901:9075" placeholder="SELECT * FRO... StudentCourse" />
+            <marker date="1459965681938" expanded="true" signature="9020:9074" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="9262:9507" placeholder="SELECT grade... " />
+            <marker date="1459965681938" expanded="true" signature="9637:9697" placeholder="UPDATE Stude... " />
+            <marker date="1459965681938" expanded="true" signature="9790:9933" placeholder="SELECT minim... MajorBucketRequiredCourses" />
+            <marker date="1459965681938" expanded="true" signature="9878:9932" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="10143:10296" placeholder="INSERT INTO StudentCourse... " />
+            <marker date="1459965681938" expanded="true" signature="10528:10582" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="10797:10868" placeholder="INSERT INTO CourseInfo... " />
+            <marker date="1459965681938" expanded="true" signature="10970:11024" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459965681938" expanded="true" signature="11149:11297" placeholder="INSERT INTO StudentCourse... " />
+            <marker date="1459965681938" expanded="true" signature="11904:11941" placeholder="SELECT type Users" />
+            <marker date="1459965681938" expanded="true" signature="12559:12724" placeholder="..." />
+            <marker date="1459965681938" expanded="true" signature="12675:12717" placeholder="..." />
+            <marker date="1459965681938" expanded="true" signature="12859:13056" placeholder="..." />
+            <marker date="1459965681938" expanded="true" signature="12991:13049" placeholder="..." />
+            <marker date="1459965681938" expanded="true" signature="13644:13699" placeholder="INSERT INTO Major... " />
+            <marker date="1459965681938" expanded="true" signature="13746:13791" placeholder="SELECT major... Major" />
+            <marker date="1459965681938" expanded="true" signature="18717:18942" placeholder="INSERT INTO MajorBucket... " />
+            <marker date="1459965681938" expanded="true" signature="18943:19130" placeholder="UPDATE dateS... " />
+            <marker date="1459965681938" expanded="true" signature="19639:19833" placeholder="INSERT INTO MajorBucket... " />
+            <marker date="1459965681938" expanded="true" signature="19858:20040" placeholder="UPDATE dateS... " />
+            <marker date="1459965681938" expanded="true" signature="20434:20504" placeholder="SELECT bucke... MajorBucket" />
+            <marker date="1459965681938" expanded="true" signature="20731:20841" placeholder="INSERT INTO CourseInfo... " />
+            <marker date="1459965681938" expanded="true" signature="20842:20903" placeholder="UPDATE cours... " />
+            <marker date="1459965681938" expanded="true" signature="21160:21421" placeholder="INSERT INTO MajorBucketRequiredCourses... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/common_files/tests/nursing.xml">
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/semesterForecastController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4207317">
-          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-          <folding />
+        <state vertical-scroll-proportion="3.641479">
+          <caret line="148" column="37" selection-start-line="148" selection-start-column="37" selection-end-line="148" selection-end-column="37" />
+          <folding>
+            <marker date="1459967894869" expanded="true" signature="568:610" placeholder="SELECT gpaGo... Users" />
+            <marker date="1459967894869" expanded="true" signature="1270:1449" placeholder="SELECT SUM(C... StudentCourse" />
+            <marker date="1459967894869" expanded="true" signature="2227:2580" placeholder="SELECT Stude... CourseInfo" />
+            <marker date="1459967894869" expanded="true" signature="3390:3637" placeholder="SELECT Cours... StudentCourse" />
+            <marker date="1459967894869" expanded="true" signature="5402:5545" placeholder="UPDATE Stude... " />
+            <marker date="1459967894869" expanded="true" signature="5475:5529" placeholder="SELECT cours... CourseInfo" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/OvrlDashController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2652733">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+          <folding>
+            <element signature="n#getMajorBuckets#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
+            <element signature="n#getProgramInfo#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
+            <element signature="n#deleteItem#0;n#OverallDashboardController#0;n#!!top" expanded="false" />
+            <marker date="1459967894877" expanded="true" signature="488:636" placeholder="SELECT descr... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="555:614" placeholder="SELECT major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="1663:2027" placeholder="SELECT Stude... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="1856:1938" placeholder="Select grade... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="1969:2026" placeholder="select userI... Users" />
+            <marker date="1459967894877" expanded="true" signature="5134:5230" placeholder="SELECT major... Major" />
+            <marker date="1459967894877" expanded="true" signature="5180:5229" placeholder="Select major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="5675:5732" placeholder="SELECT gradu... GraduatePrograms" />
+            <marker date="1459967894877" expanded="true" signature="6064:6563" placeholder="SELECT Stude... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="11568:11790" placeholder="SELECT Cours... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="13186:13419" placeholder="SELECT descr... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="13280:13329" placeholder="SELECT major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="13348:13418" placeholder="select bucke... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="14217:14535" placeholder="SELECT descr... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="14285:14354" placeholder="SELECT major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="14373:14534" placeholder="Select bucke... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="14464:14533" placeholder="select major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="15393:16058" placeholder="SELECT DISTI... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="15640:15854" placeholder="Select cours... MajorBucketRequiredCourses" />
+            <marker date="1459967894877" expanded="true" signature="15721:15853" placeholder="Select bucke... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="15793:15852" placeholder="Select major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="15887:15969" placeholder="SELECT cours... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="17407:18010" placeholder="SELECT DISTI... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="17657:17891" placeholder="Select cours... MajorBucketRequiredCourses" />
+            <marker date="1459967894877" expanded="true" signature="17749:17890" placeholder="Select bucke... MajorBucket" />
+            <marker date="1459967894877" expanded="true" signature="17840:17889" placeholder="Select major... StudentMajor" />
+            <marker date="1459967894877" expanded="true" signature="17959:18009" placeholder="SELECT grade... StudentCourse" />
+            <marker date="1459967894877" expanded="true" signature="18707:18762" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="18856:18919" placeholder="DELETE FROM " />
+            <marker date="1459967894877" expanded="true" signature="19374:19429" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="19525:19599" placeholder="UPDATE Stude... " />
+            <marker date="1459967894877" expanded="true" signature="19908:19979" placeholder="SELECT userN... Users" />
+            <marker date="1459967894877" expanded="true" signature="21186:21325" placeholder="UPDATE Stude... " />
+            <marker date="1459967894877" expanded="true" signature="21244:21309" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="22250:22306" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459967894877" expanded="true" signature="22439:22526" placeholder="UPDATE Stude... " />
+            <marker date="1459967894877" expanded="true" signature="22979:23120" placeholder="UPDATE Stude... " />
+            <marker date="1459967894877" expanded="true" signature="23039:23104" placeholder="SELECT cours... CourseInfo" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/semesterDashboardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1688103">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding>
+            <marker date="1459967894773" expanded="true" signature="521:721" placeholder="SELECT Cours... StudentCourse" />
+            <marker date="1459967894773" expanded="true" signature="1591:1832" placeholder="SELECT asses... AssessmentType" />
+            <marker date="1459967894773" expanded="true" signature="1671:1831" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1459967894773" expanded="true" signature="1776:1830" placeholder="select cours... CourseInfo" />
+            <marker date="1459967894773" expanded="true" signature="2667:2971" placeholder="SELECT grade... Assessment" />
+            <marker date="1459967894773" expanded="true" signature="2724:2792" placeholder="select asses... AssessmentType" />
+            <marker date="1459967894773" expanded="true" signature="2818:2970" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1459967894773" expanded="true" signature="2915:2969" placeholder="select cours... CourseInfo" />
+            <marker date="1459967894773" expanded="true" signature="3740:4032" placeholder="SELECT Cours... Assessment" />
+            <marker date="1459967894773" expanded="true" signature="4577:4892" placeholder="SELECT b.ass... Assessment" />
+            <marker date="1459967894773" expanded="true" signature="4741:4816" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1459967894773" expanded="true" signature="18606:18663" placeholder="SELECT gradu... GraduatePrograms" />
+            <marker date="1459967894773" expanded="true" signature="19384:19480" placeholder="SELECT major... Major" />
+            <marker date="1459967894773" expanded="true" signature="19430:19479" placeholder="SELECT major... StudentMajor" />
+            <marker date="1459967894773" expanded="true" signature="20160:20300" placeholder="Delete FROM " />
+            <marker date="1459967894773" expanded="true" signature="20241:20299" placeholder="SELECT C.cou... CourseInfo" />
+            <marker date="1459967894773" expanded="true" signature="20662:20883" placeholder="SELECT asses... AssessmentType" />
+            <marker date="1459967894773" expanded="true" signature="20730:20882" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1459967894773" expanded="true" signature="20827:20881" placeholder="select cours... CourseInfo" />
+            <marker date="1459967894773" expanded="true" signature="21589:21823" placeholder="SELECT asses... AssessmentType" />
+            <marker date="1459967894773" expanded="true" signature="21670:21822" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1459967894773" expanded="true" signature="21767:21821" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459967894773" expanded="true" signature="23237:23540" placeholder="SELECT grade... Assessment" />
+            <marker date="1459967894773" expanded="true" signature="23293:23361" placeholder="select asses... AssessmentType" />
+            <marker date="1459967894773" expanded="true" signature="23387:23539" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1459967894773" expanded="true" signature="23484:23538" placeholder="select cours... CourseInfo" />
+            <marker date="1459967894773" expanded="true" signature="24501:24853" placeholder="SELECT b.ass... Assessment" />
+            <marker date="1459967894773" expanded="true" signature="24635:24787" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1459967894773" expanded="true" signature="24732:24786" placeholder="select cours... CourseInfo" />
+            <marker date="1459967894773" expanded="true" signature="27387:27629" placeholder="INSERT into AssessmentType... " />
+            <marker date="1459967894773" expanded="true" signature="27475:27627" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1459967894773" expanded="true" signature="27572:27626" placeholder="select cours... CourseInfo" />
+            <marker date="1459967894773" expanded="true" signature="28020:28521" placeholder="INSERT into Assessment... " />
+            <marker date="1459967894773" expanded="true" signature="28343:28495" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1459967894773" expanded="true" signature="28440:28494" placeholder="select cours... CourseInfo" />
+            <marker date="1459967894773" expanded="true" signature="28925:29244" placeholder="Delete from " />
+            <marker date="1459967894773" expanded="true" signature="28989:29057" placeholder="select asses... AssessmentType" />
+            <marker date="1459967894773" expanded="true" signature="29083:29235" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1459967894773" expanded="true" signature="29180:29234" placeholder="select cours... CourseInfo" />
+            <marker date="1459967894773" expanded="true" signature="29635:29954" placeholder="Delete from " />
+            <marker date="1459967894773" expanded="true" signature="29699:29767" placeholder="select asses... AssessmentType" />
+            <marker date="1459967894773" expanded="true" signature="29793:29945" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1459967894773" expanded="true" signature="29890:29944" placeholder="select cours... CourseInfo" />
+            <marker date="1459967894773" expanded="true" signature="30336:30566" placeholder="DELETE from " />
+            <marker date="1459967894773" expanded="true" signature="30413:30565" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1459967894773" expanded="true" signature="30510:30564" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1459967894773" expanded="true" signature="30951:31254" placeholder="SELECT grade... Assessment" />
+            <marker date="1459967894773" expanded="true" signature="31007:31075" placeholder="select asses... AssessmentType" />
+            <marker date="1459967894773" expanded="true" signature="31101:31253" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1459967894773" expanded="true" signature="31198:31252" placeholder="select cours... CourseInfo" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/GPAForecastController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.2186496">
+          <caret line="94" column="5" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
+          <folding>
+            <marker date="1459967894857" expanded="true" signature="564:606" placeholder="SELECT gpaGo... Users" />
+            <marker date="1459967894857" expanded="true" signature="1197:1376" placeholder="SELECT SUM(C... StudentCourse" />
+            <marker date="1459967894857" expanded="true" signature="2086:2452" placeholder="SELECT Stude... CourseInfo" />
+            <marker date="1459967894857" expanded="true" signature="3168:3433" placeholder="SELECT Cours... StudentCourse" />
+          </folding>
         </state>
       </provider>
     </entry>

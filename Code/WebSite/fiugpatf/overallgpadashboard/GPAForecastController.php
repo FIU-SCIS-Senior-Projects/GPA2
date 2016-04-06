@@ -81,7 +81,7 @@ class GPAForecastController {
         {
             $this->log->toLog(2, __METHOD__, "No course grades or course credits");
             echo json_encode('No grades');
-            return;
+            return 'No grades';
         }
 
         for ($i = 0, $c = count($output); $i < $c; $i++) {
