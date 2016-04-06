@@ -10,8 +10,6 @@ class SemesterDashboardController
 {
     protected $userID;
     protected $username;
-    protected $id;
-    protected $course;
 
     public function __construct($userID, $username)
     {
@@ -29,16 +27,18 @@ class SemesterDashboardController
         $output = $db->select($stmt, $params);
 
         for($i = 0; $i < count($output); $i++) {
+
             $courseID = $output[$i][0];
             $courseName = $output[$i][1];
             $credit = $output[$i][2];
+
+            toLog(0, "DEBUG", __METHOD__, "ID: $courseID, Course Name: $courseName, Credits: $credit");
 
             $grade = $this->getGrade($user, $courseID);
             if($grade != 'No Grades') {
                 array_push($return, array($courseID, $courseName, $credit, round($grade, 2)));
             }
-            else
-            {
+            else {
                 array_push($return, array($courseID, $courseName, $credit, $grade));
             }
         }
@@ -61,6 +61,8 @@ class SemesterDashboardController
         for($i = 0; $i < count($output); $i++) {
             $assessmentName = $output[$i][0];
             $per = $output[$i][1];
+
+            toLog(0, "DEBUG", __METHOD__, "Assessment Name: $assessmentName, Percent: $per%");
 
             $grade = $this->averageAssess($assessmentName, $user, $course);
             if($grade != " ") {
@@ -90,12 +92,16 @@ class SemesterDashboardController
             $aGrade = $output[$i][0];
             $runAvg += $aGrade;
             $count++;
+
+            toLog(0, "DEBUG", __METHOD__, "Assessment Name: $category, Grade: $aGrade");
         }
 
         if($count != 0) {
+            toLog(1, "INFO", __METHOD__, "Value returned");
             return round($runAvg / $count, 2);
         }
         else {
+            toLog(1, "INFO", __METHOD__, "No value returned");
             return " ";
         }
     }
@@ -104,16 +110,15 @@ class SemesterDashboardController
         $db = new DatabaseConnector();
         $return = [];
 
-
         $stmt = "SELECT CourseInfo.courseID, CourseInfo.courseInfoID FROM Assessment, StudentCourse INNER JOIN CourseInfo ON StudentCourse.courseInfoID = CourseInfo.courseInfoID WHERE Assessment.studentCourseID = StudentCourse.studentCourseID AND StudentCourse.grade = 'IP' AND userID = ? ORDER BY dateEntered";
         $params = array($this->userID);
         $output = $db->select($stmt, $params);
-
 
         for($i = 0, $c = count($output); $i < $c; $i++) {
             $new =  $output[$i][0];
             if (!isset($arr[$new])) {
                 $arr[$new] = 1;
+                toLog(0, "DEBUG", __METHOD__, "Course ID: $new");
                 array_push($return, $new);
             }
         }
@@ -146,6 +151,8 @@ class SemesterDashboardController
             $date = $output[$i][3];;
             $course = $output[$i][4];;
 
+            toLog(0, "DEBUG", __METHOD__, "Assessment ID: $ID, Percent: $per, Grade: $grade, Date Entered: $date, Course ID: $course");
+
             array_push($allAssessments, array($ID, $per, $grade, $date, $course));
             if (!isset($arr[$course])) {
                 $arr[$course] = 1;
@@ -158,6 +165,9 @@ class SemesterDashboardController
         $semester = $this->term(substr($allAssessments[0][3], 5, 2)); //fall, spring or summer
         $currTimePeriod = $this->timePeriod($semester, $allAssessments[0][3]); //temp time period
         $timePeriodSize = $this->checkSize($semester); //check how many segments for x-axis
+
+        toLog(0, "DEBUG", __METHOD__, "Year: $year, Semester: $semester, Time Period: $currTimePeriod, TP Size: $timePeriodSize");
+
         $tempArray = [];
         $arrayCourse = [];
 
@@ -229,8 +239,10 @@ class SemesterDashboardController
                 }
 
                 if ($found) {
+                    toLog(0, "DEBUG", __METHOD__, "Current Average: $currAverage");
                     $y++;
                 } else {
+                    toLog(0, "DEBUG", __METHOD__, "Current Average: $currAverage");
                     array_push($plots, array($this->dateOfTerm($semester, $y, $year), $currAverage));
                     $y++;
                 }
@@ -432,7 +444,7 @@ class SemesterDashboardController
             $collectAssessments = [];
 
             foreach($arrayCourse as list($co, $a, $p, $g)) {
-                if($currCourse == $co) { //look fot same course
+                if($currCourse == $co) { //look for same course
                     array_push($collectAssessments, array($a, $p, $g)); // store ID, percent, grade
                 }
             }
@@ -509,6 +521,8 @@ class SemesterDashboardController
         for ($i = 0, $c = count($output); $i < $c; $i++) {
             $prg = $output[$i][0];
             $gpa = $output[$i][1];
+
+            toLog(0, "DEBUG", __METHOD__, "Graduate Program: $prg, Required GPA: $gpa");
             array_push($return, array($prg,$gpa));
         }
 
@@ -528,11 +542,13 @@ class SemesterDashboardController
         if(count($output) == 0) {
             toLog(2, 'ERROR', __METHOD__, "No major program selected");
             echo json_encode([]);
-            return;
+            return $return;
         }
 
         for ($i = 0, $c = count($output); $i < $c; $i++) {
             $currentProgram = $output[$i][0];
+
+            toLog(0, "DEBUG", __METHOD__, "Current Program: $currentProgram");
             array_push($return, array($currentProgram));
         }
 
@@ -565,13 +581,15 @@ class SemesterDashboardController
         $output = $db->select($stmt, $params);
 
         if(count($output) == 0) {
-            toLog(2, 'ERROR', __METHOD__, "No course cannot be removed");
+            toLog(2, 'ERROR', __METHOD__, "No assessments for course");
             echo json_encode([]);
             return;
         }
 
         for ($i = 0, $c = count($output); $i < $c; $i++) {
             $assessments = $output[$i][0];
+
+            toLog(0, "DEBUG", __METHOD__, "Tab Assessment Name: $assessments");
             array_push($return, $assessments);
         }
 
@@ -603,11 +621,13 @@ class SemesterDashboardController
 
             $grade = $this->avgAssess($bucket, $course);
             if($grade != "No Grades") {
+                toLog(0, "DEBUG", __METHOD__, "Course $course has $grade");
                 array_push($return, array($bucket, $per, round($grade, 2)));
                 $average += $grade * $per;
                 $totalPer += $per;
             }
             else {
+                toLog(0, "DEBUG", __METHOD__, "Course $course has $grade");
                 array_push($return, array($bucket, $per, $grade));
             }
         }
@@ -643,7 +663,6 @@ class SemesterDashboardController
 
         for ($i = 0, $c = count($output); $i < $c; $i++) {
             $assessmentGrade = $output[$i][0];
-
             $runAvg += $assessmentGrade;
             $count++;
 
@@ -654,6 +673,7 @@ class SemesterDashboardController
             return $runAvg / $count;
         }
         else {
+            toLog(1, "INFO", __METHOD__, "No grades returned for $category");
             return "No Grades";
         }
     }
@@ -670,21 +690,18 @@ class SemesterDashboardController
         $runningGrades = [];
         $currDate = "Empty";
 
-        if (count($output) > 0)
-        {
-            foreach ($output as $assesment)
-            {
-                if ($currDate == "Empty")
-                {
+        if (count($output) > 0) {
+            foreach ($output as $assesment) {
+                toLog(0, "DEBUG", __METHOD__, "Assessment Type ID: $assesment[0] Percentage: $assesment[1] Grade: $assesment[2] Date Entered: $assesment[3]");
+                if ($currDate == "Empty") {
                     $currDate = $assesment[3];
                     array_push($dates, array($x, substr($assesment[3], 5)));
                     array_push($runningGrades, array($assesment[0], $assesment[1], $assesment[2]));
                 }
-                else if ($currDate == $assesment[3])
-                {
+                else if ($currDate == $assesment[3]) {
                     array_push($runningGrades, array($assesment[0], $assesment[1], $assesment[2]));
-                } else
-                {
+                }
+                else {
                     array_push($points, array($x, $this->gradeUp($runningGrades)));
                     array_push($runningGrades, array($assesment[0], $assesment[1], $assesment[2]));
                     $x++;
@@ -698,9 +715,11 @@ class SemesterDashboardController
             array_push($points, $dates);
 
             echo json_encode($points);
+            return $points;
         }
         else {
             echo json_encode($output);
+            return $output;
         }
     }
 
@@ -810,8 +829,6 @@ class SemesterDashboardController
         $params = array($assessment, $this->userID, $course);
         $output = $db->select($stmt, $params);
 
-        toLog(1, 'INFO', __METHOD__, "Get grades for the assessment");
-
         if(count($output) == 0) {
             toLog(2, 'ERROR', __METHOD__, "No grades returned form assessment");
             echo json_encode([]);
@@ -821,6 +838,8 @@ class SemesterDashboardController
         $index = 1;
         for ($i = 0, $c = count($output); $i < $c; $i++) {
             $grades = $output[$i][0];
+
+            toLog(0, "DEBUG", __METHOD__, "Grade: $grades");
             array_push($return, array("Grade" . $index, $grades));
             $index++;
         }

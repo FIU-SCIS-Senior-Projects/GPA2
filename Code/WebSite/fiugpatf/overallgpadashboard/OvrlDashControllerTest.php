@@ -11,7 +11,8 @@ include_once 'OvrlDashController.php';
 
 class OvrlDashControllerTest extends PHPUnit_Framework_TestCase {
 
-    function testCheckWeightAndRelevance001() {
+    //Purpose: Ensure that all the in-progress and incomplete classes along with their weight and relevance values are returned for a user with imported Panther Audit
+    function testCheckWeightAndRelevance001_UT001() {
         $odc = new OverallDashboardController(12, 'newuser20');
         $return = $odc->checkWeightAndRelevance();
 
@@ -29,7 +30,8 @@ class OvrlDashControllerTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals($return, $expected);
     }
 
-    function testGetGraphData002() {
+    //Purpose: Ensure that a GPA is generated for each semester completed at FIU for a user with imported Panther Audit
+    function testGetGraphData001_UT002() {
         $odc = new OverallDashboardController(12, 'newuser20');
         $return = $odc->getGraphData();
 
@@ -50,5 +52,18 @@ class OvrlDashControllerTest extends PHPUnit_Framework_TestCase {
 
         $this->assertEquals($return, $expected);
     }
+
+    //Purpose: Ensure that no GPA data is returned for a new user who has not imported a Panther audit
+    function testGetGraphData002_UT003() {
+        $odc = new OverallDashboardController(27, 'lmend066');
+        $return = $odc->getGraphData();
+
+        $expected = "No data for graph";
+
+        $this->assertEquals($return, $expected);
+    }
+
+
+
 
 }
