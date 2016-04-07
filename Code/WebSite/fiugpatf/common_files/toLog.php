@@ -4,8 +4,8 @@ class workerThread extends Thread {
     protected $info; 
     protected $settings; 
 
-    //protected $root = '/home/GPA2/Code/WebSite/fiugpatf';
-    protected $root = '/home/sproject/GPA2/Code/WebSite/fiugpatf';
+    protected $root = '/home/GPA2/Code/WebSite/fiugpatf';
+    //protected $root = '/home/sproject/GPA2/Code/WebSite/fiugpatf';
    
     public function __construct($id, $info){
         $this->id = $id;

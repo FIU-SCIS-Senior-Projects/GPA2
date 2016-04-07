@@ -11,7 +11,7 @@ $received = true;
 $first = true;
 
 $settings = shm_get_var($settingMemKey, $settingKey);
-$file = $settings['log_location']['local'];
+$file = $settings['log_location']['server'];
 $log = fopen($file, "a");
 
 

@@ -238,7 +238,7 @@ class DBTest extends PHPUnit_Framework_TestCase
 
       $db = new DatabaseConnector();
 
-      $params = array(4);
+      $params = array(5);
       $buckets = $db->select("Select description from MajorBucket Where majorID = ?",$params);
 
       $output = array();
