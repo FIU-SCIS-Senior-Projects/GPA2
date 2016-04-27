@@ -38,10 +38,10 @@ class SemesterDashboardController
 
             $grade = $this->getGrade($user, $courseID);
             if($grade != 'No Grades') {
-                array_push($return, array($courseID, $courseName, $credit, round($grade, 2)));
+                array_push($return, array("id"=>$courseID, "name"=>$courseName, "credits"=>$credit, "grade"=>round($grade, 2)));
             }
             else {
-                array_push($return, array($courseID, $courseName, $credit, $grade));
+                array_push($return, array("id"=>$courseID, "name"=>$courseName, "credits"=>$credit, "grade"=>$grade));
             }
         }
 
@@ -134,7 +134,7 @@ class SemesterDashboardController
 
         $stmt = "SELECT b.assessmentTypeID, b.percentage, a.grade, a.dateEntered, a.studentCourseID FROM Assessment as a,
           AssessmentType as b WHERE  a.studentCourseID in (SELECT studentCourseID FROM StudentCourse WHERE grade = 'IP' and userID = ?)
-          AND b.assessmentTypeID = a.assessmentTypeID ORDER BY dateEntered";
+          AND b.assessmentTypeID = a.assessmentTypeID ORDER BY dateEntered, grade";
         $params = array($this->userID);
         $output = $db->select($stmt, $params);
 
@@ -222,6 +222,8 @@ class SemesterDashboardController
         }
 
         $allPoints = [];
+        $label = [];
+        $return = [];
         for ($q = 0, $c = count($trackCourse); $q < $c; $q++) { // go through every ID
             $plots = [];
             $currTrackCourse = $trackCourse[$q];
@@ -233,7 +235,11 @@ class SemesterDashboardController
             while ($y <= $timePeriodSize) {
                 foreach ($tempArray as list($tp, $ci, $ag)) { //tp - time period, ci - course id, ag - average grade
                     if ($currTrackCourse == $ci && $y == $tp) {
-                        array_push($plots, array($this->dateOfTerm($semester, $tp, $year), $ag));
+                        if (!isset($arr[$y])) {
+                            $arr[$y] = 1;
+                            array_push($label, $this->dateOfTerm($semester, $tp, $year));
+                        }
+                        array_push($plots, $ag);
                         $currAverage = $ag;
                         $found = true;
                         break;
@@ -245,7 +251,11 @@ class SemesterDashboardController
                     $y++;
                 } else {
                     $this->log->toLog(0, __METHOD__, "Current Average: $currAverage");
-                    array_push($plots, array($this->dateOfTerm($semester, $y, $year), $currAverage));
+                    if (!isset($arr[$y])) {
+                        $arr[$y] = 1;
+                        array_push($label, $this->dateOfTerm($semester, $y, $year));
+                    }
+                    array_push($plots, $currAverage);
                     $y++;
                 }
             }
@@ -254,8 +264,11 @@ class SemesterDashboardController
 
         }
 
-        echo json_encode($allPoints);
-        return $allPoints;
+        //array[0] - labels, the rest are the data for the remaining courses
+        array_push($return, $label, $allPoints);
+
+        echo json_encode($return);
+        return $return;
     }
 
     function dateOfTerm($term, $timePeriod, $year) {
@@ -264,25 +277,32 @@ class SemesterDashboardController
             $fallStart = date('Y-m-d', strtotime('third monday of august' . $year));
 
             if($timePeriod == 0) {
-                return strtotime('third monday of august' . $year) * 1000;
+                return date('m-d', strtotime('third monday of august' . $year));;
+                /*return strtotime('third monday of august' . $year) * 1000;*/
             }
             else if($timePeriod == 1) {
-                return strtotime($fallStart . '+ 3 weeks') * 1000;
+                return date('m-d', strtotime($fallStart . '+ 3 weeks'));
+                /*return strtotime($fallStart . '+ 3 weeks') * 1000;*/
             }
             else if($timePeriod == 2) {
-                return strtotime($fallStart . '+ 6 weeks') * 1000;
+                return date('m-d', strtotime($fallStart . '+ 6 weeks'));
+                /*return strtotime($fallStart . '+ 6 weeks') * 1000;*/
             }
             else if($timePeriod == 3) {
-                return strtotime($fallStart . '+ 9 weeks') * 1000;
+                return date('m-d', strtotime($fallStart . '+ 9 weeks'));
+                /*return strtotime($fallStart . '+ 9 weeks') * 1000;*/
             }
             else if($timePeriod == 4) {
-                return strtotime($fallStart . '+ 12 weeks') * 1000;
+                return date('m-d', strtotime($fallStart . '+ 12 weeks'));
+                /*return strtotime($fallStart . '+ 12 weeks') * 1000;*/
             }
             else if($timePeriod == 5) {
-                return strtotime($fallStart . '+ 15 weeks') * 1000;
+                return date('m-d', strtotime($fallStart . '+ 15 weeks'));
+                /*return strtotime($fallStart . '+ 15 weeks') * 1000;*/
             }
             else if($timePeriod == 6) {
-                return strtotime($fallStart . '+ 18 weeks') * 1000;
+                return date('m-d', strtotime($fallStart . '+ 18 weeks'));
+                /*return strtotime($fallStart . '+ 18 weeks') * 1000;*/
             }
             else {
                 return 'summer';
@@ -292,25 +312,32 @@ class SemesterDashboardController
             $springStart = date('Y-m-d', strtotime('second monday of january' . $year));
 
             if($timePeriod == 0) {
-                return strtotime('second monday of january' . $year) * 1000;
+                return date('m-d', strtotime('second monday of january' . $year));;
+                /*return strtotime('second monday of january' . $year) * 1000;*/
             }
             else if($timePeriod == 1) {
-                return strtotime($springStart . '+ 3 weeks') * 1000;
+                return date('m-d', strtotime($springStart . '+ 3 weeks'));
+                /*return strtotime($springStart . '+ 3 weeks') * 1000;*/
             }
             else if($timePeriod == 2) {
-                return strtotime($springStart . '+ 6 weeks') * 1000;
+                return date('m-d', strtotime($springStart . '+ 6 weeks'));
+                /*return strtotime($springStart . '+ 6 weeks') * 1000;*/
             }
             else if($timePeriod == 3) {
-                return strtotime($springStart . '+ 9 weeks') * 1000;
+                return date('m-d', strtotime($springStart . '+ 9 weeks'));
+                /*return strtotime($springStart . '+ 9 weeks') * 1000;*/
             }
             else if($timePeriod == 4) {
-                return strtotime($springStart . '+ 12 weeks') * 1000;
+                return date('m-d', strtotime($springStart . '+ 12 weeks'));
+                /*return strtotime($springStart . '+ 12 weeks') * 1000;*/
             }
             else if($timePeriod == 5) {
-                return strtotime($springStart . '+ 15 weeks') * 1000;
+                return date('m-d', strtotime($springStart . '+ 15 weeks'));
+                /*return strtotime($springStart . '+ 15 weeks') * 1000;*/
             }
             else if($timePeriod == 6) {
-                return strtotime($springStart . '+ 18 weeks') * 1000;
+                return date('m-d', strtotime($springStart . '+ 18 weeks'));
+                /*return strtotime($springStart . '+ 18 weeks') * 1000;*/
             }
             else {
                 return 'summer';
@@ -623,22 +650,22 @@ class SemesterDashboardController
 
             $grade = $this->avgAssess($bucket, $course);
             if($grade != "No Grades") {
-                $this->log->toLog(0, __METHOD__, "Course $course has $grade");
-                array_push($return, array($bucket, $per, round($grade, 2)));
+                $this->log->toLog(0, __METHOD__, "Course has $grade");
+                array_push($return, array("assessment"=>$bucket, "percent"=>$per, "grade"=>round($grade, 2)));
                 $average += $grade * $per;
                 $totalPer += $per;
             }
             else {
                 $this->log->toLog(0, __METHOD__, "Course $course has $grade");
-                array_push($return, array($bucket, $per, $grade));
+                array_push($return, array("assessment"=>$bucket, "percent"=>$per, "grade"=>$grade));
             }
         }
 
         if($totalPer == 0) {
-            array_push($return, array("Total","" , "No Grades"));
+            array_push($return, array("assessment"=>"Total","percent"=>"" , "grade"=>"No Grades"));
         }
         else {
-            array_push($return, array("Total", "", round($average/$totalPer, 2)));
+            array_push($return, array("assessment"=>"Total", "percent"=>"", "grade"=>round($average/$totalPer, 2)));
         }
 
         echo json_encode($return);
@@ -653,12 +680,6 @@ class SemesterDashboardController
         $stmt = "SELECT grade FROM Assessment WHERE assessmentTypeID in (select assessmentTypeID FROM AssessmentType WHERE assessmentName = ?) AND studentCourseID in (SELECT studentCourseID FROM StudentCourse WHERE grade = 'IP' and userID = ? AND courseInfoID in (select courseInfoID FROM CourseInfo WHERE courseID = ?))";
         $params = array($category, $this->userID, $course);
         $output = $db->select($stmt, $params);
-
-        if(count($output) == 0) {
-            $this->log->toLog(2, __METHOD__, "No grades for assessments returned");
-            echo json_encode([]);
-            return $return;
-        }
 
         $runAvg = 0;
         $count = 0;
@@ -690,6 +711,7 @@ class SemesterDashboardController
         $dates = [];
         $points = [];
         $runningGrades = [];
+        $plot = [];
         $currDate = "Empty";
 
         if (count($output) > 0) {
@@ -697,27 +719,27 @@ class SemesterDashboardController
                 $this->log->toLog(0, __METHOD__, "Assessment Type ID: $assesment[0] Percentage: $assesment[1] Grade: $assesment[2] Date Entered: $assesment[3]");
                 if ($currDate == "Empty") {
                     $currDate = $assesment[3];
-                    array_push($dates, array($x, substr($assesment[3], 5)));
+                    array_push($dates, substr($assesment[3], 5));
                     array_push($runningGrades, array($assesment[0], $assesment[1], $assesment[2]));
                 }
                 else if ($currDate == $assesment[3]) {
                     array_push($runningGrades, array($assesment[0], $assesment[1], $assesment[2]));
                 }
                 else {
-                    array_push($points, array($x, $this->gradeUp($runningGrades)));
+                    array_push($points, $this->gradeUp($runningGrades));
                     array_push($runningGrades, array($assesment[0], $assesment[1], $assesment[2]));
                     $x++;
                     $currDate = $assesment[3];
-                    array_push($dates, array($x, substr($assesment[3], 5)));
+                    array_push($dates, substr($assesment[3], 5));
                 }
             }
 
             array_push($runningGrades, array($assesment[0], $assesment[1], $assesment[2]));
-            array_push($points, array($x, $this->gradeUp($runningGrades)));
-            array_push($points, $dates);
+            array_push($points, $this->gradeUp($runningGrades));
+            array_push($plot, $dates, $points);
 
-            echo json_encode($points);
-            return $points;
+            echo json_encode($plot);
+            return $plot;
         }
         else {
             echo json_encode($output);

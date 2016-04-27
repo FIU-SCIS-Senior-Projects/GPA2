@@ -11,12 +11,12 @@ md-toolbar.navbar, md-toolbar.footer {
     padding-right: 0px;
 }
 
-/*.md-button {
+.md-button {
     font-size: large;
     padding-top: 10px;
     padding-bottom: 10px;
     color: #ffffff;
-}*/
+}
 
 .profilePic {
     margin-right: 10px;
@@ -36,9 +36,9 @@ md-toolbar.navbar, md-toolbar.footer {
     color: #002d62;
 }
 
-.table {
+/*.table {
     margin-right: 5%;
-}
+}*/
 
 tr:nth-child(even) {
     background: rgba(166, 200, 254, 1);
@@ -50,8 +50,33 @@ th {
     background-color: #002d62;
 }
 
-.todo {
+/*.todo {
     margin-left: 5%;
+}*/
+
+[role="tabpanel"] {
+    transition: none;
+}
+
+.tabNaN {
+    background-color: #cecece;
+}
+
+md-tabs[md-no-bar] md-ink-bar {
+    display: none;
+}
+
+md-tabs-canvas {
+    background-color: #002d62;
+}
+
+md-tabs.md-default-theme .md-tab, md-tabs .md-tab {
+    color: #ffffff;
+}
+
+md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active {
+    color: #002d62;
+    background-color: #cecece;
 }
 
 .graph {
@@ -64,7 +89,7 @@ canvas.chart.chart-line, canvas#line {
 }
 
 .md-button.md-fab, .md-button.md-fab:not([disabled]):hover, .md-button.md-fab.md-focused:not([disabled]) {
-   /* background-color: #002d62;*/
+    background-color: #002d62;
     padding-top: 0px;
     padding-bottom: 0px;
 }

@@ -99,7 +99,7 @@ class SemesterDashboardRouter {
                 break;
             case "plotPoints":
                 $controller = new SemesterDashboardController($_SESSION['userID'], $_SESSION['username']);
-                $controller->$action($_POST['course']);
+                $controller->$action($_POST['list']);
                 break;
             case "add":
                 $controller = new SemesterDashboardController($_SESSION['userID'], $_SESSION['username']);
@@ -129,11 +129,11 @@ class SemesterDashboardRouter {
     }
 }
 
-if (isset($_POST['action'])) {
-    $action = $_POST['action'];
-} else {
-    $action = "";
-}
 
-$pageRouter = new SemesterDashboardRouter($action);
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST))
+    $_POST = json_decode(file_get_contents('php://input'), true);
+$pageRouter = new SemesterDashboardRouter($_POST['action']);
+
+//$pageRouter = new SemesterDashboardRouter($action);
 

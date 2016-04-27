@@ -7,7 +7,7 @@ sec_session_start();
 if(isset($_SESSION['username']))
 {
     echo "<li><a href=\"../overallgpadashboard/OvrlDash.html\">GPA Dashboard</a></li>";
-    echo "<li><a href=\"../sem_dashboard/current.html\">Semester Dashboard</a></li>";
+    echo "<li><a href=\"../sem_dashboard/semesterDashboard.html\">Semester Dashboard</a></li>";
 	echo "<li><a href=\"../common_files/settings.html\">Settings</a></li>";
 
     echo "<li><a href=../common_files/logout.php>Logout</a></li>";
