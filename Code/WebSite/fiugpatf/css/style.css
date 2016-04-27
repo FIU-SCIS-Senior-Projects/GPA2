@@ -1,0 +1,89 @@
+.logo {
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 80px;
+    width: 350px;
+}
+
+md-toolbar.navbar, md-toolbar.footer {
+    background-color: #002d62;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+/*.md-button {
+    font-size: large;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #ffffff;
+}*/
+
+.profilePic {
+    margin-right: 10px;
+    margin-top: 10px;
+    height: 100px;
+    width: 225px;
+}
+
+.content {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.content h1, h2 {
+    text-align: center;
+    font-weight: bold;
+    color: #002d62;
+}
+
+.table {
+    margin-right: 5%;
+}
+
+tr:nth-child(even) {
+    background: rgba(166, 200, 254, 1);
+}
+tr:nth-child(odd) {
+    background: #ffffff;
+}
+th {
+    background-color: #002d62;
+}
+
+.todo {
+    margin-left: 5%;
+}
+
+.graph {
+    margin: 10% 0 10% 0;
+}
+
+canvas.chart.chart-line, canvas#line {
+    width: 500px;
+    height: 500px;
+}
+
+.md-button.md-fab, .md-button.md-fab:not([disabled]):hover, .md-button.md-fab.md-focused:not([disabled]) {
+   /* background-color: #002d62;*/
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#placeholder {
+    width: 900px;
+    height: 400px;
+    margin: auto;
+}
+
+.footer {
+    background-color: #002d62;
+    height: 20%;
+}
+
+.tableButton {
+    padding: 0 6px 0 6px;
+    margin: 0px 8px 0px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+}

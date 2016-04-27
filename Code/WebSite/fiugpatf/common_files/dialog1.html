@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<md-dialog>
+    <form>
+        <md-toolbar class="navbar">
+            <div class="md-toolbar-tools">
+                <h2>Edit</h2>
+                <span flex></span>
+                <md-button ng-click="cancel()">
+                    cancel
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <md-list layout="row">
+                    <md-list-item ng-repeat="s in pnames">
+                        <md-input-container>
+                            <label>{{s}}</label>
+                            <input type="text" ng-model="selected[s]">
+                        </md-input-container>
+                    </md-list-item>
+                </md-list>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row" layout-align="space-between end">
+            <md-button ng-click="delete()">
+                Delete
+            </md-button>
+            <md-button ng-click="save()">
+                Save
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
+</body>
+</html>
