@@ -18,8 +18,10 @@ class OverallDashboardController
         $dbc = new DatabaseConnector();
 
         $params = array($this->userID);
-        $buckets = $dbc->select("SELECT description, allRequired FROM MajorBucket WHERE majorID in (SELECT majorID
+        $buckets = $dbc->select("SELECT description, allRequired, bucketID FROM MajorBucket WHERE majorID in (SELECT majorID
           FROM StudentMajor WHERE userID = ?) and parentID IS NULL", $params);
+
+        $dbc = null;
 
         $output = array();
         foreach ($buckets as $bucket)
@@ -32,26 +34,135 @@ class OverallDashboardController
             else
                 $allRequired = 'NO';
 
-            array_push($output, array('+', $bucket[0], $allRequired));
+            array_push($output, array(
+                'name' => $bucket[0],
+                'req' => $allRequired,
+                'id' => $bucket[2]));
         }
+
 
         echo json_encode($output);
         return $output;
     }
 
-    public function getProgramInfo()
-    {
-        $gpa = $this->calculateGpa();
+    public function getMajorBucketsNeeded() {
+        $dbc = new DatabaseConnector();
+        $completed = false;
 
-        $curr = $this->getCurrProgram();
+        $params = array($this->userID);
+        $buckets = $dbc->select("SELECT description, allRequired, bucketID FROM MajorBucket WHERE majorID in (SELECT majorID
+          FROM StudentMajor WHERE userID = ?) and parentID IS NULL", $params);
 
-        $programs  = $this->getGradPrograms();
+
+        $params = array($this->userID);
+        $nonCompleted = $dbc->select("Select DISTINCT bucketID from MajorBucketRequiredCourses INNER JOIN StudentCourse
+          on MajorBucketRequiredCourses.courseInfoID = StudentCourse.courseInfoID WHERE StudentCourse.grade='ND'
+          and StudentCourse.userID = ? ", $params);
 
         $output = array();
-        array_push($output, $gpa, $curr, $this->username, $programs);
+        foreach ($buckets as $bucket)
+        {
+            $this->log->toLog(0, __METHOD__, "bucket: description: $bucket[0]
+                required: $bucket[1] ");
+
+            foreach ($nonCompleted as $non)
+            {
+                if ($non[0] == $bucket[2]) {
+                    if ($bucket[1] == '1')
+                        $allRequired = 'YES';
+                    else
+                        $allRequired = 'NO';
+
+                    array_push($output, array(
+                        'name' => $bucket[0],
+                        'req' => $allRequired,
+                        'id' => $bucket[2]));
+                }
+            }
+        }
+
 
         echo json_encode($output);
         return $output;
+    }
+
+    private function checkChildCompleted($bucketID)
+    {
+        $dbc = new DatabaseConnector();
+        $completed = null;
+
+        $params = array($bucketID);
+        $buckets = $dbc->select("SELECT description, allRequired, parentID FROM MajorBucket WHERE
+              parentID = ?", $params);
+        $dbc = null;
+
+        if (count($buckets) > 0)
+        {
+            foreach ($buckets as $bucket) {
+                $completed = $this->checkChildCompleted($bucket[2]);
+
+                if (!$completed)
+                    break;
+            }
+        }
+        else
+            $completed = $this->checkCompleted($bucketID);
+
+        return $completed;
+    }
+
+    private function checkCompleted($bucketID)
+    {
+        $dbc = new DatabaseConnector();
+
+        $params = array($bucketID, $this->userID, $this->userID);
+        $courses = $dbc->select("SELECT DISTINCT CourseInfo.courseID, CourseInfo.credits, StudentCourse.weight,
+          StudentCourse.relevance, StudentCourse.studentCourseID FROM StudentCourse INNER JOIN
+          CourseInfo ON CourseInfo.courseInfoID in (Select courseInfoID From MajorBucketRequiredCourses where bucketID
+          = ?)AND CourseInfo.courseInfoID in (SELECT courseInfoID From StudentCourse Where userID = ?
+          AND grade = 'ND' )  AND StudentCourse.courseInfoID = CourseInfo.courseInfoID And StudentCourse.userID = ?",
+            $params);
+
+        if (count($courses) > 0)
+            return false;
+        else
+            return true;
+    }
+
+    public function getProgramInfo()
+    {
+        //$gpa = $this->calculateGpa();
+
+        $curr = $this->getCurrProgram();
+        $targetGPA = $this->getGoalGPA();
+        $programs  = $this->getGradPrograms();
+
+        $output = array();
+        array_push($output, $curr, $targetGPA, $programs);
+
+        echo json_encode($output);
+        return $output;
+    }
+
+    public function getGoalGPA()
+    {
+        $dbc = new DatabaseConnector();
+
+        $params = array($this->userID);
+        $gpa = $dbc->select("SELECT gpaGoal from Users where userID = ?", $params);
+
+        $x = $gpa[0][0];
+        $this->log->toLog(0, __METHOD__, "user: $this->userID, targetGPA: $x");
+
+        return $gpa[0][0];
+    }
+
+    public function saveTargetGPA($gpa)
+    {
+        $dbc = new DatabaseConnector();
+
+        $params = array($gpa, $this->userID);
+        $dbc->query("Update Users set gpaGoal = ? where userID = ?", $params);
     }
 
     private function calculateGpa()
@@ -159,14 +270,19 @@ class OverallDashboardController
         $dbc = new DatabaseConnector();
 
         $params = array();
-        $gradPrograms = $dbc->select("SELECT graduateProgram, requiredGPA FROM GraduatePrograms", $params);
+        $gradPrograms = $dbc->select("SELECT graduateProgram, requiredGPA, graduateProgramID FROM GraduatePrograms", $params);
 
+        $output = array();
         foreach ($gradPrograms as $gradProgram)
         {
             $this->log->toLog(0, __METHOD__, "program: $gradProgram[0] gpa: $gradProgram[1]");
+            array_push($output, array(
+                'name' => $gradProgram[0],
+                'gpa' => $gradProgram[1],
+                'id' => $gradProgram[2]));
         }
 
-        return $gradPrograms;
+        return $output;
     }
 
     public function getGraphData() {
@@ -296,9 +412,11 @@ class OverallDashboardController
             }
         }
 
-        for($i = 0, $c = count($xaxis); $i < $c; $i++) {
+        /*for($i = 0, $c = count($xaxis); $i < $c; $i++) {
             array_push($return, array($xaxis[$i], $averages[$i]));
-        }
+        }*/
+
+        array_push($return, $xaxis, $averages);
 
         echo json_encode($return);
         return $return;
@@ -340,27 +458,21 @@ class OverallDashboardController
     }
 
     public function getGPA() {
-        $gpa = $this->calculateGpa();
-
-        $output = array($gpa);
-        echo json_encode($output);
-    }
-
-    public function findChildBuckets() {
         $dbc = new DatabaseConnector();
 
-        if (isset($_POST['bucket'])) {
-            $bucket = $_POST['bucket'];
-        }
-        else {
-            $bucket = "";
-            $this->log->toLog(3, __METHOD__, "bucket is null");
-        }
+        $params = array($this->userID);
+        $gpa = $dbc->select("SELECT gpa From Users Where userID = ?", $params);
 
-        $params = array($this->userID, $bucket);
+        //$output = array($gpa);
+        echo json_encode($gpa[0]);
+    }
+
+    public function findChildBuckets($bucket) {
+        $dbc = new DatabaseConnector();
+
+        $params = array($this->userID, $bucket['id']);
         $buckets = $dbc->select("SELECT description, allRequired, parentID FROM MajorBucket WHERE  majorID in
-                (SELECT majorID FROM StudentMajor WHERE userID = ?) and parentID in (select bucketID
-                FROM MajorBucket where description = ?)", $params);
+                (SELECT majorID FROM StudentMajor WHERE userID = ?) and parentID = ?", $params);
 
         foreach ($buckets as $childBucket) {
             $this->log->toLog(0, __METHOD__, "description: $childBucket[0]
@@ -375,23 +487,12 @@ class OverallDashboardController
         echo json_encode($result);
     }
 
-    public function getMajorBucketsChildBuckets()
+    public function getMajorBucketsChildBuckets($bucket)
     {
         $dbc = new DatabaseConnector();
 
-        if (isset($_POST['bucket'])) {
-            $bucket = $_POST['bucket'];
-        }
-        else {
-            $bucket = "";
-            $this->log->toLog(3, __METHOD__, "bucket is null");
-        }
-
-        $params = array($this->userID, $bucket, $this->userID);
-        $buckets = $dbc->select("SELECT description, allRequired FROM MajorBucket WHERE  majorID in (SELECT majorID
-                    FROM StudentMajor WHERE userID = ?) and parentID in (Select bucketID From
-                    MajorBucket Where description = ? AND majorID in (select majorID FROM StudentMajor
-                    WHERE userID = ?))", $params);
+        $params = array($bucket['id']);
+        $buckets = $dbc->select("SELECT description, allRequired, bucketID FROM MajorBucket WHERE parentID = ?", $params);
 
         $output = array();
         foreach ($buckets as $childBucket) {
@@ -403,71 +504,51 @@ class OverallDashboardController
             else
                 $allR = "NO";
 
-            array_push($output, array('+', $childBucket[0], $allR));
+            array_push($output, array(
+                'name' => $childBucket[0],
+                'req' => $allR,
+                'id' => $childBucket[2]));
         }
 
         echo json_encode($output);
     }
 
-    public function getMajorBucketsCourseNeeded()
+    public function getMajorBucketsCourseNeeded($bucket)
     {
         $dbc = new DatabaseConnector();
 
-        if (isset($_POST['bucket'])) {
-            $bucket = $_POST['bucket'];
-        }
-        else {
-            $bucket = "";
-            $this->log->toLog(3, __METHOD__, "bucket is null");
-        }
-
-        $params = array($bucket, $this->userID, $this->userID, $this->userID);
+        $params = array($bucket['id'], $this->userID, $this->userID);
         $courses = $dbc->select("SELECT DISTINCT CourseInfo.courseID, CourseInfo.credits, StudentCourse.weight,
-          StudentCourse.relevance, StudentCourse.courseInfoID, StudentCourse.selected FROM StudentCourse INNER JOIN
+          StudentCourse.relevance, StudentCourse.studentCourseID FROM StudentCourse INNER JOIN
           CourseInfo ON CourseInfo.courseInfoID in (Select courseInfoID From MajorBucketRequiredCourses where bucketID
-          in (Select bucketID FROM MajorBucket where description = ? AND  majorID in (Select majorID From StudentMajor
-          where userID = ?)))AND CourseInfo.courseInfoID in (SELECT courseInfoID From StudentCourse Where userID = ?
+          = ?)AND CourseInfo.courseInfoID in (SELECT courseInfoID From StudentCourse Where userID = ?
           AND grade = 'ND' )  AND StudentCourse.courseInfoID = CourseInfo.courseInfoID And StudentCourse.userID = ?",
             $params);
 
         $output = array();
         foreach ($courses as $course) {
             $this->log->toLog(0, __METHOD__, "courseID: $course[0],
-            credits: $course[1], weight: $course[2], relevance: $course[3], courseInfoID: $course[4],
-            selected: $course[5]");
+            credits: $course[1], weight: $course[2], relevance: $course[3], id: $course[4],");
 
-            if ($course[5] == 1) {
-                $box = '<input id = "' . $course[0] . 'check" type="checkbox" name="myCheckbox"
-                    checked disabled="disabled" /> <a style ="color:blue;">toggle</a>';
-                array_push($output, array($course[0], $course[1], $course[2], $course[3], $box));
-            }
-            else {
-                array_push($output, array($course[0], $course[1], $course[2], $course[3], '<input id = "' . $course[0]
-                    . 'check" type="checkbox" name="myCheckbox" /> <a  style ="color:blue;">toggle</a>'
-                ));
-            }
+            array_push($output, array(
+                'courseID' => $course[0],
+                'credits' => $course[1],
+                'weight' => $course[2],
+                'relevance' => $course[3],
+                'id' => $course[4]));
         }
 
         echo json_encode($output);
     }
 
-    public function getMajorBucketsCourse() {
+    public function getMajorBucketsCourse($bucket) {
         $dbc = new DatabaseConnector();
 
-        if (isset($_POST['bucket'])) {
-            $bucket = $_POST['bucket'];
-        }
-        else {
-            $bucket = "";
-            $this->log->toLog(3, __METHOD__, "bucket is null");
-        }
-
-        $params = array($bucket, $this->userID, $this->userID);
+        $params = array($bucket['id'], $this->userID);
         $courses = $dbc->select("SELECT DISTINCT CourseInfo.courseID, CourseInfo.credits, StudentCourse.grade
-                    FROM CourseInfo INNER JOIN StudentCourse ON  CourseInfo.courseInfoID = StudentCourse.courseInfoID
+                    FROM CourseInfo INNER JOIN StudentCourse ON CourseInfo.courseInfoID = StudentCourse.courseInfoID
                     AND StudentCourse.courseInfoID in (Select  courseInfoID From MajorBucketRequiredCourses where
-                    bucketID in (Select bucketID FROM MajorBucket where description = ? AND majorID
-                    in (Select majorID From StudentMajor where userID = ?)))AND userID = ? AND NOT StudentCourse.grade
+                    bucketID = ?) AND userID = ? AND NOT StudentCourse.grade
                     in (SELECT grade FROM StudentCourse WHERE grade = 'ND')", $params);
 
         $output = array();
@@ -477,7 +558,10 @@ class OverallDashboardController
             $this->log->toLog(0, __METHOD__, "courseID: $course[0],
             credits: $course[1], grade: $course[2]");
 
-            array_push($output, array($course[0], $course[1], $course[2]));
+            array_push($output, array(
+                'courseID' => $course[0],
+                'credits' => $course[1],
+                'grade' => $course[2]));
         }
 
         echo json_encode($output);
@@ -576,33 +660,11 @@ class OverallDashboardController
         echo json_encode($output);
     }
 
-    public function modWeight() {
+    public function modWeight($course) {
         $dbc = new DatabaseConnector();
 
-        if (isset($_POST['courseID'])) {
-            $courseID = $_POST['courseID'];
-        } else {
-            $courseID = "";
-            $this->log->toLog(3, __METHOD__, "course is null");
-        }
-        if (isset($_POST['modifiedWeight'])) {
-            $modifiedWeight = $_POST['modifiedWeight'];
-        } else {
-            $modifiedWeight = "";
-            $this->log->toLog(3, __METHOD__, "weight is null");
-        }
-        if (isset($_POST['modifiedRelevance'])) {
-            $modifiedRelevance = $_POST['modifiedRelevance'];
-        } else {
-            $modifiedRelevance = "";
-            $this->log->toLog(3, __METHOD__, "relevance is null");
-        }
-
-        $params = array($courseID);
-        $courseInfoID = $dbc->select("SELECT courseInfoID FROM CourseInfo WHERE  courseID  = ?", $params);
-
-        $params = array($modifiedWeight, $modifiedRelevance, $courseInfoID[0][0], $this->userID);
-        $dbc->query("UPDATE StudentCourse SET weight = ?, relevance = ? WHERE courseInfoID = ? AND userID =?", $params);
+        $params = array($course['weight'], $course['relevance'], $course['id']);
+        $dbc->query("UPDATE StudentCourse SET weight = ?, relevance = ? WHERE studentCourseID = ?", $params);
 
         $result = array('success' => true);
         echo json_encode($result);
@@ -624,5 +686,56 @@ class OverallDashboardController
 
         $result = array('success' => true);
         echo json_encode($result);
+    }
+
+    public function getAllCoursesTaken()
+    {
+        $dbc = new DatabaseConnector();
+
+        $params = array($this->userID);
+        $courses = $dbc->select("SELECT DISTINCT CourseInfo.courseID, CourseInfo.credits, StudentCourse.grade
+                    FROM CourseInfo INNER JOIN StudentCourse ON CourseInfo.courseInfoID = StudentCourse.courseInfoID
+                    AND userID = ? AND NOT StudentCourse.grade in (SELECT grade FROM StudentCourse WHERE grade = 'ND')", $params);
+
+        $output = array();
+
+        foreach ($courses as $course) {
+
+            $this->log->toLog(0, __METHOD__, "courseID: $course[0],
+            credits: $course[1], grade: $course[2]");
+
+            array_push($output, array(
+                'courseID' => $course[0],
+                'credits' => $course[1],
+                'grade' => $course[2]));
+        }
+
+        echo json_encode($output);
+    }
+
+    public function getAllCoursesNeeded()
+    {
+        $dbc = new DatabaseConnector();
+
+        $params = array($this->userID);
+        $courses = $dbc->select("SELECT DISTINCT CourseInfo.courseID, CourseInfo.credits, StudentCourse.weight,
+          StudentCourse.relevance, StudentCourse.studentCourseID FROM StudentCourse INNER JOIN
+          CourseInfo ON CourseInfo.courseInfoID = StudentCourse.courseInfoID WHERE StudentCourse.userID = ?
+          and grade = 'ND'", $params);
+
+        $output = array();
+        foreach ($courses as $course) {
+            $this->log->toLog(0, __METHOD__, "courseID: $course[0],
+            credits: $course[1], weight: $course[2], relevance: $course[3], id: $course[4],");
+
+            array_push($output, array(
+                'courseID' => $course[0],
+                'credits' => $course[1],
+                'weight' => $course[2],
+                'relevance' => $course[3],
+                'id' => $course[4]));
+        }
+
+        echo json_encode($output);
     }
 }

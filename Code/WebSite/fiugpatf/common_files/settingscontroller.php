@@ -26,6 +26,7 @@ class SettingsController
             $courseInfo = shell_exec('python PDFWhatIfParser.py ' . $username . '/unencrypted.pdf');
             echo 'python PDFWhatIfParser.py ' . $username . '/unencrypted.pdf';
 
+            $this->log->toLog(0, __METHOD__, "$courseInfo");
             $allData = explode("!!!!", $courseInfo);
             $majorData = explode("\n", $allData[0]);
             $gpa = explode("\n", $allData[1]);
@@ -39,6 +40,8 @@ class SettingsController
             } else {
                 $this->update($courses);
             }
+
+            $this->insertGPA($gpa);
 
             shell_exec('rm -rf ' . $username);
 
@@ -64,6 +67,19 @@ class SettingsController
                 $stmt = "INSERT INTO StudentMajor (userID, majorID) VALUES (?, (SELECT majorID from Major WHERE majorName = ?))";
                 $params = array($this->user, $maj);
                 $dbc->query($stmt, $params);
+            }
+        }
+    }
+
+    private function insertGPA($gpa) {
+        $dbc = new DatabaseConnector();
+
+        foreach( $gpa as $g) {
+            if ($g != "") {
+                $params = array($g, $this->user);
+                $dbc->query("UPDATE Users set gpa = ? Where userID =?", $params);
+
+                $this->log->toLog(0, __METHOD__, "gpa updated: $g");
             }
         }
     }
@@ -253,7 +269,6 @@ class SettingsController
                 break;
 
         }
-        return;
     }
 
     public function update($courses)
@@ -470,8 +485,7 @@ class SettingsController
         $output = array();
         $ct = count($programs);
 
-        //$this->log->toLog(0, __METHOD__, "$ct");
-        array_push($output, array("count" => $ct));
+        $this->log->toLog(0, __METHOD__, "$ct");
         for ($i = 0; $i < count($programs); $i++) {
             array_push($output, array(
                 "name" => $programs[$i][0],
@@ -492,9 +506,6 @@ class SettingsController
         $programs = $db->select("Select * FROM Major", $params);
 
         $output = array();
-        $ct = count($programs);
-
-        array_push($output, array("count" => $ct));
         foreach ($programs as $program) {
             array_push($output, array(
                 "name" => $program[0],
@@ -511,16 +522,12 @@ class SettingsController
         $db = new DatabaseConnector();
 
         $params = array();
-        $buckets = $db->select("Select DISTINCT description, quantityNeeded FROM MajorBucket", $params);
+        $buckets = $db->select("Select DISTINCT description FROM MajorBucket", $params);
 
         $output = array();
-        $ct = count($buckets);
-
-        array_push($output, array("count" => $ct));
         foreach ($buckets as $bucket) {
             array_push($output, array(
-                "name" => $bucket[0],
-                "quantity" => $bucket[1]));
+                "name" => $bucket[0]));
             $this->log->toLog(0, __METHOD__, "bucket: $bucket[0]");
         }
         echo json_encode($output);
@@ -534,9 +541,6 @@ class SettingsController
         $courses = $db->select("SELECT * FROM CourseInfo", $params);
 
         $output = array();
-        $ct = count($courses);
-
-        array_push($output, array("count" => $ct));
         foreach ($courses as $course) {
             array_push($output, array(
                 "name" => $course[1],
@@ -557,9 +561,6 @@ class SettingsController
         $students = $db->select("SELECT * FROM Users where type = 0", $params);
 
         $output = array();
-        $ct = count($students);
-
-        array_push($output, array("count" => $ct));
         foreach ($students as $student) {
             array_push($output, array(
                 "name" => "$student[3] $student[4]",

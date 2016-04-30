@@ -1,144 +1,398 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>FIU GPA Tracker</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    <script src="https://cdn.datatables.net/plug-ins/1.10.9/api/fnReloadAjax.js"></script>
-    <link href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.min.js"></script>
-    <script type="text/javascript" src="http://raw.github.com/markrcote/flot-axislabels/master/jquery.flot.axislabels.js"></script>
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.time.min.js"></script>
-    <link href="../css/main2.css" rel="stylesheet" type="text/css">
-    <script src="nav.js" type="text/javascript"></script>
-    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/overcast/jquery-ui.css" rel="stylesheet">
-    <script src='OvrlDash.js' type='text/javascript'></script>
+    <meta name="description" content="Angular Material: UI Components with Dynamic Data">
+
+    <link rel="stylesheet" href="../node_modules/angular-material-data-table/dist/md-data-table.min.css"/>
+    <link rel="stylesheet" href="../node_modules/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="../node_modules/angular-chart/angular-chart.css"/>
+
+
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <link href="../css/style2.css" rel="stylesheet" type="text/css">
+
+
 </head>
-<body>
-<div class="yellowBar"></div>
-<div id="header">
-    <div class="container clearfix">
-        <div class="logo">
-            <img class="logo" src="http://www.fiu.edu/_assets/images/core/fiu-logo-large.png">
-            <a href="OvrlDash.html">Overall GPA Dashboard</a>
+<body ng-app="myApp" layout="column" ng-controller="ovrlDashCtrl as ctrl">
+
+<div class="container">
+
+    <md-toolbar class="navbar" layout="column" style="font-size: large" md-whiteframe="5">
+        <!--<span class="logo">-->
+        <div layout="row">
+            <div layout="column">
+                <img class="logo" src="http://www.fiu.edu/_assets/images/core/fiu-logo-large.png">
+                    <span layout="row">
+                    <md-button href="OvrlDash.html">GPA DASHBOARD</md-button>
+                    <md-button href="../sem_dashboard/semesterDashboard.html">SEMESTER DASHBOARD</md-button>
+                    <md-button href="../common_files/settings.html">SETTINGS</md-button>
+                    <md-button>HELP</md-button>
+                    <md-button href="../common_files/logout.php">LOGOUT</md-button>
+                    </span>
+            </div>
+
+            <span flex></span>
+            <img class="profilePic" src="../img/blank-profile-picture.png">
         </div>
-        <div class="nav"> <!-- NAV BAR -->
-            <ul>
-                <li>
-                    <a href="OvrlDash.html">GPA Dashboard</a>
-                </li>
-                <li>
-                    <a href="../sem_dashboard/semesterDashboard.html">Semester
-                        Dashboard</a>
-                </li>
-                <li>
-                    <a href="../common_files/settings.html">Settings</a>
-                </li>
-                <li>
-                    <a href="../common_files/logout.php">Logout</a>
-                </li>
-                <li>
-                    <div class="dropdown">
-                        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">Help<span class="caret"></span></a>
-                        <ul class="dropdown-menu" style="margin-top: 1px;">
-                            <li>
-                                <a href="OvrlDash_help_contents.html">GPA Dashboard Help</a>
-                            </li>
-                            <li >
-                                <a href="../sem_dashboard/SemHelpContents.html">Semester Dashboard Help</a>
-                            </li>
-                            <li>
-                                <a href="about.html">About</a>
-                            </li>
-                        </ul>
+        <!--</span>-->
+    </md-toolbar>
+
+    <div layout-padding>
+
+        <div layout="row" flex style=" height: 450px" class="noPad">
+
+            <div id="taken" layout="column" flex class="table-size">
+                <md-toolbar class="md-table-toolbar md-default">
+                    <div class="md-toolbar-tools">
+                        <span>Courses Taken</span>
+                        <div flex></div>
+                        <md-button class="md-fab md-mini" ng-click="expandTaken()">
+                            <md-tooltip md-direction="left" md-visible="tooltipVisible">Courses View</md-tooltip>
+                        </md-button>
                     </div>
-                </li>
-            </ul>
-        </div> <!-- END OF NAV BAR -->
-    </div> <!-- END OF container clearfix -->
-</div> <!-- END OF header -->
-<div class="jumbotronOVRL">
-    <div class="top">
-        <div class="screenPrivacy">
-            <p>screen privacy</p>
-            <div class="onoffswitch">
-                <input class="onoffswitch-checkbox" id="myonoffswitch" name="onoffswitch" type="checkbox">
-                <label class="onoffswitch-label" for="myonoffswitch">
-                    <span class="onoffswitch-inner"></span>
-                    <span class="onoffswitch-switch"></span>
-                </label>
-            </div><!-- <button id="privacyon">SCREEN PRIVACY</button>-->
-        </div> <!-- END OF screenPrivacy -->
-        <div class="targetGPA">
-            <div id="studentMajText">
-                <label for="gradprogs">Current Program:</label>
+                </md-toolbar>
+                <md-table-container>
+                    <table md-table md-row-select ng-model="selectTaken">
+                        <thead md-head md-order="queryTaken.order">
+                        <tr md-row>
+                            <th style="color:#ffffff;" md-column md-order-by="name"><span>Courses Taken</span></th>
+                            <th style="color:#ffffff;" md-column md-order-by="req"><span>All Required</span></th>
+                        </tr>
+                        </thead>
+                        <tbody md-body>
+                        <tr md-row md-select="bucket" md-on-select="getChildren" md-auto-select="true"
+                            ng-repeat="bucket in displayTaken | filter: filter.search | orderBy: queryTaken.order | limitTo: queryTaken.limit : (queryTaken.page -1) * queryTaken.limit">
+                            <td md-cell>{{bucket.name}}</td>
+                            <td md-cell>{{bucket.req}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </md-table-container>
+                <md-table-pagination md-limit="queryTaken.limit" md-limit-options="limitOptions"
+                                     md-page="queryTaken.page" md-total="{{countTaken}}"
+                                     md-page-select="true"></md-table-pagination>
             </div>
-            <div id="studentMajData">
-                <p>N/A</p>
+
+            <div id="takenChild" layout="column" flex class="table-size" style="display:none">
+                <md-toolbar class="md-table-toolbar md-default">
+                    <div class="md-toolbar-tools">
+                        <span>Courses Taken</span>
+                    </div>
+                </md-toolbar>
+                <md-table-container>
+                    <table md-table md-row-select ng-model="selectTaken">
+                        <thead md-head md-order="queryTaken.order">
+                        <tr md-row>
+                            <th style="color:#ffffff;" md-column md-order-by="name"><span>Courses Taken</span></th>
+                            <th style="color:#ffffff;" md-column md-order-by="req"><span>All Required</span></th>
+                        </tr>
+                        </thead>
+                        <tbody md-body>
+                        <tr md-row>
+                            <td md-cell>{{bucketTaken}}</td>
+                            <td></td>
+                        </tr>
+                        <tr md-row md-select="bucket" md-on-select="getChildren" md-auto-select="true"
+                            ng-repeat="bucket in displayTaken | filter: filter.search | orderBy: queryTaken.order | limitTo: queryTaken.limit : (queryTaken.page -1) * queryTaken.limit">
+                            <td md-cell>{{bucket.name}}</td>
+                            <td md-cell>{{bucket.req}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </md-table-container>
+                <div layout="row" class="tablel-div" layout-align="space-between end">
+                    <md-button class="table-button" ng-click="takenBack()">BACK</md-button>
+                    <md-table-pagination md-limit="queryTaken.limit" md-limit-options="limitOptions"
+                                         md-page="queryTaken.page" md-total="{{countTaken}}"
+                                         md-page-select="true"></md-table-pagination>
+                </div>
             </div>
-            <div id="text">
-                <label for="gradprogs">Target Graduate Program:</label>
-                <p>Required GPA:</p>
+
+            <div id="takenCourses" layout="column" flex class="table-size" style="display:none">
+                <md-toolbar class="md-table-toolbar md-default">
+                    <div class="md-toolbar-tools">
+                        <span>Courses Taken</span>
+                    </div>
+                </md-toolbar>
+                <md-table-container>
+                    <table md-table>
+                        <thead md-head md-order="queryTaken.order">
+                        <tr md-row>
+                            <th style="color:#ffffff;" md-column md-order-by="name"><span>CourseID</span></th>
+                            <th style="color:#ffffff;" md-column md-order-by="req"><span>Grade</span></th>
+                            <th style="color:#ffffff;" md-column md-order-by="req"><span>Credits</span></th>
+                        </tr>
+                        </thead>
+                        <tbody md-body>
+                        <tr md-row>
+                            <td md-cell>{{bucketTaken}}</td>
+                            <td></td>
+                        </tr>
+                        <tr md-row
+                            ng-repeat="bucket in displayTaken | filter: filter.search | orderBy: queryTaken.order | limitTo: queryTaken.limit : (queryTaken.page -1) * queryTaken.limit">
+                            <td md-cell>{{bucket.courseID}}</td>
+                            <td md-cell>{{bucket.grade}}</td>
+                            <td md-cell>{{bucket.credits}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </md-table-container>
+                <div layout="row" class="tablel-div" layout-align="space-between end">
+                    <md-button class="table-button" ng-click="takenBack()">BACK</md-button>
+                    <md-table-pagination md-limit="queryTaken.limit" md-limit-options="limitOptions"
+                                         md-page="queryTaken.page" md-total="{{countTaken}}"
+                                         md-page-select="true"></md-table-pagination>
+                </div>
             </div>
-            <div id="data">
-                <select id="gradprogs" name="gradprogs"></select>
-                <p></p>
+
+            <div id="allTakenCourses" layout="column" flex class="table-size" style="display:none">
+                <md-toolbar class="md-table-toolbar md-default">
+                    <div class="md-toolbar-tools">
+                        <span>Courses Taken</span>
+                        <div flex></div>
+                        <md-button class="md-fab" ng-click="collapseTaken()">
+                            <md-tooltip md-direction="left" md-visible="tooltipVisible">Bucket View</md-tooltip>
+                        </md-button>
+                    </div>
+                </md-toolbar>
+                <md-table-container>
+                    <table md-table>
+                        <thead md-head md-order="queryTaken.order">
+                        <tr md-row>
+                            <th style="color:#ffffff;" md-column md-order-by="name"><span>CourseID</span></th>
+                            <th style="color:#ffffff;" md-column md-order-by="req"><span>Grade</span></th>
+                            <th style="color:#ffffff;" md-column md-order-by="req"><span>Credits</span></th>
+                        </tr>
+                        </thead>
+                        <tbody md-body>
+                        <tr md-row
+                            ng-repeat="bucket in displayTaken | filter: filter.search | orderBy: queryTaken.order | limitTo: queryTaken.limit : (queryTaken.page -1) * queryTaken.limit">
+                            <td md-cell>{{bucket.courseID}}</td>
+                            <td md-cell>{{bucket.grade}}</td>
+                            <td md-cell>{{bucket.credits}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </md-table-container>
+                <md-table-pagination md-limit="queryTaken.limit" md-limit-options="limitOptions"
+                                     md-page="queryTaken.page" md-total="{{countTaken}}"
+                                     md-page-select="true" md-boundary-links="true"></md-table-pagination>
             </div>
+
+            <div id="needed" layout="column" flex class="table-size">
+                <div class="md-toolbar-tools">
+                    <span>Courses Needed</span>
+                    <div flex></div>
+                    <md-button class="md-fab md-mini" ng-click="expandNeeded()">
+                        <md-tooltip md-direction="left" md-visible="tooltipVisible">Courses View</md-tooltip>
+                    </md-button>
+                </div>
+                <md-table-container>
+                    <table md-table md-row-select ng-model="selectNeeded">
+                        <thead md-head md-order="queryNeeded.order">
+                        <tr md-row>
+                            <th style="color:#ffffff;" md-column md-order-by="name"><span>Courses Needed</span></th>
+                            <th style="color:#ffffff;" md-column md-order-by="req"><span>All Required</span></th>
+                        </tr>
+                        </thead>
+                        <tbody md-body>
+                        <tr md-row md-select="bucket" md-on-select="getChildrenNeeded" md-auto-select="true"
+                            ng-repeat="bucket in displayNeeded | filter: filter.search | orderBy: queryNeeded.order | limitTo: queryNeeded.limit : (queryNeeded.page -1) * queryNeeded.limit">
+                            <td md-cell>{{bucket.name}}</td>
+                            <td md-cell>{{bucket.req}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </md-table-container>
+                <md-table-pagination md-limit="queryNeeded.limit" md-limit-options="limitOptions"
+                                     md-page="queryNeeded.page" md-total="{{countNeeded}}"
+                                     md-page-select="true"></md-table-pagination>
+            </div>
+
+            <div id="neededChild" layout="column" flex class="table-size" style="display:none">
+                <md-toolbar class="md-table-toolbar md-default">
+                    <div class="md-toolbar-tools">
+                        <span>Courses Needed</span>
+                    </div>
+                </md-toolbar>
+                <md-table-container>
+                    <table md-table md-row-select ng-model="selectNeeded">
+                        <thead md-head md-order="queryNeeded.order">
+                        <tr md-row>
+                            <th style="color:#ffffff;" md-column md-order-by="name"><span>Courses Needed</span></th>
+                            <th style="color:#ffffff;" md-column md-order-by="req"><span>All Required</span></th>
+                        </tr>
+                        </thead>
+                        <tbody md-body>
+                        <tr md-row>
+                            <td md-cell>{{bucketNeeded}}</td>
+                            <td></td>
+                        </tr>
+                        <tr md-row md-select="bucket" md-on-select="getChildrenNeeded" md-auto-select="true"
+                            ng-repeat="bucket in displayNeeded | filter: filter.search | orderBy: queryNeeded.order | limitTo: queryNeeded.limit : (queryNeeded.page -1) * queryNeeded.limit">
+                            <td md-cell>{{bucket.name}}</td>
+                            <td md-cell>{{bucket.req}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </md-table-container>
+                <div layout="row" class="tablel-div" layout-align="space-between end">
+                    <md-button class="table-button" ng-click="neededBack()">BACK</md-button>
+                    <md-table-pagination md-limit="queryNeeded.limit" md-limit-options="limitOptions"
+                                         md-page="queryNeeded.page" md-total="{{countNeeded}}"
+                                         md-page-select="true"></md-table-pagination>
+                </div>
+            </div>
+
+            <div id="neededCourses" layout="column" flex class="table-size" style="display:none">
+                <md-toolbar class="md-table-toolbar md-default">
+                    <div class="md-toolbar-tools">
+                        <span>Courses Needed</span>
+                    </div>
+                </md-toolbar>
+                <md-table-container>
+                    <table md-table md-row-select ng-model="selectNeeded">
+                        <thead md-head md-order="queryNeeded.order">
+                        <tr md-row>
+                            <th style="color:#ffffff;" md-column md-order-by="name"><span>CoursesID</span></th>
+                            <th style="color:#ffffff;" md-column md-order-by="req"><span>Credits</span></th>
+                            <th style="color:#ffffff;" md-column md-order-by="req"><span>Weight</span></th>
+                            <th style="color:#ffffff;" md-column md-order-by="req"><span>Relevance</span></th>
+                        </tr>
+                        </thead>
+                        <tbody md-body>
+                        <tr md-row>
+                            <td md-cell>{{bucketNeeded}}</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr md-row md-select="course" md-on-select="change" md-auto-select="true"
+                            ng-repeat="course in displayNeeded | filter: filter.search | orderBy: queryNeeded.order | limitTo: queryNeeded.limit : (queryNeeded.page -1) * queryNeeded.limit">
+                            <td md-cell>{{course.courseID}}</td>
+                            <td md-cell>{{course.credits}}</td>
+                            <td md-cell>{{course.weight}}</td>
+                            <td md-cell>{{course.relevance}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </md-table-container>
+                <div layout="row" class="tablel-div" layout-align="space-between end">
+                    <md-button class="table-button" ng-click="neededBack()">BACK</md-button>
+                    <md-table-pagination md-limit="queryNeeded.limit" md-limit-options="limitOptions"
+                                         md-page="queryNeeded.page" md-total="{{countNeeded}}"
+                                         md-page-select="true"></md-table-pagination>
+                </div>
+            </div>
+
+            <div id="allNeededCourses" layout="column" flex class="table-size" style="display:none">
+                <md-toolbar class="md-table-toolbar md-default">
+                    <div class="md-toolbar-tools">
+                        <span>Courses Needed</span>
+                        <div flex></div>
+                        <md-button class="md-fab" ng-click="collapseNeeded()">
+                            <md-tooltip md-direction="left" md-visible="tooltipVisible">Bucket View</md-tooltip>
+                        </md-button>
+                    </div>
+                </md-toolbar>
+                <md-table-container>
+                    <table md-table md-row-select ng-model="selectNeeded">
+                        <thead md-head md-order="queryNeeded.order">
+                        <tr md-row>
+                            <th style="color:#ffffff;" md-column md-order-by="name"><span>CoursesID</span></th>
+                            <th style="color:#ffffff;" md-column md-order-by="req"><span>Credits</span></th>
+                            <th style="color:#ffffff;" md-column md-order-by="req"><span>Weight</span></th>
+                            <th style="color:#ffffff;" md-column md-order-by="req"><span>Relevance</span></th>
+                        </tr>
+                        </thead>
+                        <tbody md-body>
+                        <tr md-row md-select="course" md-on-select="change" md-auto-select="true"
+                            ng-repeat="course in displayNeeded | filter: filter.search | orderBy: queryNeeded.order | limitTo: queryNeeded.limit : (queryNeeded.page -1) * queryNeeded.limit">
+                            <td md-cell>{{course.courseID}}</td>
+                            <td md-cell>{{course.credits}}</td>
+                            <td md-cell>{{course.weight}}</td>
+                            <td md-cell>{{course.relevance}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </md-table-container>
+                <md-table-pagination md-limit="queryNeeded.limit" md-limit-options="limitOptions"
+                                     md-page="queryNeeded.page" md-total="{{countNeeded}}"
+                                     md-page-select="true"></md-table-pagination>
+            </div>
+
+            <div layout="column" layout-align="space-around stretch" class="noPad">
+                <div layout="column" layout-align="center center" flex>
+                    <h4>Current Program:</h4> &nbsp
+                    <span>{{currentProgram}}</span>
+                </div>
+                <div layout="column" layout-align="center center">
+                    <h4>Target Program</h4> &nbsp &nbsp
+                    <div class="target" >
+                        <md-autocomplete
+                                         md-input-maxlength="50"
+                                         md-selected-item="targetProgram"
+                                         md-search-text="searchText"
+                                         md-items="item in programs | filter:searchText"
+                                         md-item-text="item.name"
+                                         md-selected-item-change="changeTargetGPA(targetGPA)"
+                                         md-min-length="0"
+                                         md-floating-label=".">
+                            <md-item-template>
+                                <span md-highlight-text="searchText" style="text-align: center;" >{{item.name}}</span>
+                            </md-item-template>
+                        </md-autocomplete>
+                    </div>
+                </div>
+                <div layout="column" layout-align="center center" flex>
+                    <h4>Current GPA:</h4>
+                    <span>{{gpa}}</span>
+                </div>
+                <div layout="column" layout-align="center center" flex>
+                    <h4>Target GPA</h4> &nbsp
+                    <span>{{targetGPA}}</span>
+
+                    <div layout="column" class="slider" layout-align="center center" flex ng-model="target" ng-show="showSlider()">
+                        <md-slider style="width: 300px" md-discrete ng-model="targetGPA" step=".1" min="2" max="4">
+                        </md-slider>
+                    </div>
+                </div>
+                <div layout="column" layout-align="center center" flex>
+                    <md-button class="md-fab generate" aria-label="Generate Forecast" ng-click="generateForecast()">
+                        <md-tooltip md-direction="left" md-visible="tooltipVisible">Generate Forecast</md-tooltip>
+                        <md-icon md-svg-src="../img/document.svg"></md-icon>
+                    </md-button>
+                </div>
+
+            </div>
+
         </div>
-        <div class="studentName">
-            <p id="studName">Welcome</p>
+
+        <div flex="55" ng-controller="graphController" style="max-height: 20px;">
+            <h2>GPA HISTORY</h2>
+            <div layout="row">
+                <p layout="row" layout-align="end center" style="font-size:small">Running Grade</p>
+                <canvas style="display: block; margin:auto;" class="chart chart-line" chart-data="data"
+                        chart-labels="labels" chart-legend="true" chart-hover="onHover" chart-series="series"
+                        height="450" width="1000" style="border: 10px rgba(0, 0, 0, .12) solid;"></canvas>
+            </div>
+            <p layout="row" layout-align="center start" style="font-size:small">Date</p>
         </div>
-    </div> <!-- END OF top -->
-    <div class="tables">
-        <div class="GPATable">
-            <table id="parentTableTaken" width = "100%" border ="1">
-                <thead>
-                <tr>
-                    <th></th>
-                    <th>Courses Taken</th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-        </div> <!-- END OF GPATable -->
 
-        <div class="futureCoursesTable">
-            <table id="parentTable" width = "100%" border ="1">
-                <thead>
-                <tr>
-                    <th></th>
-                    <th>Courses Needed</th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-        </div> <!-- END OF futureCoursesTable -->
-    </div> <!-- END OF tables -->
-
-    <div class="GPACalcBox">
-        <p id="GPAtext">GPA:</p>
-        <p id="GPACalc"></p>
     </div>
 
-    <div class="importButton">
-        <button id="generateForecast">Generate Forecast</button>
-    </div>
-    <br><br>
-    <div id ="current_course">
-    </div>
-    <div class="footer">
-    </div>
+    <!--<md-toolbar class="footer"></md-toolbar>-->
+
 </div>
 
-
+<script src="../node_modules/angular/angular.min.js"></script>
+<script src="../node_modules/angular-animate/angular-animate.min.js"></script>
+<script src="../node_modules/angular-aria/angular-aria.min.js"></script>
+<script src="../node_modules/angular-material/angular-material.min.js"></script>
+<script src="../node_modules/angular-material-data-table/dist/md-data-table.min.js"></script>
+<script src="../node_modules/angular-chart/Chart.min.js"></script>
+<script src="../node_modules/angular-chart/angular-chart.min.js"></script>
+<script src="ovrlDashCtrl.js"></script>
 
 </body>
 </html>
-

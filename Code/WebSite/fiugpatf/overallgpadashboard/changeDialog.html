@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="../css/style2.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<md-dialog>
+    <form>
+        <md-content layout="column" flex>
+            <md-table-container>
+                <table md-table>
+                    <thead md-head>
+                    <tr md-row>
+                        <th style="color:#ffffff;" md-column md-order-by="name"><span>CoursesID</span></th>
+                        <th style="color:#ffffff;" md-column md-order-by="req"><span>Credits</span></th>
+                        <th style="color:#ffffff;" md-column md-order-by="req"><span>Weight</span></th>
+                        <th style="color:#ffffff;" md-column md-order-by="req"><span>Relevance</span></th>
+                    </tr>
+                    </thead>
+                    <tbody md-body>
+                    <tr md-row ng-style={{selected.color}}>
+                        <td md-cell>{{selected.courseID}}</td>
+                        <td md-cell>{{selected.credits}}</td>
+                        <td md-cell>{{selected.weight}}</td>
+                        <td md-cell>{{selected.relevance}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </md-table-container>
+        </md-content>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <div layout>
+                    <div flex="55" layout layout-align="center center">Weight</div>
+                    <md-slider style="width: 300px" md-discrete ng-model="weight" step="1" min="1" max="3">
+                    </md-slider>
+                </div>
+                <div layout>
+                    <div flex="55" layout layout-align="center center">Relevance</div>
+                    <md-slider style="width: 300px" md-discrete ng-model="relevance" step="1" min="0" max="3">
+                    </md-slider>
+                </div>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row" layout-align="space-between end">
+            <md-button class="md-button1" ng-click="cancel()">
+                Cancel
+            </md-button>
+            <md-button class="md-button1" ng-click="save()">
+                Save
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
+</body>
+</html>

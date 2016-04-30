@@ -9,7 +9,7 @@ def splitMajor(maj):
 		else:
 			temp = temp + maj[i]
 	return temp
-	
+
 parseFile = ''.join(sys.argv[1])
 whatIfPDF = open(parseFile, 'rb')
 WhatIfReader = PyPDF2.PdfFileReader(whatIfPDF)
@@ -29,6 +29,16 @@ for x in range (0, len(majors)):
 #For parsing in the php file
 print ("!!!!")
 
+#Gets GPA
+gpa = ""
+gpaX = re.findall(r"\d.\d\d\d earned", allText)
+for item in gpaX:
+    gpa = item.split()
+print (gpa[0])
+
+#For parsing in the php file
+print ("!!!!")
+
 #Gets courses already taken.
 courses = re.findall(r"(Course History)(.*)",allText)
 
@@ -44,11 +54,11 @@ for item in courseBreakdown:
 	year = item[1]
 	course = item[2]
 	courseDescription = item[3]
-	
+
 	if courseDescription[0] == "L" and  not courseDescription.istitle():
 		course = course + "L"
 		courseDescription = courseDescription[1:]
-		
+
 	grade = item[4]
 	credits = item[5]
 	ctype = item[6]
@@ -68,11 +78,11 @@ for item in inProgress:
 	year = item[1]
 	course = item[2]
 	courseDescription = item[3]
-		
+
 	if courseDescription[0] == "L" and  not courseDescription.istitle():
 		course = course + "L"
 		courseDescription = courseDescription[1:]
-			
+
 	grade = "IP"
 	credits = item[4]
 	print semester + "$$&&"+ year + "$$&&" + course + "$$&&" +courseDescription + "$$&&" + grade + "$$&&" + credits + "$$&&" + 'IP'
@@ -84,16 +94,3 @@ if ucc[0] == "Satisfied":
    print "true"
 else:
    print "false"
-
-
-
-   
-   
-
-
-
-
-
-
-
-

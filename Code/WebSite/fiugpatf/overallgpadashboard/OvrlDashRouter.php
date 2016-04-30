@@ -42,6 +42,10 @@ class OverallDashboardRouter
                 $controller = new OverallDashboardController($_SESSION['userID'], $_SESSION['username']);
                 $controller->$action();
                 break;
+            case "getMajorBucketsNeeded":
+                $controller = new OverallDashboardController($_SESSION['userID'], $_SESSION['username']);
+                $controller->$action();
+                break;
             case "getProgramInfo":
                 $controller = new OverallDashboardController($_SESSION['userID'], $_SESSION['username']);
                 $controller->$action();
@@ -76,19 +80,19 @@ class OverallDashboardRouter
                 break;
             case "findChildBuckets":
                 $controller = new OverallDashboardController($_SESSION['userID'], $_SESSION['username']);
-                $controller->$action();
+                $controller->$action($_POST['bucket']);
                 break;
             case "getMajorBucketsChildBuckets":
                 $controller = new OverallDashboardController($_SESSION['userID'], $_SESSION['username']);
-                $controller->$action();
+                $controller->$action($_POST['bucket']);
                 break;
             case "getMajorBucketsCourseNeeded":
                 $controller = new OverallDashboardController($_SESSION['userID'], $_SESSION['username']);
-                $controller->$action();
+                $controller->$action($_POST['bucket']);
                 break;
             case "getMajorBucketsCourse":
                 $controller = new OverallDashboardController($_SESSION['userID'], $_SESSION['username']);
-                $controller->$action();
+                $controller->$action($_POST['bucket']);
                 break;
             case "deleteCourseNeeded":
                 $controller = new OverallDashboardController($_SESSION['userID'], $_SESSION['username']);
@@ -108,9 +112,21 @@ class OverallDashboardRouter
                 break;
             case "modWeight":
                 $controller = new OverallDashboardController($_SESSION['userID'], $_SESSION['username']);
-                $controller->$action();
+                $controller->$action($_POST['course']);
                 break;
             case "deleteItem":
+                $controller = new OverallDashboardController($_SESSION['userID'], $_SESSION['username']);
+                $controller->$action();
+                break;
+            case "saveTargetGPA":
+                $controller = new OverallDashboardController($_SESSION['userID'], $_SESSION['username']);
+                $controller->$action($_POST['gpa']);
+                break;
+            case "getAllCoursesTaken":
+                $controller = new OverallDashboardController($_SESSION['userID'], $_SESSION['username']);
+                $controller->$action();
+                break;
+            case "getAllCoursesNeeded":
                 $controller = new OverallDashboardController($_SESSION['userID'], $_SESSION['username']);
                 $controller->$action();
                 break;
@@ -118,10 +134,6 @@ class OverallDashboardRouter
     }
 }
 
-if (isset($_POST['action'])) {
-    $action = $_POST['action'];
-} else {
-    $action = "";
-}
-
-$pageRouter = new OverallDashboardRouter($action);
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST))
+    $_POST = json_decode(file_get_contents('php://input'), true);
+$pageRouter = new OverallDashboardRouter($_POST['action']);
