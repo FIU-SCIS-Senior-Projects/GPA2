@@ -789,12 +789,12 @@ class SemesterDashboardController
 
     }
 
-    function addGrade($course, $assesment, $grade) {
+    function addGrade($course, $assessment, $grade) {
 
         $db = new DatabaseConnector();
 
-        $stmt = "INSERT into Assessment (assessmentTypeID, grade, studentCourseID, dateEntered) VALUES ((SELECT FROM AssessmentTypeWHERE StudentCourseID in (SELECT studentCourseID FROM StudentCourse WHERE grade = 'IP' and userID = ? AND courseInfoID in (select courseInfoID FROM CourseInfo WHERE courseID = ?)) AND assessmentName = ?), ?, (SELECT studentCourseID FROM StudentCourse WHERE grade = 'IP' and userID = ? AND courseInfoID in (select courseInfoID FROM CourseInfo WHERE courseID = ?)), '" . date("Y-m-d") ."')";
-        $params = array($this->userID, $course, $assesment, $grade, $this->userID, $course);
+        $stmt = "INSERT into Assessment (assessmentTypeID, grade, studentCourseID, dateEntered) VALUES ((SELECT assessmentTypeID FROM AssessmentType WHERE StudentCourseID in (SELECT studentCourseID FROM StudentCourse WHERE grade = 'IP' and userID = ? AND courseInfoID in (select courseInfoID FROM CourseInfo WHERE courseID = ?)) AND assessmentName = ?), ?, (SELECT studentCourseID FROM StudentCourse WHERE grade = 'IP' and userID = ? AND courseInfoID in (select courseInfoID FROM CourseInfo WHERE courseID = ?)), '" . date("Y-m-d") ."')";
+        $params = array($this->userID, $course, $assessment, $grade, $this->userID, $course);
         $db->query($stmt, $params);
 
         $this->log->toLog(1, 'INFO', __METHOD__, "Grade inserted into database");
@@ -821,7 +821,8 @@ class SemesterDashboardController
 
         $db = new DatabaseConnector();
 
-        $stmt = "Delete from Assessment WHERE grade = ? AND assessmentTypeID in (select assessmentTypeID FROM AssessmentType WHERE assessmentName = ?) AND studentCourseID in (SELECT studentCourseID FROM StudentCourse WHERE grade = 'IP' and userID = ? and courseInfoID in (select courseInfoID FROM CourseInfo WHERE courseID = ?)) limit 1";
+        $stmt = "UPDATE Assessment SET grade = ? WHERE grade = ? AND assessmentTypeID in (select assessmentTypeID from AssessmentType where assessmentName = ?) AND studentCourseID in (SELECT studentCourseID FROM StudentCourse WHERE grade = 'IP' and userID = ? AND courseInfoID in (select courseInfoID from CourseInfo where courseID = ?)) limit 1";
+
         $params = array($newGrade, $grade, $assessment, $this->userID, $course);
         $db->query($stmt, $params);
 

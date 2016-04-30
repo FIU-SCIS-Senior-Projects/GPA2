@@ -67,12 +67,18 @@ angular.module('firstApplication', ['ngMaterial', 'md.data.table', 'chart.js'])
         };
 
         $http.post('semesterDashboardRouter.php',data).success( function(response) {
+            //adding project labels to table
+            response[0].push("P1**");
+            response[0].push("P2**");
+            response[0].push("P3**");
+
+            var projData = dataProjection(response[1]);
             $scope.labels = response[0];
-            $scope.data = response[1];
+            $scope.data = projData;
+
             $scope.onClick = function (points, evt) {
                 console.log(points, evt);
             };
-            $scope.colours = ['#000080', '#FFD700', '#333333', '#0f6b2e', '#ff3300', '#7d00b3'];
         });
 
         data = {
@@ -172,6 +178,38 @@ angular.module('firstApplication', ['ngMaterial', 'md.data.table', 'chart.js'])
 
             });
         };
+    }
+
+    function dataProjection( data ) {
+        var testData = data;
+
+        var count = 0;
+        do {
+
+            for (var i = 0; i < testData.length; i++) {
+                var value = testData[i].length - 1;
+
+                if (testData[i].length == 1) {
+                    //add value to inner array
+                    testData[i].push(testData[i][value]);
+                }
+                else if (testData[i].length == 2) {
+                    //avg of the two values
+                    var avg = ( (2*testData[i][value]) + (1*testData[i][value - 1])) / 3;
+                    //add value to inner array
+                    testData[i].push(avg);
+                }
+                else if (testData[i].length >= 3) {
+                    //grab last three values anf avg
+                    avg = ( (3*testData[i][value]) + (2*testData[i][value - 1]) + (1*testData[i][value - 2]) ) / 6;
+                    //add value to inner array
+                    testData[i].push(avg);
+                }
+            }
+            count++;
+        } while(count < 3);
+
+        return testData;
     }
 
 

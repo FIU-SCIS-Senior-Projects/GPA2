@@ -100,6 +100,64 @@ angular.module('breakdownApp', ['ngMaterial', 'md.data.table', 'chart.js', 'ngMe
             return deffered.promise;
         };
 
+        service.addGrade = function(assessment, grade) {
+            var deffered = $q.defer();
+
+            var data = {
+                'action': 'addGrade',
+                'assessment': assessment,
+                'grade': grade,
+                'course': course
+            };
+
+            $http.post(router, data).success(function (response)
+            {
+                console.log('Add Grade: success');
+                deffered.resolve();
+            });
+
+            return deffered.promise;
+        };
+
+        service.removeGrade = function (assessment, grade) {
+            var deffered = $q.defer();
+
+            var data = {
+                'action': 'removeGrade',
+                'assessment': assessment,
+                'grade': grade,
+                'course': course
+            };
+
+            $http.post(router, data).success(function (response)
+            {
+                console.log('Remove Grade: success');
+                deffered.resolve();
+            });
+
+            return deffered.promise;
+        };
+
+        service.modifyGrade = function (assessment, oldGrade, newGrade) {
+            var deffered = $q.defer();
+
+            var data = {
+                'action': 'modifyGrade',
+                'assessment': assessment,
+                'grade': oldGrade,
+                'newGrade': newGrade,
+                'course': course
+            };
+
+            $http.post(router, data).success(function (response)
+            {
+                console.log('Modify Grade: success');
+                deffered.resolve();
+            });
+
+            return deffered.promise;
+        };
+
         return service;
     }])
 
@@ -161,7 +219,8 @@ angular.module('breakdownApp', ['ngMaterial', 'md.data.table', 'chart.js', 'ngMe
         $scope.logPagination = function (page, limit) {
             console.log('page: ', page);
             console.log('limit: ', limit);
-        }
+        };
+
     }])
 
     .controller('AppCtrl', ['$scope', '$log', '$http', 'breakdownService', '$mdDialog', '$mdMedia', function  ($scope, $log, $http, breakdownService, $mdDialog, $mdMedia) {
@@ -188,7 +247,6 @@ angular.module('breakdownApp', ['ngMaterial', 'md.data.table', 'chart.js', 'ngMe
             self.settings = breakdownService.getSettings();
             returnedTabs = self.settings[0].list;
             returnedAvg = self.settings[1].list;
-
 
             $scope.mainTitle = 'Assessment Management';
 
@@ -356,47 +414,25 @@ angular.module('breakdownApp', ['ngMaterial', 'md.data.table', 'chart.js', 'ngMe
         }).then(function() {
 
             tabs = [{title1: 'Assessment Management'}];
-            var selected = null, previous = null;
 
             $scope.courses = { //data tables
                 "data": returnedAvg
             };
             console.log(returnedAvg);
 
+            var selected = null,
+                previous = null;
             $scope.tabs = tabs;
             $scope.selectedIndex = 0;
-            /*$scope.$watch('selectedIndex', function(current, old){
 
+            console.log($scope.selectedIndex);
+
+            $scope.$watch('selectedIndex', function(current, old){
                 previous = selected;
                 selected = tabs[current];
-                if ( old + 1 && (old != current)) $log.debug('Goodbye ' + previous.title + '!');
-                if ( current + 1 )                $log.debug('Hello ' + selected.title + '!');
-
-                switch(selected.title) {
-                    case tabs[0].title:
-                        console.log('this is table 1');
-                        break;
-                    case tabs[1].title:
-                        console.log('this is table 2');
-                        break;
-                    case tabs[2].title:
-                        console.log('this is table 3');
-                        break;
-                    case tabs[3].title:
-                        console.log('this is table 4');
-                        break;
-                    case tabs[4].title:
-                        console.log('this is table 5');
-                        break;
-                    case tabs[5].title:
-                        console.log('this is table 6');
-                        break;
-                    case tabs[6].title:
-                        console.log('this is table 7');
-                        break;
-                }
-            });*/
-
+                if ( old + 1 && (old != current)) $log.debug('Goodbye ' + previous + '!');
+                if ( current + 1 )                $log.debug('Hello ' + selected + '!');
+            });
 
             //POP UP - ADD BUTTON
             $scope.showAdvanced = function(ev) {
@@ -444,14 +480,76 @@ angular.module('breakdownApp', ['ngMaterial', 'md.data.table', 'chart.js', 'ngMe
                 });
             };
 
+            //POP UP - ADD GRADE BUTTON
+            $scope.showAdvanced3 = function(ev) {
+                var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
+                $mdDialog.show({
+                        controller: DialogController3,
+                        templateUrl: 'addGrade.html',
+                        parent: angular.element(document.body),
+                        targetEvent: ev,
+                        clickOutsideToClose:true,
+                        fullscreen: useFullScreen
+                    })
+                    .then(function(answer) {
+                        console.log('You said the information was "' + answer + '".');
+                    }, function() {
+                        console.log('You cancelled the dialog.');
+                    });
+                $scope.$watch(function() {
+                    return $mdMedia('xs') || $mdMedia('sm');
+                }, function(wantsFullScreen) {
+                    $scope.customFullscreen = (wantsFullScreen === true);
+                });
+            };
+
+            //POP UP - MODIFY GRADE BUTTON
+            $scope.showAdvanced4 = function(ev) {
+                var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
+                $mdDialog.show({
+                        controller: DialogController4,
+                        templateUrl: 'modifyGrade.html',
+                        parent: angular.element(document.body),
+                        targetEvent: ev,
+                        clickOutsideToClose:true,
+                        fullscreen: useFullScreen
+                    })
+                    .then(function(answer) {
+                        console.log('You said the information was "' + answer + '".');
+                    }, function() {
+                        console.log('You cancelled the dialog.');
+                    });
+                $scope.$watch(function() {
+                    return $mdMedia('xs') || $mdMedia('sm');
+                }, function(wantsFullScreen) {
+                    $scope.customFullscreen = (wantsFullScreen === true);
+                });
+            };
+
+            //POP UP - REMOVE GRADE BUTTON
+            $scope.showAdvanced5 = function(ev) {
+                var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
+                $mdDialog.show({
+                        controller: DialogController5,
+                        templateUrl: 'removeGrade.html',
+                        parent: angular.element(document.body),
+                        targetEvent: ev,
+                        clickOutsideToClose:true,
+                        fullscreen: useFullScreen
+                    })
+                    .then(function(answer) {
+                        console.log('You said the information was "' + answer + '".');
+                    }, function() {
+                        console.log('You cancelled the dialog.');
+                    });
+                $scope.$watch(function() {
+                    return $mdMedia('xs') || $mdMedia('sm');
+                }, function(wantsFullScreen) {
+                    $scope.customFullscreen = (wantsFullScreen === true);
+                });
+            };
+
         });
-
-        /*$scope.AppendText = function() {*/
-        /*var myEl = angular.element( document.querySelector( '.tab0' ) );
-        myEl.append(div);*/
-        /*};
-         $scope.AppendText();*/
-
     }]);
 
     function getUrlVars() {
@@ -487,6 +585,55 @@ angular.module('breakdownApp', ['ngMaterial', 'md.data.table', 'chart.js', 'ngMe
         $scope.answer = function(answer, answer2) {
 
             breakdownService.removeData(answer,answer2);
+
+            $mdDialog.hide();
+            location.reload();
+        };
+    }
+
+    function DialogController3($scope, $mdDialog, breakdownService) {
+        $scope.hide = function() {
+            $mdDialog.hide();
+        };
+        $scope.cancel = function() {
+            $mdDialog.cancel();
+        };
+        $scope.answer = function(answer, answer2) {
+
+            breakdownService.addGrade(answer,answer2);
+
+            $mdDialog.hide();
+            location.reload();
+        };
+    }
+
+    function DialogController4($scope, $mdDialog, breakdownService) {
+        $scope.hide = function() {
+            $mdDialog.hide();
+        };
+        $scope.cancel = function() {
+            $mdDialog.cancel();
+        };
+        $scope.answer = function(answer, answer2, answer3) {
+
+
+            breakdownService.modifyGrade(answer,answer2,answer3);
+
+            $mdDialog.hide();
+            /*location.reload();*/
+        };
+    }
+
+    function DialogController5($scope, $mdDialog, breakdownService) {
+        $scope.hide = function() {
+            $mdDialog.hide();
+        };
+        $scope.cancel = function() {
+            $mdDialog.cancel();
+        };
+        $scope.answer = function(answer, answer2) {
+
+            breakdownService.removeGrade(answer,answer2);
 
             $mdDialog.hide();
             location.reload();

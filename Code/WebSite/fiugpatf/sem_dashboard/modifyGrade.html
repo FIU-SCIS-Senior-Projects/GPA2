@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<md-dialog aria-label="Add Grade" ng-cloak>
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Modify Grade</h2>
+                <span flex></span>
+                <md-button ng-click="cancel()">
+                    Cancel
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+
+                <form layout="column" class="md-padding" style="padding-top: 0;">
+                    <div layout="row" layout-sm="column">
+                        <div flex style="position: relative;">
+                            <h2 class="md-subhead" style="position: absolute; bottom: 0; left: 0; margin: 0; font-weight: 500; text-transform: uppercase; line-height: 35px; white-space: nowrap;">Modify Grade:</h2>
+                        </div>
+                        <md-input-container>
+                            <label for="assessment">Assessment</label>
+                            <input type="text" id="assessment" ng-model="tAssessment">
+                        </md-input-container>
+                        <md-input-container>
+                            <label for="oldGrade">Old Grade</label>
+                            <input type="text" id="oldGrade" ng-model="tOldGrade">
+                        </md-input-container>
+                        <md-input-container>
+                            <label for="newGrade">New Grade</label>
+                            <input type="text" id="newGrade" ng-model="tNewGrade">
+                        </md-input-container>
+                        <md-button class="add-tab md-primary md-raised" ng-disabled="!tAssessment || !tOldGrade || !tNewGrade" ng-click="answer(tAssessment,tOldGrade, tNewGrade)" style="margin-right: 0;">Modify Grade</md-button>
+                    </div>
+                </form>
+
+            </div>
+        </md-dialog-content>
+    </form>
+</md-dialog>
+
+</body>
+</html>

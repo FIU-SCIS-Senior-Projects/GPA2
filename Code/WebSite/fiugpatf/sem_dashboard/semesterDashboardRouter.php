@@ -107,7 +107,7 @@ class SemesterDashboardRouter {
                 break;
             case "addGrade":
                 $controller = new SemesterDashboardController($_SESSION['userID'], $_SESSION['username']);
-                $controller->$action($_POST['course'], $_POST['assesment'], $_POST['grade']);
+                $controller->$action($_POST['course'], $_POST['assessment'], $_POST['grade']);
                 break;
             case "removeGrade":
                 $controller = new SemesterDashboardController($_SESSION['userID'], $_SESSION['username']);
