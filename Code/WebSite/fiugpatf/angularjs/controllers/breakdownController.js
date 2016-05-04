@@ -527,8 +527,9 @@ angular.module('breakdownApp', ['ngMaterial', 'md.data.table', 'chart.js', 'ngMe
                     $scope.customFullscreen = (wantsFullScreen === true);
                 });*/
 
-                breakdownService.removeData($scope.selectedIndex);
-                location.reload();
+                breakdownService.removeData($scope.selectedIndex).then(function(){
+                    location.reload();
+                });
             };
 
             //POP UP - ADD GRADE BUTTON
@@ -655,10 +656,11 @@ angular.module('breakdownApp', ['ngMaterial', 'md.data.table', 'chart.js', 'ngMe
         };
         $scope.answer = function(answer) {
 
-            breakdownService.addGrade(answer);
+            breakdownService.addGrade(answer).then(function(){
+                $mdDialog.hide();
+                location.reload();
+            });
 
-            $mdDialog.hide();
-            location.reload();
         };
     }
 
@@ -688,10 +690,12 @@ angular.module('breakdownApp', ['ngMaterial', 'md.data.table', 'chart.js', 'ngMe
         };
         $scope.answer = function(answer) {
 
-            breakdownService.removeGrade(answer);
+            breakdownService.removeGrade(answer).then(function(){
+                $mdDialog.hide();
+                location.reload();
+            });
 
-            $mdDialog.hide();
-            location.reload();
+
         };
 
         $scope.grades = breakdownService.getGrades();
