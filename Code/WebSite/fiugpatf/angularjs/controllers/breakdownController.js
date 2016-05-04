@@ -33,6 +33,8 @@ angular.module('breakdownApp', ['ngMaterial', 'md.data.table', 'chart.js', 'ngMe
                 name: 'GetAllAssessments'
             }
         ];
+        var grades = [];
+        var tabSelected = 0;
 
         service.initial = function () {
             var deffered = $q.defer();
@@ -82,12 +84,12 @@ angular.module('breakdownApp', ['ngMaterial', 'md.data.table', 'chart.js', 'ngMe
             return deffered.promise;
         };
 
-        service.removeData = function(assessment) {
+        service.removeData = function(tab) {
             var deffered = $q.defer();
 
             var data = {
                 'action': 'removeBucket',
-                'assessment': assessment,
+                'assessment': settings[0].list[tab-1],
                 'course': course
             };
 
@@ -100,12 +102,12 @@ angular.module('breakdownApp', ['ngMaterial', 'md.data.table', 'chart.js', 'ngMe
             return deffered.promise;
         };
 
-        service.addGrade = function(assessment, grade) {
+        service.addGrade = function(grade) {
             var deffered = $q.defer();
 
             var data = {
                 'action': 'addGrade',
-                'assessment': assessment,
+                'assessment': settings[0].list[tabSelected-1],
                 'grade': grade,
                 'course': course
             };
@@ -119,12 +121,12 @@ angular.module('breakdownApp', ['ngMaterial', 'md.data.table', 'chart.js', 'ngMe
             return deffered.promise;
         };
 
-        service.removeGrade = function (assessment, grade) {
+        service.removeGrade = function (grade) {
             var deffered = $q.defer();
-
+            console.log(grade);
             var data = {
                 'action': 'removeGrade',
-                'assessment': assessment,
+                'assessment': settings[0].list[tabSelected-1],
                 'grade': grade,
                 'course': course
             };
@@ -156,6 +158,52 @@ angular.module('breakdownApp', ['ngMaterial', 'md.data.table', 'chart.js', 'ngMe
             });
 
             return deffered.promise;
+        };
+
+        service.setGrades = function (list) {
+            grades = list;
+        };
+
+        service.getGrades = function () {
+            var x = grades[tabSelected - 1];
+
+            for(var i = 0; i < x.length; i++)
+            {
+                var grade = x[i];
+                if (grade.hasOwnProperty('id0')) {
+                    grade.name = grade.id0;
+                    grade.value = grade.grade0;
+                }
+                else if (grade.hasOwnProperty('id1')) {
+                    grade.name = grade.id1;
+                    grade.value = grade.grade1;
+                }
+                else if (grade.hasOwnProperty('id2')) {
+                    grade.name = grade.id2;
+                    grade.value = grade.grade2;
+                }
+                else if (grade.hasOwnProperty('id3')) {
+                    grade.name = grade.id3;
+                    grade.value = grade.grade3;
+                }
+                else if (grade.hasOwnProperty('id4')) {
+                    grade.name = grade.id4;
+                    grade.value = grade.grade4;
+                }
+                else if (grade.hasOwnProperty('id5')) {
+                    grade.name = grade.id5;
+                    grade.value = grade.grade5;
+                }
+                else if (grade.hasOwnProperty('id6')) {
+                    grade.name = grade.id6;
+                    grade.value = grade.grade6;
+                }
+            }
+            return x;
+        };
+
+        service.setTabSelected = function (i) {
+            tabSelected = i;
         };
 
         return service;
@@ -428,10 +476,10 @@ angular.module('breakdownApp', ['ngMaterial', 'md.data.table', 'chart.js', 'ngMe
             console.log($scope.selectedIndex);
 
             $scope.$watch('selectedIndex', function(current, old){
-                previous = selected;
+                /*previous = selected;
                 selected = tabs[current];
                 if ( old + 1 && (old != current)) $log.debug('Goodbye ' + previous + '!');
-                if ( current + 1 )                $log.debug('Hello ' + selected + '!');
+                if ( current + 1 )                $log.debug('Hello ' + selected + '!');*/
             });
 
             //POP UP - ADD BUTTON
@@ -459,7 +507,7 @@ angular.module('breakdownApp', ['ngMaterial', 'md.data.table', 'chart.js', 'ngMe
 
             //POP UP - REMOVE BUTTON
             $scope.showAdvanced2 = function(ev) {
-                var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
+                /*var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
                 $mdDialog.show({
                         controller: DialogController2,
                         templateUrl: 'removeAssessment.html',
@@ -477,7 +525,10 @@ angular.module('breakdownApp', ['ngMaterial', 'md.data.table', 'chart.js', 'ngMe
                     return $mdMedia('xs') || $mdMedia('sm');
                 }, function(wantsFullScreen) {
                     $scope.customFullscreen = (wantsFullScreen === true);
-                });
+                });*/
+
+                breakdownService.removeData($scope.selectedIndex);
+                location.reload();
             };
 
             //POP UP - ADD GRADE BUTTON
@@ -501,6 +552,7 @@ angular.module('breakdownApp', ['ngMaterial', 'md.data.table', 'chart.js', 'ngMe
                 }, function(wantsFullScreen) {
                     $scope.customFullscreen = (wantsFullScreen === true);
                 });
+                breakdownService.setTabSelected($scope.selectedIndex);
             };
 
             //POP UP - MODIFY GRADE BUTTON
@@ -547,6 +599,9 @@ angular.module('breakdownApp', ['ngMaterial', 'md.data.table', 'chart.js', 'ngMe
                 }, function(wantsFullScreen) {
                     $scope.customFullscreen = (wantsFullScreen === true);
                 });
+                breakdownService.setTabSelected($scope.selectedIndex);
+                var grades = [returnedGrades0, returnedGrades1, returnedGrades2, returnedGrades3, returnedGrades4, returnedGrades5, returnedGrades6];
+                breakdownService.setGrades(grades);
             };
 
         });
@@ -598,9 +653,9 @@ angular.module('breakdownApp', ['ngMaterial', 'md.data.table', 'chart.js', 'ngMe
         $scope.cancel = function() {
             $mdDialog.cancel();
         };
-        $scope.answer = function(answer, answer2) {
+        $scope.answer = function(answer) {
 
-            breakdownService.addGrade(answer,answer2);
+            breakdownService.addGrade(answer);
 
             $mdDialog.hide();
             location.reload();
@@ -631,11 +686,14 @@ angular.module('breakdownApp', ['ngMaterial', 'md.data.table', 'chart.js', 'ngMe
         $scope.cancel = function() {
             $mdDialog.cancel();
         };
-        $scope.answer = function(answer, answer2) {
+        $scope.answer = function(answer) {
 
-            breakdownService.removeGrade(answer,answer2);
+            breakdownService.removeGrade(answer);
 
             $mdDialog.hide();
             location.reload();
         };
+
+        $scope.grades = breakdownService.getGrades();
+        console.log($scope.grades[0]);
     }
