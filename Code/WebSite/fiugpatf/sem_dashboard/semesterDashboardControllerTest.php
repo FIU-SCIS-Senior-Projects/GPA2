@@ -158,53 +158,36 @@ class SemesterDashboardControllerTest extends PHPUnit_Framework_TestCase {
 
     }
 
-    /*function testPlotPoints001_UT008() {
+    function testPlotPoints001_UT008() {
 
         $sdc = new SemesterDashboardController(12, 'newuser20');
         $return = $sdc->plotPoints('CIS4911');
 
         //expected output for unit test
         $expected = [
-            [1,85],
-            [
-                [1,"02-10"]
-            ]
+            ["02-10"],
+            [85]
         ];
 
         $this->assertEquals($return, $expected);
 
-    }*/
+    }
 
-    /*function testPlotPoints002_UT012() {
+    function testPlotPoints002_UT012() {
 
         $sdc = new SemesterDashboardController(12, 'newuser20');
         $return = $sdc->plotPoints('COP4610');
 
         //expected output for unit test
         $expected = [
-            [1,90],
-            [2,84.5],
-            [3,71.333333333333],
-            [4,81.333333333333],
-            [5,86.222222222222],
-            [6,88.416666666667],
-            [7,89.25],
-            [8,85.45],
-            [
-                [1,"01-15"],
-                [2,"01-21"],
-                [3,"02-10"],
-                [4,"02-16"],
-                [5,"02-22"],
-                [6,"02-25"],
-                [7,"03-01"],
-                [8,"03-07"]
-            ]
+            ["01-15","01-21","02-10","02-16","02-22","02-25","03-01","03-07"],
+            [90,84.5,71.333333333333,81.333333333333
+            ,86.222222222222,88.416666666667,89.25,85.45]
         ];
 
         $this->assertEquals($return, $expected);
 
-    }*/
+    }
 
     function testGetGrades001_UT009() {
 

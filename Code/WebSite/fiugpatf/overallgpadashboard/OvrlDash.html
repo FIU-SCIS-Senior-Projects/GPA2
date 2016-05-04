@@ -22,13 +22,14 @@
         <div layout="row">
             <div layout="column">
                 <img class="logo" src="http://www.fiu.edu/_assets/images/core/fiu-logo-large.png">
-                    <span layout="row">
-                    <md-button href="OvrlDash.html">GPA DASHBOARD</md-button>
-                    <md-button href="../sem_dashboard/semesterDashboard.html">SEMESTER DASHBOARD</md-button>
-                    <md-button href="../common_files/settings.html">SETTINGS</md-button>
-                    <md-button>HELP</md-button>
-                    <md-button href="../common_files/logout.php">LOGOUT</md-button>
-                    </span>
+                <br><br>
+                <span layout="row">
+                <md-button href="OvrlDash.html">GPA DASHBOARD</md-button>
+                <md-button href="../sem_dashboard/semesterDashboard.html">SEMESTER DASHBOARD</md-button>
+                <md-button href="../common_files/settings.html">SETTINGS</md-button>
+                <md-button href="../common_files/help.html">HELP</md-button>
+                <md-button href="../common_files/logout.php">LOGOUT</md-button>
+                </span>
             </div>
 
             <span flex></span>
@@ -39,19 +40,65 @@
 
     <div layout-padding>
 
-        <div layout="row" flex style=" height: 450px" class="noPad">
+        <div layout="row" flex style=" height: 450px" class="noPad" ng-cloak>
 
-            <div id="taken" layout="column" flex class="table-size">
+            <div layout="column" layout-align="space-around stretch" class="leftColumn" md-whiteframe="2">
+                <div layout="column" layout-align="center center" flex>
+                    <h4>Current Program:</h4> &nbsp
+                    <span>{{currentProgram}}</span>
+                </div>
+                <div layout="column" layout-align="center center">
+                    <h4>Target Program</h4> &nbsp &nbsp
+                    <div class="target" >
+                        <md-autocomplete
+                                md-input-maxlength="50"
+                                md-selected-item="targetProgram"
+                                md-search-text="searchText"
+                                md-items="item in programs | filter:searchText"
+                                md-item-text="item.name"
+                                md-selected-item-change="changeTargetGPA(targetGPA)"
+                                md-min-length="0"
+                                md-floating-label=".">
+                            <md-item-template>
+                                <span md-highlight-text="searchText" style="text-align: center;" >{{item.name}}</span>
+                            </md-item-template>
+                        </md-autocomplete>
+                    </div>
+                </div>
+                <div layout="column" layout-align="center center" flex>
+                    <h4>Current GPA:</h4>
+                    <span>{{gpa}}</span>
+                </div>
+                <div layout="column" layout-align="center center" flex>
+                    <h4>Target GPA</h4> &nbsp
+                    <span>{{targetGPA}}</span>
+
+                    <div layout="column" class="slider" layout-align="center center" flex ng-model="target" ng-show="showSlider()">
+                        <md-slider style="width: 80%;" md-discrete ng-model="targetGPA" step=".1" min="2" max="4">
+                        </md-slider>
+                    </div>
+                </div>
+                <div layout="column" layout-align="center center" flex>
+                    <md-button class="md-fab generate" aria-label="Generate Forecast" ng-click="generateForecast()">
+                        <md-tooltip md-direction="right" md-visible="tooltipVisible">Generate Forecast</md-tooltip>
+                        <md-icon md-svg-src="../img/document.svg"></md-icon>
+                    </md-button>
+                </div>
+
+            </div>
+
+            <div id="taken" layout="column" flex class="table-size" ng-cloak>
                 <md-toolbar class="md-table-toolbar md-default">
                     <div class="md-toolbar-tools">
-                        <span>Courses Taken</span>
+                        <span class="tableHeading">Courses Taken</span>
                         <div flex></div>
                         <md-button class="md-fab md-mini" ng-click="expandTaken()">
-                            <md-tooltip md-direction="left" md-visible="tooltipVisible">Courses View</md-tooltip>
+                            <md-tooltip md-direction="left" md-visible="tooltipVisible">Expand All</md-tooltip>
+                            <md-icon md-svg-src="../img/expand.svg"></md-icon>
                         </md-button>
                     </div>
                 </md-toolbar>
-                <md-table-container>
+                <md-table-container md-whiteframe="2" md-dynamic-height>
                     <table md-table md-row-select ng-model="selectTaken">
                         <thead md-head md-order="queryTaken.order">
                         <tr md-row>
@@ -71,15 +118,15 @@
                 <md-table-pagination md-limit="queryTaken.limit" md-limit-options="limitOptions"
                                      md-page="queryTaken.page" md-total="{{countTaken}}"
                                      md-page-select="true"></md-table-pagination>
-            </div>
+            </div >
 
-            <div id="takenChild" layout="column" flex class="table-size" style="display:none">
+            <div id="takenChild" layout="column" flex class="table-size"  style="display:none">
                 <md-toolbar class="md-table-toolbar md-default">
                     <div class="md-toolbar-tools">
-                        <span>Courses Taken</span>
+                        <span class="tableHeading">Courses Taken</span>
                     </div>
                 </md-toolbar>
-                <md-table-container>
+                <md-table-container md-whiteframe="2" md-dynamic-height>
                     <table md-table md-row-select ng-model="selectTaken">
                         <thead md-head md-order="queryTaken.order">
                         <tr md-row>
@@ -89,7 +136,7 @@
                         </thead>
                         <tbody md-body>
                         <tr md-row>
-                            <td md-cell>{{bucketTaken}}</td>
+                            <td class="buckets" md-cell>{{bucketTaken}}</td>
                             <td></td>
                         </tr>
                         <tr md-row md-select="bucket" md-on-select="getChildren" md-auto-select="true"
@@ -108,13 +155,13 @@
                 </div>
             </div>
 
-            <div id="takenCourses" layout="column" flex class="table-size" style="display:none">
+            <div id="takenCourses" layout="column" flex class="table-size"  style="display:none">
                 <md-toolbar class="md-table-toolbar md-default">
                     <div class="md-toolbar-tools">
-                        <span>Courses Taken</span>
+                        <span class="tableHeading">Courses Taken</span>
                     </div>
                 </md-toolbar>
-                <md-table-container>
+                <md-table-container md-whiteframe="2" md-dynamic-height>
                     <table md-table>
                         <thead md-head md-order="queryTaken.order">
                         <tr md-row>
@@ -125,7 +172,7 @@
                         </thead>
                         <tbody md-body>
                         <tr md-row>
-                            <td md-cell>{{bucketTaken}}</td>
+                            <td class="buckets" md-cell>{{bucketTaken}}</td>
                             <td></td>
                         </tr>
                         <tr md-row
@@ -148,14 +195,15 @@
             <div id="allTakenCourses" layout="column" flex class="table-size" style="display:none">
                 <md-toolbar class="md-table-toolbar md-default">
                     <div class="md-toolbar-tools">
-                        <span>Courses Taken</span>
+                        <span class="tableHeading">Courses Taken</span>
                         <div flex></div>
                         <md-button class="md-fab" ng-click="collapseTaken()">
-                            <md-tooltip md-direction="left" md-visible="tooltipVisible">Bucket View</md-tooltip>
+                            <md-tooltip md-direction="left" md-visible="tooltipVisible">Collapse All</md-tooltip>
+                            <md-icon md-svg-src="../img/collapse.svg"></md-icon>
                         </md-button>
                     </div>
                 </md-toolbar>
-                <md-table-container>
+                <md-table-container md-whiteframe="2" md-dynamic-height>
                     <table md-table>
                         <thead md-head md-order="queryTaken.order">
                         <tr md-row>
@@ -179,15 +227,16 @@
                                      md-page-select="true" md-boundary-links="true"></md-table-pagination>
             </div>
 
-            <div id="needed" layout="column" flex class="table-size">
+            <div id="needed" layout="column" flex class="table-size" ng-cloak>
                 <div class="md-toolbar-tools">
-                    <span>Courses Needed</span>
+                    <span class="tableHeading">Courses Needed</span>
                     <div flex></div>
                     <md-button class="md-fab md-mini" ng-click="expandNeeded()">
-                        <md-tooltip md-direction="left" md-visible="tooltipVisible">Courses View</md-tooltip>
+                        <md-tooltip md-direction="left" md-visible="tooltipVisible">Expand All</md-tooltip>
+                        <md-icon md-svg-src="../img/expand.svg"></md-icon>
                     </md-button>
                 </div>
-                <md-table-container>
+                <md-table-container md-whiteframe="2">
                     <table md-table md-row-select ng-model="selectNeeded">
                         <thead md-head md-order="queryNeeded.order">
                         <tr md-row>
@@ -212,10 +261,10 @@
             <div id="neededChild" layout="column" flex class="table-size" style="display:none">
                 <md-toolbar class="md-table-toolbar md-default">
                     <div class="md-toolbar-tools">
-                        <span>Courses Needed</span>
+                        <span class="tableHeading">Courses Needed</span>
                     </div>
                 </md-toolbar>
-                <md-table-container>
+                <md-table-container md-whiteframe="2">
                     <table md-table md-row-select ng-model="selectNeeded">
                         <thead md-head md-order="queryNeeded.order">
                         <tr md-row>
@@ -225,7 +274,7 @@
                         </thead>
                         <tbody md-body>
                         <tr md-row>
-                            <td md-cell>{{bucketNeeded}}</td>
+                            <td class="buckets" md-cell>{{bucketNeeded}}</td>
                             <td></td>
                         </tr>
                         <tr md-row md-select="bucket" md-on-select="getChildrenNeeded" md-auto-select="true"
@@ -247,10 +296,10 @@
             <div id="neededCourses" layout="column" flex class="table-size" style="display:none">
                 <md-toolbar class="md-table-toolbar md-default">
                     <div class="md-toolbar-tools">
-                        <span>Courses Needed</span>
+                        <span class="tableHeading">Courses Needed</span>
                     </div>
                 </md-toolbar>
-                <md-table-container>
+                <md-table-container md-whiteframe="2">
                     <table md-table md-row-select ng-model="selectNeeded">
                         <thead md-head md-order="queryNeeded.order">
                         <tr md-row>
@@ -262,7 +311,7 @@
                         </thead>
                         <tbody md-body>
                         <tr md-row>
-                            <td md-cell>{{bucketNeeded}}</td>
+                            <td class="buckets" md-cell>{{bucketNeeded}}</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -288,14 +337,15 @@
             <div id="allNeededCourses" layout="column" flex class="table-size" style="display:none">
                 <md-toolbar class="md-table-toolbar md-default">
                     <div class="md-toolbar-tools">
-                        <span>Courses Needed</span>
+                        <span class="tableHeading">Courses Needed</span>
                         <div flex></div>
                         <md-button class="md-fab" ng-click="collapseNeeded()">
-                            <md-tooltip md-direction="left" md-visible="tooltipVisible">Bucket View</md-tooltip>
+                            <md-tooltip md-direction="left" md-visible="tooltipVisible">Collapse All</md-tooltip>
+                            <md-icon md-svg-src="../img/collapse.svg"></md-icon>
                         </md-button>
                     </div>
                 </md-toolbar>
-                <md-table-container>
+                <md-table-container md-whiteframe="2">
                     <table md-table md-row-select ng-model="selectNeeded">
                         <thead md-head md-order="queryNeeded.order">
                         <tr md-row>
@@ -320,70 +370,23 @@
                                      md-page="queryNeeded.page" md-total="{{countNeeded}}"
                                      md-page-select="true"></md-table-pagination>
             </div>
-
-            <div layout="column" layout-align="space-around stretch" class="noPad">
-                <div layout="column" layout-align="center center" flex>
-                    <h4>Current Program:</h4> &nbsp
-                    <span>{{currentProgram}}</span>
-                </div>
-                <div layout="column" layout-align="center center">
-                    <h4>Target Program</h4> &nbsp &nbsp
-                    <div class="target" >
-                        <md-autocomplete
-                                         md-input-maxlength="50"
-                                         md-selected-item="targetProgram"
-                                         md-search-text="searchText"
-                                         md-items="item in programs | filter:searchText"
-                                         md-item-text="item.name"
-                                         md-selected-item-change="changeTargetGPA(targetGPA)"
-                                         md-min-length="0"
-                                         md-floating-label=".">
-                            <md-item-template>
-                                <span md-highlight-text="searchText" style="text-align: center;" >{{item.name}}</span>
-                            </md-item-template>
-                        </md-autocomplete>
-                    </div>
-                </div>
-                <div layout="column" layout-align="center center" flex>
-                    <h4>Current GPA:</h4>
-                    <span>{{gpa}}</span>
-                </div>
-                <div layout="column" layout-align="center center" flex>
-                    <h4>Target GPA</h4> &nbsp
-                    <span>{{targetGPA}}</span>
-
-                    <div layout="column" class="slider" layout-align="center center" flex ng-model="target" ng-show="showSlider()">
-                        <md-slider style="width: 300px" md-discrete ng-model="targetGPA" step=".1" min="2" max="4">
-                        </md-slider>
-                    </div>
-                </div>
-                <div layout="column" layout-align="center center" flex>
-                    <md-button class="md-fab generate" aria-label="Generate Forecast" ng-click="generateForecast()">
-                        <md-tooltip md-direction="left" md-visible="tooltipVisible">Generate Forecast</md-tooltip>
-                        <md-icon md-svg-src="../img/document.svg"></md-icon>
-                    </md-button>
-                </div>
-
-            </div>
-
         </div>
 
-        <div flex="55" ng-controller="graphController" style="max-height: 20px;">
-            <h2>GPA HISTORY</h2>
-            <div layout="row">
-                <p layout="row" layout-align="end center" style="font-size:small">Running Grade</p>
-                <canvas style="display: block; margin:auto;" class="chart chart-line" chart-data="data"
-                        chart-labels="labels" chart-legend="true" chart-hover="onHover" chart-series="series"
-                        height="450" width="1000" style="border: 10px rgba(0, 0, 0, .12) solid;"></canvas>
-            </div>
-            <p layout="row" layout-align="center start" style="font-size:small">Date</p>
-        </div>
+    </div>
 
+    <div ng-controller="graphController" style="height:300px; width:90%;">
+        <h2>GPA HISTORY</h2>
+        <div layout="row">
+            <p layout="row" layout-align="end center" style="font-size:small">Running<br>GPA</p>
+            <canvas style="display: block; margin:auto;" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="true"  chart-hover="onHover" chart-series="series" height="300" width="900"></canvas>
+        </div>
+        <p layout="row" layout-align="center start" style="font-size:small">Semester</p></i></p>
     </div>
 
     <!--<md-toolbar class="footer"></md-toolbar>-->
 
 </div>
+
 
 <script src="../node_modules/angular/angular.min.js"></script>
 <script src="../node_modules/angular-animate/angular-animate.min.js"></script>

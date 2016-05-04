@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Semester GPA Forecast Report</title>
+    <title>Ovrl GPA Forecast Report</title>
 
     <link rel="stylesheet" href="../node_modules/angular-material/angular-material.min.css"/>
     <link rel="stylesheet" href="../node_modules/angular-material-data-table/dist/md-data-table.min.css"/>
@@ -17,9 +17,8 @@
 
 <div class="table" flex>
     <md-card ng-controller="GPATableController">
-
         <md-table-container>
-            <table md-table md-progress="promise">
+            <table md-table md-progress="promise" ng-cloak>
                 <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
                 <tr md-row>
                     <th style="color:#ffffff;" md-column md-order-by="class" md-desc><span>Class</span></th>
@@ -49,11 +48,11 @@
     <p><i>*While only a recommendation, we highly recommend students to consider their circumstances and select an appropriate schedule based on their workload.</i></p>
 </div>
 
-<div class="graph" ng-controller="graphController" style="height:450px; width:100%;">
+<div class="graph" ng-controller="graphController" style="height:450px; width:95%;">
     <h2>GPA HISTORY</h2>
     <div layout="row">
         <p layout="row" layout-align="end center" style="font-size:small">Running Grade</p>
-        <canvas style="display: block; margin:auto;" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="true"  chart-hover="onHover" chart-series="series" height="450" width="1000"></canvas>
+        <canvas style="display: block; margin:auto;" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="true"  chart-hover="onHover" chart-series="series" height="450" width="900"></canvas>
     </div>
     <p layout="row" layout-align="center start" style="font-size:small">Date</p>
     <p layout="row"><i>** P1, P2, P3 are projections, or estimates, of possible future averages based on Assessments input by the Student. These are NOT the Student's current averages.</i></p>

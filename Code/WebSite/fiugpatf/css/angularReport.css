@@ -29,7 +29,7 @@ th {
     margin: 5% 0 5% 0;
 }
 
-canvas.chart.chart-line, canvas#line {
-    width: 500px;
-    height: 500px;
+.chart chart-line {
+    height:500px;
+    width: 750px;
 }

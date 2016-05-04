@@ -26,8 +26,8 @@ md-toolbar.navbar, md-toolbar.footer {
 }
 
 .content {
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 1%;
+    padding-right: 1%;
 }
 
 .content h1, h2 {
@@ -35,10 +35,6 @@ md-toolbar.navbar, md-toolbar.footer {
     font-weight: bold;
     color: #002d62;
 }
-
-/*.table {
-    margin-right: 5%;
-}*/
 
 tr:nth-child(even) {
     background: rgba(166, 200, 254, 1);
@@ -49,10 +45,6 @@ tr:nth-child(odd) {
 th {
     background-color: #002d62;
 }
-
-/*.todo {
-    margin-left: 5%;
-}*/
 
 [role="tabpanel"] {
     transition: none;

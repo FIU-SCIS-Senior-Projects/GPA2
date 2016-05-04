@@ -31,7 +31,7 @@ h5 {
     width: 300px;
     height: 50px;
     margin: 0px;
-    padding: 0px
+    padding: 0px;
 }
 
 .slider {
@@ -43,6 +43,13 @@ h5 {
     padding: 0px
 }
 
+md-slider.md-default-theme .md-thumb::after, md-slider .md-thumb::after,
+md-slider.md-default-theme .md-focus-ring, md-slider .md-focus-ring,
+md-slider.md-default-theme .md-track.md-track-fill, md-slider .md-track.md-track-fill,
+md-slider.md-default-theme .md-thumb::after, md-slider .md-thumb::after {
+    background-color: #002d62;
+    border-color: #002d62;
+}
 
 .gpa {
     height: 75px;
@@ -64,13 +71,40 @@ h5 {
     padding-top: 3%;
 }
 
+.tableHeading {
+    font-weight: bold;
+    color: #002d62;
+    text-transform: uppercase;
+}
+
+.buckets {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
 .noPad {
     margin: 0px;
     padding: 0px;
 }
 
+.leftColumn {
+    border-radius: 25px;
+    border: 2px solid #002d62;
+    background: rgba(166, 200, 254, 1);
+}
 .md-button1 {
     font-size: small;
     padding-top: 10px;
     color: black;
+}
+
+md-icon {
+    fill: #ffffff;
+}
+
+canvas.style {
+    display: block;
+    height: 500px;
+    margin: auto;
+    width: 1200px;
 }

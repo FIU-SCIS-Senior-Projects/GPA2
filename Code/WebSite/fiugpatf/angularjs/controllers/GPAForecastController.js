@@ -414,7 +414,20 @@ function forecaster( response ) {
     }
 
     //Appending the first half of the report
-    var sum = '<p class="heading" id="heading" align="center"><strong>Current GPA:</strong> ' + accurateGPA.toFixed(2) + '<br><strong>Graduation Goal GPA:</strong> ' + formattedGPAGoal.toFixed(2) + '<br><strong>Credits Remaining:</strong> ' + creditsLeft + '<br></p><p class="inorder">In order to your Graduation Goal GPA of ' + formattedGPAGoal.toFixed(2) + ', the following forecast has been generated according to the weight and relevance you provided for all the remaining courses:</p>';
+    var sum = '<div class="heading" layout="row">' +
+        '<span flex></span><div class="text" layout="column" layout-align="center start" flex="20">' +
+        '<strong>Current GPA:</strong><br>' +
+        '<strong>Graduation Goal GPA:</strong><br>' +
+        '<strong>Credits Remaining:</strong>' +
+        '</div>' +
+        '<div class="results" layout="column" layout-align="center end" flex="5">' +
+        accurateGPA.toFixed(2) + '<br>' +
+        formattedGPAGoal.toFixed(2) + '<br>' +
+        '<span class="credits">' + creditsLeft + '</span>' +
+        '</div><span flex></span></div>' +
+        '<br>' +
+        '<p class="inorder">In order to your Graduation Goal GPA of ' + formattedGPAGoal.toFixed(2) + ', the following forecast has been generated according to the weight and relevance you provided for all the remaining courses:</p>';
+
     var myEl = angular.element( document.querySelector( '#sum' ) );
     myEl.append(sum);
 
@@ -430,20 +443,4 @@ function forecaster( response ) {
     }
 
     return arr;
-
-    /*var content = "<table><tr><th>Class</th><th>Weight</th><th>Relevance</th><th>Min. Grade<br>Required</th><th>Secure<br>GPA Path</th><th>Estimated Study<br>Time (Hrs/Week)*</th></tr>";
-
-     for(var i = 0; i < courseID.length; i++) {
-     content += ("<tr><td>" + courseID[i] + "</td>" +
-     "<td>" + weight[i] + "</td>" +
-     "<td>" + Math.floor(relevance[i]) + "</td>" +
-     "<td>" + valueToChar(relevance[i]) + "</td>" +
-     "<td>" + valueToChar(secureGPAPath[i]) + "</td>" +
-     "<td>" + minimumStudyTime[i] + "</td></tr>");
-     }
-     content += "</table>";
-
-     $("#forecast_table").append(content);*/
-
-    /*$("#recommend").append('<p><i>*While only a recommendation, we highly recommend students to consider their circumstances and select an appropriate schedule based on their workload.</i></p>');*/
 }

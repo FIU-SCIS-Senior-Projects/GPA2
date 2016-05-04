@@ -19,7 +19,7 @@
             <md-button href="../overallgpadashboard/OvrlDash.html">GPA DASHBOARD</md-button>
             <md-button href="semesterDashboard.html">SEMESTER DASHBOARD</md-button>
             <md-button href="../common_files/settings.html">SETTINGS</md-button>
-            <md-button>HELP</md-button>
+            <md-button href="../common_files/help.html">HELP</md-button>
             <md-button href="../common_files/logout.php">LOGOUT</md-button>
             </span>
         </div>
@@ -31,17 +31,35 @@
 <div layout="column" flex>
 <div class="content">
     <h1>SEMESTER DASHBOARD</h1>
-    <div ng-controller="checkForecastController" layout="row">
-        <h2>CURRENT COURSES</h2>
-        <span flex></span>
-        <md-button class="md-fab generate" aria-label="Generate Forecast" ng-click="checkGenerateForecast()">
-            <md-tooltip md-direction="left" md-visible="tooltipVisible">Generate Forecast</md-tooltip>
-            <md-icon md-svg-src="../img/document.svg"></md-icon>
-        </md-button>
-    </div>
     <br>
     <div layout="row">
-        <div class="table" flex> <!--after implementing todo list, change flex to flex="60"-->
+
+    <div layout="column" flex="59">
+        <div class="graph" ng-controller="LineCtrl" style="height:450px;">
+            <h2 layout="row" layout-align="center center">GRADE TRENDS FOR ALL COURSES</h2>
+
+            <div layout="row">
+                <p class="runningGrade" layout="row" layout-align="end center" align="right" style="font-size:small" flex="5">Running<br>Grade</p>
+                <canvas style="display: block; margin:0;" class="chart chart-line" chart-data="data" chart-labels="labels"  chart-hover="onHover" chart-series="series" height="300" width="700" flex="95"></canvas>
+            </div>
+            <p layout="row" layout-align="center start" style="font-size:small">Date</p>
+
+        </div>
+    </div>
+
+        <span flex></span> <!-- ------------------------------- -->
+
+    <div layout="column" flex="39">
+        <div ng-controller="checkForecastController" layout="row" ng-cloak>
+            <h2>CURRENT COURSES</h2>
+            <span flex></span>
+            <md-button class="md-fab generate" aria-label="Generate Forecast" ng-click="checkGenerateForecast()">
+                <md-tooltip md-direction="left" md-visible="tooltipVisible">Generate Forecast</md-tooltip>
+                <md-icon md-svg-src="../img/document.svg"></md-icon>
+            </md-button>
+        </div>
+        <br>
+        <div class="table" layout="row" layout-align="end start" flex>
             <md-card ng-controller="dashboardTableController">
                 <md-table-container>
                     <table md-table md-row-select="options.rowSelection"  ng-model="selected" md-progress="promise">
@@ -65,25 +83,11 @@
                 </md-table-container>
             </md-card>
         </div>
-
-        <!--<div class="todo" flex="40">
-            <img src="../img/to-do.png">
-        </div>-->
     </div>
-
-    <div class="graph" ng-controller="LineCtrl" style="height:450px; width:100%;">
-        <h2>GRADE TRENDS FOR ALL COURSES</h2>
-        <div layout="row">
-            <p layout="row" layout-align="end center" style="font-size:small">Running Grade</p>
-            <canvas style="display: block; margin:auto;" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="true"  chart-hover="onHover" chart-series="series" height="450" width="1000"></canvas>
-        </div>
-        <p layout="row" layout-align="center start" style="font-size:small">Date</p>
-        <p layout="row"><i>** P1, P2, P3 are projections, or estimates, of possible future averages based on Assessments input by the Student. These are NOT the Student's current averages.</i></p>
     </div>
 
 </div>
-    <md-toolbar class="footer"></md-toolbar>
-
+    <!--<md-toolbar class="footer"></md-toolbar>-->
 </div>
 
 <script src="../node_modules/angular/angular.min.js"></script>
