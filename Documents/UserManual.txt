@@ -1,0 +1,11 @@
+User Guide
+
+1)Registration: To register for the FIU GPA Tracker and Forecaster simply click on the "Register" navigation link in the landing page. There it will ask you for your email and name and ask you to set your username and password. Password must be at least eight characters long.
+
+2)Login: Login is just as simple click the login navigation button and enter your username and password.
+
+3)Import PDF Grade Report: The first step any user should take to facilitate their experience is importing their Grade report. This PDF can be downloaded from PantherSoft under the "Panther Degree Audit" by hitting "Download PDF". After downloading the GPA go to settings, click the button next to the "import GPA Audit (PDF)" label, and select the Grade Report PDF. Just like that, all of your grades and major will be imported.
+
+4)The overall GPA dashboard will tell you what your current GPA is. You can "Unenroll" in classes there (mark courses as not currently taking) by hitting the right arrow button on the courses taken table. Conversly, you can "enroll" in a course you are currently taking. If for whatever reason there is a discrepency between the grade you have and the grade shown, it can be modified. More importantly, the Overall GPA Dashboard can provide a forecast report which tells you what you need to earn to get into your desired graduate program.
+
+5)The Semester Dashboard is the perfect place to keep track of all the courses you are currently taking. For each course you are taking you can describe the grade breakdown of your class (i.e. Homework - 30%, Quizes - 20%, etc.) and when you enter grades for each of these categories your grade will instantly be calculated.
