@@ -22,13 +22,13 @@ myApp.controller('ovrlDashCtrl', ['$scope', '$mdDialog', 'gpaDashService', funct
 
     $scope.queryTaken = {
         order: 'name',
-        limit: 5,
+        limit: 4,
         page: 1
     };
 
     $scope.queryNeeded = {
         order: 'name',
-        limit: 5,
+        limit: 4,
         page: 1
     };
 
@@ -49,20 +49,7 @@ myApp.controller('ovrlDashCtrl', ['$scope', '$mdDialog', 'gpaDashService', funct
     });
 
     gpaDashService.setPrograms().then(function() {
-        $scope.programs = [
-            {"name":"Masters in IT","gpa":3.2,"id":1},
-            {"name":"Masters in Mathematics","gpa":2.8,"id":2},
-            {"name":"Masters in Computer Science","gpa":3,"id":3},
-            {"name":"Masjjters in IT","gpa":3.2,"id":4},
-            {"name":"Masterys in Mathematics","gpa":2.8,"id":5},
-            {"name":"Mastters in Computer Science","gpa":3,"id":6},
-            {"name":"Masters in dddIT","gpa":3.2,"id":7},
-            {"name":"Masters in Mathemagtgttics","gpa":2.8,"id":8},
-            {"name":"Masters in Computgtter Science","gpa":3,"id":9},
-            {"name":"Masjjters itgn IT","gpa":3.2,"id":10},
-            {"name":"Masterys in Mathetggmatics","gpa":2.8,"id":11},
-            {"name":"Mastters in Compugtter Science","gpa":3,"id":12}
-        ];
+        $scope.programs = gpaDashService.getPrograms();
         $scope.currentProgram = gpaDashService.getCurrentProgram();
         $scope.targetGPA = gpaDashService.getTargetGPA();
     });

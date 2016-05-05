@@ -96,6 +96,7 @@ angular.module('GPAForecastApp', ['ngMaterial', 'md.data.table', 'chart.js'])
         $scope.list = [];
         var arr = [];
 
+
         $scope.selected = [];
         $scope.limitOptions = [5, 10, 15];
 
@@ -129,6 +130,8 @@ angular.module('GPAForecastApp', ['ngMaterial', 'md.data.table', 'chart.js'])
             $scope.courses = { //data tables
                 "data": arr
             };
+            $scope.total = $scope.courses.data.length;
+            //$scope.total = ;
         });
     }]);
 
