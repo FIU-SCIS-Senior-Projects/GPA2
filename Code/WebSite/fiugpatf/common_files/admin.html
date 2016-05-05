@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta name="description" content="Angular Material: UI Components with Dynamic Data">
+
+    <link rel="stylesheet" href="../node_modules/angular-material-data-table/dist/md-data-table.min.css"/>
+    <link rel="stylesheet" href="../node_modules/angular-material/angular-material.min.css">
+
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+
+    <style>
+        html, body {
+            font-family: 'Roboto', sans-serif;
+            font-size:14px;
+            height:100%;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        md-toolbar h3 {
+            margin: auto;
+            font-weight: 500;
+        }
+
+        md-list-item > button {
+            width:100%;
+            text-align:left !important;
+        }
+
+        #content  {
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-top: 5px;
+        }
+
+        .md-button {
+            color: #000000;
+            font-size: small;
+        }
+
+        .avatar {
+            position: relative;
+            width: 110px;
+            height: 75px;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            display: inline-block;
+            overflow: hidden;
+            margin: 0px;
+            vertical-align: middle;
+            zoom:0.70;
+            transform: translateZ(0);
+            -webkit-transform: scale(0.70);
+            -moz-transform:scale(0.70);
+        }
+
+        .h3 {
+            color: white;
+        }
+
+    </style>
+
+</head>
+<body ng-app="myApp" layout="column" ng-controller="myCtrl as ul">
+
+<md-toolbar class="navbar" layout="column" style="font-size: large" md-whiteframe="5">
+    <div layout="row">
+        <div layout="column">
+            <img class="logo" src="http://www.fiu.edu/_assets/images/core/fiu-logo-large.png">
+            <span layout="row">
+            <md-button href="logout.php">LOGOUT</md-button>
+            </span>
+        </div>
+    </div>
+</md-toolbar>
+
+<div class="container" layout="row" flex>
+    <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp">
+        <md-list>
+            <md-list-item ng-repeat="u in ul.settings">
+                <md-button ng-click="ul.selectUser(u)">
+                    <md-icon class="avatar"></md-icon>
+                    {{u.name}}
+                </md-button>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+
+    <md-content laout="column" flex id="Update Grad Program">
+        <md-card>
+            <h2>{{ul.selected.name}}</h2>
+            <md-table-container>
+                <table md-table md-row-select ng-model="select">
+                    <thead md-head md-order="query.order">
+                    <tr md-row>
+                        <th style="color:#ffffff;" md-column md-order-by="name"><span>Name</span></th>
+                        <th style="color:#ffffff;" md-column md-numeric md-order-by="GPA"><span>GPA</span></th>
+                    </tr>
+                    </thead>
+                    <tbody md-body>
+                    <tr md-row md-select="l" md-on-select="logItem" md-auto-select="true" ng-repeat="l in ul.selected.list | filter: filter.search
+                    | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                        <td md-cell>{{l.name}}</td>
+                        <td md-cell>{{l.GPA}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </md-table-container>
+            <div layout="row" layout-align="space-between">
+                <md-button class="btn1" ng-click="addGrad($event)">add</md-button>
+                <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{ul.selected.count}}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>
+            </div>
+        </md-card>
+    </md-content>
+
+    <md-content laout="column" flex id="Update Curriculum" style="display:none">
+        <md-card>
+            <h2>{{ul.selected.name}}</h2>
+            <md-table-container>
+                <table md-table md-row-select ng-model="select">
+                    <thead md-head md-order="query.order">
+                    <tr md-row>
+                        <th style="color:#ffffff;" md-column md-order-by="name"><span>Name</span></th>
+                        <th style="color:#ffffff;" md-column md-numeric md-order-by="GPA"><span>GPA</span></th>
+                        <th style="color:#ffffff;" md-column md-numeric md-order-by="date"><span>date</span></th>
+                    </tr>
+                    </thead>
+                    <tbody md-body>
+                    <tr md-row md-select="l" md-on-select="logItem" md-auto-select="true" ng-repeat="l in ul.selected.list | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                        <td md-cell>{{l.name}}</td>
+                        <td md-cell>{{l.GPA}}</td>
+                        <td md-cell>{{l.date}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </md-table-container>
+            <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{ul.selected.count}}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>
+        </md-card>
+    </md-content>
+
+    <md-content laout="column" flex id="Update Buckets" style="display:none">
+        <md-card>
+            <h2>{{ul.selected.name}}</h2>
+            <md-table-container>
+                <table md-table md-row-select ng-model="select">
+                    <thead md-head md-order="query.order">
+                    <tr md-row>
+                        <th style="color:#ffffff;" md-column md-order-by="name"><span>Name</span></th>
+                        <th style="color:#ffffff;" md-column md-numeric md-order-by="quantity"><span>quantity</span></th>
+                    </tr>
+                    </thead>
+                    <tbody md-body>
+                    <tr md-row md-select="l" md-on-select="logItem" md-auto-select="true" ng-repeat="l in ul.selected.list | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                        <td md-cell>{{l.name}}</td>
+                        <td md-cell>{{l.quantity}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </md-table-container>
+            <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{ul.selected.count}}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>
+        </md-card>
+    </md-content>
+
+    <md-content laout="column" flex id="Update Courses" style="display:none">
+        <md-card>
+            <h2>{{ul.selected.name}}</h2>
+            <md-table-container>
+                <table md-table md-row-select ng-model="select">
+                    <thead md-head md-order="query.order">
+                    <tr md-row>
+                        <th style="color:#ffffff;" md-column md-order-by="name"><span>Name</span></th>
+                        <th style="color:#ffffff;" md-column md-order-by="courseID"><span>CourseID</span></th>
+                        <th style="color:#ffffff;" md-column md-numeric md-order-by="credits"><span>Credits</span></th>
+                        <th style="color:#ffffff;" md-column md-order-by="description"><span>description</span></th>
+                    </tr>
+                    </thead>
+                    <tbody md-body>
+                    <tr md-row md-select="l" md-on-select="logItem" md-auto-select="true" ng-repeat="l in ul.selected.list | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                        <td md-cell >{{l.name}}</td>
+                        <td md-cell>{{l.courseID}}</td>
+                        <td md-cell>{{l.credits}}</td>
+                        <td md-cell>{{l.description}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </md-table-container>
+            <div layout="row" layout-align="space-between">
+                <md-button class="btn1" ng-click="addCourse()">add</md-button>
+                <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{ul.selected.count}}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>
+            </div>
+        </md-card>
+    </md-content>
+
+    <md-content laout="column" flex id="Update Student" style="display:none">
+        <md-card>
+            <h2>{{ul.selected.name}}</h2>
+            <md-table-container>
+                <table md-table md-row-select ng-model="select">
+                    <thead md-head md-order="query.order">
+                    <tr md-row>
+                        <th style="color:#ffffff;" md-column md-order-by="name"><span>Name</span></th>
+                        <th style="color:#ffffff;" md-column md-order-by="username"><span>userName</span></th>
+                    </tr>
+                    </thead>
+                    <tbody md-body>
+                    <tr md-row md-select="l" md-on-select="displayCourses" md-auto-select="true" ng-repeat="l in ul.selected.list | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                        <td md-cell>{{l.name}}</td>
+                        <td md-cell>{{l.username}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </md-table-container>
+            <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{ul.selected.count}}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>
+        </md-card>
+    </md-content>
+
+    <md-content laout="column" flex id="Student Courses" style="display:none">
+        <md-card>
+            <h2>{{ul.selected.name}}</h2>
+            <md-table-container>
+                <table md-table md-row-select ng-model="select">
+                    <thead md-head md-order="query.order">
+                    <tr md-row>
+                        <th style="color:#ffffff;" md-column md-order-by="courseID"><span>CourseID</span></th>
+                        <th style="color:#ffffff;" md-column md-order-by="courseName"><span>CourseName</span></th>
+                        <th style="color:#ffffff;" md-column md-order-by="grade"><span>Grade</span></th>
+                    </tr>
+                    </thead>
+                    <tbody md-body>
+                    <tr md-row md-select="l" md-on-select="logItem" md-auto-select="true" ng-repeat="l in ul.courses.list | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                        <td md-cell>{{l.courseID}}</td>
+                        <td md-cell>{{l.courseName}}</td>
+                        <td md-cell>{{l.grade}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </md-table-container>
+            <div layout="row" layout-align="space-between">
+                <md-button class="btn1" ng-click="resetPass()">Reset Password</md-button>
+                <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{ul.selected.count}}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>
+            </div>
+        </md-card>
+    </md-content>
+
+    <md-content flex id="Import / Export" style="display:none">
+        <md-card>
+            <h2>{{ul.selected.name}}</h2>
+            <md-card-content layout="row" layout-align="start center">
+                <input id="inputfile" type="file" file-model="myFile" placeholder=""/>
+                <button ng-click="uploadFile()">upload</button>
+            </md-card-content>
+        </md-card>
+    </md-content>
+
+</div>
+
+<md-toolbar class="footer"></md-toolbar>
+
+<script src="../node_modules/angular/angular.min.js"></script>
+<script src="../node_modules/angular-animate/angular-animate.min.js"></script>
+<script src="../node_modules/angular-aria/angular-aria.min.js"></script>
+<script src="../node_modules/angular-material/angular-material.min.js"></script>
+<script src="../node_modules/angular-material-data-table/dist/md-data-table.min.js"></script>
+<script src="adminController.js"></script>
+
+</body>
+</html>

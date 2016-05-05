@@ -1,0 +1,110 @@
+.table-button {
+    color : deepskyblue;
+    min-width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 12px;
+    text-align: center;
+    text-transform: lowercase;
+    text-decoration:none;
+    border: none;
+    outline: none;
+}
+
+.tablel-div {
+    border-top: 1px rgba(0, 0, 0, .12) solid;
+}
+
+h4 {
+    font-weight: bold;
+    margin: 0;
+}
+
+h5 {
+    font-weight: normal;
+    margin: 0;
+}
+
+.target {
+    position: relative;
+    bottom: 25px;
+    width: 300px;
+    height: 50px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.slider {
+    position: relative;
+    bottom: 10px;
+    width: 300px;
+    height: 30px;
+    margin: 0px;
+    padding: 0px
+}
+
+md-slider.md-default-theme .md-thumb::after, md-slider .md-thumb::after,
+md-slider.md-default-theme .md-focus-ring, md-slider .md-focus-ring,
+md-slider.md-default-theme .md-track.md-track-fill, md-slider .md-track.md-track-fill,
+md-slider.md-default-theme .md-thumb::after, md-slider .md-thumb::after {
+    background-color: #002d62;
+    border-color: #002d62;
+}
+
+.gpa {
+    height: 75px;
+    margin: 0;
+    padding: 0;
+}
+
+.gpaGraph {
+    margin: 0;
+    padding: 0;
+    height:200px;
+    width:80%;
+    /*border: 10px rgba(0, 0, 0, .12) solid;*/
+}
+
+.table-size {
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
+}
+
+.tableHeading {
+    font-weight: bold;
+    color: #002d62;
+    text-transform: uppercase;
+}
+
+.buckets {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.noPad {
+    margin: 0px;
+    padding: 0px;
+}
+
+.leftColumn {
+    border-radius: 25px;
+    border: 2px solid #002d62;
+    background: rgba(166, 200, 254, 1);
+}
+.md-button1 {
+    font-size: small;
+    padding-top: 10px;
+    color: black;
+}
+
+md-icon {
+    fill: #ffffff;
+}
+
+canvas.style {
+    display: block;
+    height: 500px;
+    margin: auto;
+    width: 1200px;
+}

@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="25697b4e-8e66-4d3b-866b-eb9411fcd7ec" name="Default" comment="" />
+    <ignored path="Code.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="Code" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="modifyGrade.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/modifyGrade.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.096463025">
+              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+              <folding>
+                <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#form#0;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="semesterDashboardController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/semesterDashboardController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.416667">
+              <caret line="817" column="5" selection-start-line="817" selection-start-column="5" selection-end-line="817" selection-end-column="5" />
+              <folding>
+                <element signature="e#379#1559#0#PHP" expanded="false" />
+                <element signature="e#1565#2619#0#PHP" expanded="false" />
+                <element signature="e#2625#3697#0#PHP" expanded="false" />
+                <element signature="e#3703#4556#0#PHP" expanded="false" />
+                <element signature="e#4562#10954#0#PHP" expanded="false" />
+                <element signature="e#10960#14294#0#PHP" expanded="false" />
+                <element signature="e#14300#14751#0#PHP" expanded="false" />
+                <element signature="e#14757#17231#0#PHP" expanded="false" />
+                <element signature="e#17237#17601#0#PHP" expanded="false" />
+                <element signature="e#17607#18750#0#PHP" expanded="false" />
+                <element signature="e#18756#20145#0#PHP" expanded="false" />
+                <element signature="e#20151#20920#0#PHP" expanded="false" />
+                <element signature="e#20926#21726#0#PHP" expanded="false" />
+                <element signature="e#21732#22204#0#PHP" expanded="false" />
+                <element signature="e#22210#23118#0#PHP" expanded="false" />
+                <element signature="e#23124#24891#0#PHP" expanded="false" />
+                <element signature="e#24897#25930#0#PHP" expanded="false" />
+                <element signature="e#25936#28029#0#PHP" expanded="false" />
+                <element signature="e#28035#28842#0#PHP" expanded="false" />
+                <element signature="e#28848#29476#0#PHP" expanded="false" />
+                <element signature="e#29482#30397#0#PHP" expanded="false" />
+                <element signature="e#30403#31096#0#PHP" expanded="false" />
+                <element signature="e#31831#32421#0#PHP" expanded="false" />
+                <element signature="e#32427#33503#0#PHP" expanded="false" />
+                <marker date="1461975788922" expanded="true" signature="521:721" placeholder="SELECT Cours... StudentCourse" />
+                <marker date="1461975788922" expanded="true" signature="1659:1900" placeholder="SELECT asses... AssessmentType" />
+                <marker date="1461975788922" expanded="true" signature="1739:1899" placeholder="SELECT stude... StudentCourse" />
+                <marker date="1461975788922" expanded="true" signature="1844:1898" placeholder="select cours... CourseInfo" />
+                <marker date="1461975788922" expanded="true" signature="2735:3039" placeholder="SELECT grade... Assessment" />
+                <marker date="1461975788922" expanded="true" signature="2792:2860" placeholder="select asses... AssessmentType" />
+                <marker date="1461975788922" expanded="true" signature="2886:3038" placeholder="SELECT stude... StudentCourse" />
+                <marker date="1461975788922" expanded="true" signature="2983:3037" placeholder="select cours... CourseInfo" />
+                <marker date="1461975788922" expanded="true" signature="3808:4100" placeholder="SELECT Cours... Assessment" />
+                <marker date="1461975788922" expanded="true" signature="4645:4967" placeholder="SELECT b.ass... Assessment" />
+                <marker date="1461975788922" expanded="true" signature="4809:4884" placeholder="SELECT stude... StudentCourse" />
+                <marker date="1461975788922" expanded="true" signature="20259:20316" placeholder="SELECT gradu... GraduatePrograms" />
+                <marker date="1461975788922" expanded="true" signature="21037:21133" placeholder="SELECT major... Major" />
+                <marker date="1461975788922" expanded="true" signature="21083:21132" placeholder="SELECT major... StudentMajor" />
+                <marker date="1461975788922" expanded="true" signature="21813:21953" placeholder="Delete FROM " />
+                <marker date="1461975788922" expanded="true" signature="21894:21952" placeholder="SELECT C.cou... CourseInfo" />
+                <marker date="1461975788922" expanded="true" signature="22315:22536" placeholder="SELECT asses... AssessmentType" />
+                <marker date="1461975788922" expanded="true" signature="22383:22535" placeholder="SELECT stude... StudentCourse" />
+                <marker date="1461975788922" expanded="true" signature="22480:22534" placeholder="select cours... CourseInfo" />
+                <marker date="1461975788922" expanded="true" signature="23242:23476" placeholder="SELECT asses... AssessmentType" />
+                <marker date="1461975788922" expanded="true" signature="23323:23475" placeholder="SELECT stude... StudentCourse" />
+                <marker date="1461975788922" expanded="true" signature="23420:23474" placeholder="SELECT cours... CourseInfo" />
+                <marker date="1461975788922" expanded="true" signature="25018:25321" placeholder="SELECT grade... Assessment" />
+                <marker date="1461975788922" expanded="true" signature="25074:25142" placeholder="select asses... AssessmentType" />
+                <marker date="1461975788922" expanded="true" signature="25168:25320" placeholder="SELECT stude... StudentCourse" />
+                <marker date="1461975788922" expanded="true" signature="25265:25319" placeholder="select cours... CourseInfo" />
+                <marker date="1461975788922" expanded="true" signature="26091:26443" placeholder="SELECT b.ass... Assessment" />
+                <marker date="1461975788922" expanded="true" signature="26225:26377" placeholder="SELECT stude... StudentCourse" />
+                <marker date="1461975788922" expanded="true" signature="26322:26376" placeholder="select cours... CourseInfo" />
+                <marker date="1461975788922" expanded="true" signature="28956:29198" placeholder="INSERT into AssessmentType... " />
+                <marker date="1461975788922" expanded="true" signature="29044:29196" placeholder="SELECT stude... StudentCourse" />
+                <marker date="1461975788922" expanded="true" signature="29141:29195" placeholder="select cours... CourseInfo" />
+                <marker date="1461975788922" expanded="true" signature="29590:30087" placeholder="INSERT into Assessment... " />
+                <marker date="1461975788922" expanded="true" signature="29590:30109" placeholder="INSERT into Assessment... " />
+                <marker date="1461975788922" expanded="true" signature="29678:29924" placeholder="SELECT FROM AssessmentType... " />
+                <marker date="1461975788922" expanded="true" signature="29748:29900" placeholder="SELECT stude... StudentCourse" />
+                <marker date="1461975788922" expanded="true" signature="29845:29899" placeholder="select cours... CourseInfo" />
+                <marker date="1461975788922" expanded="true" signature="29931:30083" placeholder="SELECT stude... StudentCourse" />
+                <marker date="1461975788922" expanded="true" signature="30028:30082" placeholder="select cours... CourseInfo" />
+                <marker date="1461975788922" expanded="true" signature="30514:30833" placeholder="Delete from " />
+                <marker date="1461975788922" expanded="true" signature="30578:30646" placeholder="select asses... AssessmentType" />
+                <marker date="1461975788922" expanded="true" signature="30672:30824" placeholder="SELECT stude... StudentCourse" />
+                <marker date="1461975788922" expanded="true" signature="30769:30823" placeholder="select cours... CourseInfo" />
+                <marker date="1461975788922" expanded="true" signature="31224:31552" placeholder="Delete from " />
+                <marker date="1461975788922" expanded="true" signature="31297:31365" placeholder="select asses... AssessmentType" />
+                <marker date="1461975788922" expanded="true" signature="31391:31543" placeholder="SELECT stude... StudentCourse" />
+                <marker date="1461975788922" expanded="true" signature="31488:31542" placeholder="select cours... CourseInfo" />
+                <marker date="1461975788922" expanded="true" signature="31935:32165" placeholder="DELETE from " />
+                <marker date="1461975788922" expanded="true" signature="32012:32164" placeholder="SELECT stude... StudentCourse" />
+                <marker date="1461975788922" expanded="true" signature="32109:32163" placeholder="SELECT cours... CourseInfo" />
+                <marker date="1461975788922" expanded="true" signature="32550:32853" placeholder="SELECT grade... Assessment" />
+                <marker date="1461975788922" expanded="true" signature="32606:32674" placeholder="select asses... AssessmentType" />
+                <marker date="1461975788922" expanded="true" signature="32700:32852" placeholder="SELECT stude... StudentCourse" />
+                <marker date="1461975788922" expanded="true" signature="32797:32851" placeholder="select cours... CourseInfo" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/overallForecastReport.html" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/ODCTesting.php" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/overallForecastReport.js" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/OvrlDash.php" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/semesterForecastReport.js" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/OvrlDashRouter.php" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/semesterForecastControllerTest.php" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/semesterDashboardControllerTest.php" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/GPAForecastControllerTest.php" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/common_files/testing.php" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/common_files/jsjs.js" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/OvrlDashControllerTest.php" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/semesterForecastReport.html" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/current.js" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/common_files/main.css" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/main2.css" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/ovrlForecastReport.html" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/ovrlForecastReport.js" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/OvrlDash.html" />
+        <option value="$USER_HOME$/gpadash/OvrlDashController.php" />
+        <option value="$USER_HOME$/gpadash/OvrlDash.js" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/OvrlDash.js" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/common_files/dbconnector.php" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/common_files/tests/nursing.xml" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/OvrlDashController.php" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/semesterForecastController.php" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/GPAForecastController.php" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/common_files/adminController.js" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/common_files/PDFWhatIfParser.py" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/common_files/settingscontroller.php" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/css/style.css" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/common_files/admin.html" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/common_files/consumer.php" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/common_files/toLog.php" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/semesterDashboardRouter.php" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/angularjs/controllers/breakdownController.js" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/modifyGrade.html" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/removeGrade.html" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/addGrade.html" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/semesterDashboardController.php" />
+        <option value="$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/assessmentBreakdown.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.6">
+    <include_path>
+      <path value="." />
+      <path value="/usr/local/lib/php" />
+      <path value="/usr/local/bin" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="65" />
+    <option name="y" value="-4" />
+    <option name="width" value="1535" />
+    <option name="height" value="799" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebSite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebSite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fiugpatf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebSite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fiugpatf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sem_dashboard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/update/OvrlDashController.php" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/WebSite/fiugpatf/css" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="25697b4e-8e66-4d3b-866b-eb9411fcd7ec" name="Default" comment="" />
+      <created>1458584841102</created>
+      <option name="number" value="Default" />
+      <updated>1458584841102</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="65" y="-4" width="1535" height="799" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22431162" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288889" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="19" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/OvrlDashController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/common_files/toLog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/common_files/dbconnector.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/common_files/settingscontroller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/GPAForecastController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/OvrlDashController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/OvrlDash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2000" column="0" selection-start-line="2000" selection-start-column="0" selection-end-line="2000" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/GPAForecastController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="60" selection-start-line="55" selection-start-column="60" selection-end-line="55" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/ovrlForecastReport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/OvrlDash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/OvrlDash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/OvrlDash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/current.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="611" column="126" selection-start-line="611" selection-start-column="8" selection-end-line="611" selection-end-column="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/OvrlDash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="695" column="11" selection-start-line="695" selection-start-column="11" selection-end-line="695" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/OvrlDash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="695" column="11" selection-start-line="695" selection-start-column="11" selection-end-line="695" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/OvrlDash.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41157556">
+          <caret line="882" column="0" selection-start-line="882" selection-start-column="0" selection-end-line="897" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/common_files/tests/unit_tests.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5816327">
+          <caret line="139" column="46" selection-start-line="139" selection-start-column="46" selection-end-line="139" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/current.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="14" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/current.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="74" column="17" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/OvrlDash.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.988746">
+          <caret line="137" column="12" selection-start-line="137" selection-start-column="12" selection-end-line="137" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/ovrlForecastReport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.960182">
+          <caret line="217" column="5" selection-start-line="217" selection-start-column="5" selection-end-line="217" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/OvrlDash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38566554">
+          <caret line="2000" column="0" selection-start-line="2000" selection-start-column="0" selection-end-line="2000" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/common_files/dbconnector.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.01754386">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/common_files/tests/nursing.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43729904">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/semesterForecastController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.641479">
+          <caret line="148" column="37" selection-start-line="148" selection-start-column="37" selection-end-line="148" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/OvrlDashController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2652733">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/overallgpadashboard/GPAForecastController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.2186496">
+          <caret line="94" column="5" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/common_files/dialog1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/common_files/PDFWhatIfParser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34253094">
+          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/common_files/settingscontroller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.99318403">
+          <caret line="68" column="5" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/common_files/adminController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.81424147">
+          <caret line="414" column="0" selection-start-line="414" selection-start-column="0" selection-end-line="414" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/common_files/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.89228296">
+          <caret line="37" column="29" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3376206">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="16" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/css/report.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/css/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/common_files/consumer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31350482">
+          <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/common_files/toLog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1688103">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/SemHelp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.88235295">
+          <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/SemHelp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.5">
+          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/common_files/db_connect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/tab.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+          <folding>
+            <element signature="e#1271#1898#0" expanded="false" />
+            <element signature="e#1909#2473#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/addAssessment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.6666665">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/common_files/settings.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/common_files/log.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-81.94118">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/removeGrade.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2652733">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#form#0;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/addGrade.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6688103">
+          <caret line="34" column="182" selection-start-line="34" selection-start-column="182" selection-end-line="34" selection-end-column="182" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/semesterDashboardRouter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36334404">
+          <caret line="117" column="70" selection-start-line="117" selection-start-column="65" selection-end-line="117" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/semesterDashboardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.416667">
+          <caret line="817" column="5" selection-start-line="817" selection-start-column="5" selection-end-line="817" selection-end-column="5" />
+          <folding>
+            <element signature="e#379#1559#0#PHP" expanded="false" />
+            <element signature="e#1565#2619#0#PHP" expanded="false" />
+            <element signature="e#2625#3697#0#PHP" expanded="false" />
+            <element signature="e#3703#4556#0#PHP" expanded="false" />
+            <element signature="e#4562#10954#0#PHP" expanded="false" />
+            <element signature="e#10960#14294#0#PHP" expanded="false" />
+            <element signature="e#14300#14751#0#PHP" expanded="false" />
+            <element signature="e#14757#17231#0#PHP" expanded="false" />
+            <element signature="e#17237#17601#0#PHP" expanded="false" />
+            <element signature="e#17607#18750#0#PHP" expanded="false" />
+            <element signature="e#18756#20145#0#PHP" expanded="false" />
+            <element signature="e#20151#20920#0#PHP" expanded="false" />
+            <element signature="e#20926#21726#0#PHP" expanded="false" />
+            <element signature="e#21732#22204#0#PHP" expanded="false" />
+            <element signature="e#22210#23118#0#PHP" expanded="false" />
+            <element signature="e#23124#24891#0#PHP" expanded="false" />
+            <element signature="e#24897#25930#0#PHP" expanded="false" />
+            <element signature="e#25936#28029#0#PHP" expanded="false" />
+            <element signature="e#28035#28842#0#PHP" expanded="false" />
+            <element signature="e#28848#29476#0#PHP" expanded="false" />
+            <element signature="e#29482#30397#0#PHP" expanded="false" />
+            <element signature="e#30403#31096#0#PHP" expanded="false" />
+            <element signature="e#31831#32421#0#PHP" expanded="false" />
+            <element signature="e#32427#33503#0#PHP" expanded="false" />
+            <marker date="1461975788922" expanded="true" signature="521:721" placeholder="SELECT Cours... StudentCourse" />
+            <marker date="1461975788922" expanded="true" signature="1659:1900" placeholder="SELECT asses... AssessmentType" />
+            <marker date="1461975788922" expanded="true" signature="1739:1899" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1461975788922" expanded="true" signature="1844:1898" placeholder="select cours... CourseInfo" />
+            <marker date="1461975788922" expanded="true" signature="2735:3039" placeholder="SELECT grade... Assessment" />
+            <marker date="1461975788922" expanded="true" signature="2792:2860" placeholder="select asses... AssessmentType" />
+            <marker date="1461975788922" expanded="true" signature="2886:3038" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1461975788922" expanded="true" signature="2983:3037" placeholder="select cours... CourseInfo" />
+            <marker date="1461975788922" expanded="true" signature="3808:4100" placeholder="SELECT Cours... Assessment" />
+            <marker date="1461975788922" expanded="true" signature="4645:4967" placeholder="SELECT b.ass... Assessment" />
+            <marker date="1461975788922" expanded="true" signature="4809:4884" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1461975788922" expanded="true" signature="20259:20316" placeholder="SELECT gradu... GraduatePrograms" />
+            <marker date="1461975788922" expanded="true" signature="21037:21133" placeholder="SELECT major... Major" />
+            <marker date="1461975788922" expanded="true" signature="21083:21132" placeholder="SELECT major... StudentMajor" />
+            <marker date="1461975788922" expanded="true" signature="21813:21953" placeholder="Delete FROM " />
+            <marker date="1461975788922" expanded="true" signature="21894:21952" placeholder="SELECT C.cou... CourseInfo" />
+            <marker date="1461975788922" expanded="true" signature="22315:22536" placeholder="SELECT asses... AssessmentType" />
+            <marker date="1461975788922" expanded="true" signature="22383:22535" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1461975788922" expanded="true" signature="22480:22534" placeholder="select cours... CourseInfo" />
+            <marker date="1461975788922" expanded="true" signature="23242:23476" placeholder="SELECT asses... AssessmentType" />
+            <marker date="1461975788922" expanded="true" signature="23323:23475" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1461975788922" expanded="true" signature="23420:23474" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1461975788922" expanded="true" signature="25018:25321" placeholder="SELECT grade... Assessment" />
+            <marker date="1461975788922" expanded="true" signature="25074:25142" placeholder="select asses... AssessmentType" />
+            <marker date="1461975788922" expanded="true" signature="25168:25320" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1461975788922" expanded="true" signature="25265:25319" placeholder="select cours... CourseInfo" />
+            <marker date="1461975788922" expanded="true" signature="26091:26443" placeholder="SELECT b.ass... Assessment" />
+            <marker date="1461975788922" expanded="true" signature="26225:26377" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1461975788922" expanded="true" signature="26322:26376" placeholder="select cours... CourseInfo" />
+            <marker date="1461975788922" expanded="true" signature="28956:29198" placeholder="INSERT into AssessmentType... " />
+            <marker date="1461975788922" expanded="true" signature="29044:29196" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1461975788922" expanded="true" signature="29141:29195" placeholder="select cours... CourseInfo" />
+            <marker date="1461975788922" expanded="true" signature="29590:30087" placeholder="INSERT into Assessment... " />
+            <marker date="1461975788922" expanded="true" signature="29590:30109" placeholder="INSERT into Assessment... " />
+            <marker date="1461975788922" expanded="true" signature="29678:29924" placeholder="SELECT FROM AssessmentType... " />
+            <marker date="1461975788922" expanded="true" signature="29748:29900" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1461975788922" expanded="true" signature="29845:29899" placeholder="select cours... CourseInfo" />
+            <marker date="1461975788922" expanded="true" signature="29931:30083" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1461975788922" expanded="true" signature="30028:30082" placeholder="select cours... CourseInfo" />
+            <marker date="1461975788922" expanded="true" signature="30514:30833" placeholder="Delete from " />
+            <marker date="1461975788922" expanded="true" signature="30578:30646" placeholder="select asses... AssessmentType" />
+            <marker date="1461975788922" expanded="true" signature="30672:30824" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1461975788922" expanded="true" signature="30769:30823" placeholder="select cours... CourseInfo" />
+            <marker date="1461975788922" expanded="true" signature="31224:31552" placeholder="Delete from " />
+            <marker date="1461975788922" expanded="true" signature="31297:31365" placeholder="select asses... AssessmentType" />
+            <marker date="1461975788922" expanded="true" signature="31391:31543" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1461975788922" expanded="true" signature="31488:31542" placeholder="select cours... CourseInfo" />
+            <marker date="1461975788922" expanded="true" signature="31935:32165" placeholder="DELETE from " />
+            <marker date="1461975788922" expanded="true" signature="32012:32164" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1461975788922" expanded="true" signature="32109:32163" placeholder="SELECT cours... CourseInfo" />
+            <marker date="1461975788922" expanded="true" signature="32550:32853" placeholder="SELECT grade... Assessment" />
+            <marker date="1461975788922" expanded="true" signature="32606:32674" placeholder="select asses... AssessmentType" />
+            <marker date="1461975788922" expanded="true" signature="32700:32852" placeholder="SELECT stude... StudentCourse" />
+            <marker date="1461975788922" expanded="true" signature="32797:32851" placeholder="select cours... CourseInfo" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/assessmentBreakdown.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.87138265">
+          <caret line="108" column="122" selection-start-line="108" selection-start-column="32" selection-end-line="108" selection-end-column="125" />
+          <folding>
+            <element signature="n#md-toolbar#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#md-tab#0;n#md-tabs#0;n#md-content#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#md-tab#1;n#md-tabs#0;n#md-content#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#md-tab#3;n#md-tabs#0;n#md-content#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#md-tab#4;n#md-tabs#0;n#md-content#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#md-tab#5;n#md-tabs#0;n#md-content#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#md-tab#6;n#md-tabs#0;n#md-content#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#md-tab#7;n#md-tabs#0;n#md-content#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/angularjs/controllers/breakdownController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48452014">
+          <caret line="148" column="21" selection-start-line="148" selection-start-column="21" selection-end-line="148" selection-end-column="21" />
+          <folding>
+            <element signature="e#1826#2293#0" expanded="false" />
+            <element signature="e#2346#2780#0" expanded="false" />
+            <element signature="e#2838#3295#0" expanded="false" />
+            <element signature="e#3357#3820#0" expanded="false" />
+            <element signature="e#4508#4973#0" expanded="false" />
+            <element signature="e#5108#6132#0" expanded="false" />
+            <element signature="e#7202#7880#0" expanded="false" />
+            <element signature="e#7951#8630#0" expanded="false" />
+            <element signature="e#8702#9328#0" expanded="false" />
+            <element signature="e#9400#10026#0" expanded="false" />
+            <element signature="e#10098#10724#0" expanded="false" />
+            <element signature="e#10796#11422#0" expanded="false" />
+            <element signature="e#11494#12120#0" expanded="false" />
+            <element signature="n#!!block;n#DialogController#0" expanded="false" />
+            <element signature="n#!!block;n#DialogController2#0" expanded="false" />
+            <element signature="n#!!block;n#DialogController3#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebSite/fiugpatf/sem_dashboard/modifyGrade.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.096463025">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#form#0;n#div#0;n#md-dialog-content#0;n#form#0;n#md-dialog#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

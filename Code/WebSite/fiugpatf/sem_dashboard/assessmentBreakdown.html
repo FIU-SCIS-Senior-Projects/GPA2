@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assessment Breakdown</title>
+    <link rel="stylesheet" href="../node_modules/angular-material/angular-material.min.css"/>
+    <link rel="stylesheet" href="../node_modules/angular-material-data-table/dist/md-data-table.min.css"/>
+    <link rel="stylesheet" href="../node_modules/angular-chart/angular-chart.css"/>
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+<body ng-app="breakdownApp" layout="column">
+
+<md-toolbar class="navbar" layout="column" style="font-size: large" md-whiteframe="5">
+    <div layout="row">
+        <div layout="column">
+            <img class="logo" src="http://www.fiu.edu/_assets/images/core/fiu-logo-large.png">
+            <br><br>
+            <span layout="row">
+            <md-button href="../overallgpadashboard/OvrlDash.html">GPA DASHBOARD</md-button>
+            <md-button href="semesterDashboard.html">SEMESTER DASHBOARD</md-button>
+            <md-button href="../common_files/settings.html">SETTINGS</md-button>
+            <md-button help.html>HELP</md-button>
+            <md-button href="../common_files/logout.php">LOGOUT</md-button>
+            </span>
+        </div>
+        <span flex></span>
+        <img class="profilePic" src="../img/blank-profile-picture.png">
+    </div>
+</md-toolbar>
+
+<div layout="column" flex>
+    <div class="content" ng-controller="AppCtrl">
+        <h1>ASSESSMENT BREAKDOWN</h1>
+
+        <br>
+        <div layout="row">
+            <div class="sample tabsdemoDynamicTabs" layout="column" ng-cloak="" flex>
+                <md-content class="md-padding tabContent">
+                    <md-tabs md-selected="selectedIndex" md-dynamic-height="" md-border-bottom="" md-autoselect="" md-no-bar >
+                        <md-tab label="{{mainTitle}}" id="mainTitle"  ng-disabled="tab.disabled">
+                            <md-content class="tab{{$index%4}}" id="tabs0" style="padding: 25px; text-align: center;" >
+                                <md-table-container>
+                                    <table md-table md-row-select="options.rowSelection"  ng-model="selected" md-progress="promise">
+                                        <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                                        <tr md-row>
+                                            <th style="color:#ffffff;" md-column md-order-by="assessment" md-desc><span>Assessment</span></th>
+                                            <th style="color:#ffffff;" md-column md-numeric md-order-by="percent"><span>Percentage</span></th>
+                                            <th style="color:#ffffff;" md-column md-numeric md-order-by="grade"><span>Cumulative Average</span></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody md-body>
+                                        <tr md-row md-select="courses" md-on-select="logItem" ng-repeat="courses in courses.data | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                                            <td md-cell>{{courses.assessment}}</td>
+                                            <td md-cell>{{courses.percent}}</td>
+                                            <td md-cell>{{courses.grade}}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </md-table-container>
+                                <br>
+                            </md-content>
+                        </md-tab>
+
+                        <md-tab label="{{title0}}">
+                            <md-content class="tab{{$index%4}}" id="tabs0" style="padding: 25px; text-align: center;">
+                                <md-table-container>
+                                    <table md-table md-row-select="options.rowSelection"  ng-model="selected" md-progress="promise">
+                                        <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                                        <tr md-row>
+                                            <th style="color:#ffffff;" md-column md-order-by="id" md-desc><span>Title</span></th>
+                                            <th style="color:#ffffff;" md-column md-numeric md-order-by="grade"><span>Grade</span></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody md-body>
+                                        <tr md-row md-select="grades0" md-on-select="logItem" ng-repeat="grades0 in grades0.data | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                                            <td md-cell>{{grades0.id0}}</td>
+                                            <td md-cell>{{grades0.grade0}}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </md-table-container>
+                                <br>
+                                <md-button class="md-raised" ng-click="showAdvanced3($event)">Add Grade</md-button>
+                                <!--<md-button class="md-raised" ng-click="showAdvanced4($event)">Modify Grade</md-button>-->
+                                <md-button class="md-raised" ng-click="showAdvanced5($event)">Remove Grade</md-button>
+                            </md-content>
+                        </md-tab>
+
+                        <md-tab label={{title1}}>
+                            <md-content class="tab{{$index%4}}" id="tabs1" style="padding: 25px; text-align: center;">
+                                <md-table-container>
+                                    <table md-table md-row-select="options.rowSelection"  ng-model="selected" md-progress="promise">
+                                        <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                                        <tr md-row>
+                                            <th style="color:#ffffff;" md-column md-order-by="id" md-desc><span>Title</span></th>
+                                            <th style="color:#ffffff;" md-column md-numeric md-order-by="grade"><span>Grade</span></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody md-body>
+                                        <tr md-row md-select="grades1" md-on-select="logItem" ng-repeat="grades1 in grades1.data | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                                            <td md-cell>{{grades1.id1}}</td>
+                                            <td md-cell>{{grades1.grade1}}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </md-table-container>
+                                <br>
+                                <md-button class="md-raised" ng-click="showAdvanced3($event)">Add Grade</md-button>
+                                <!--<md-button class="md-raised" ng-click="showAdvanced4($event)">Modify Grade</md-button>-->
+                                <md-button class="md-raised" ng-click="showAdvanced5($event)">Remove Grade</md-button>
+                            </md-content>
+                        </md-tab>
+
+                        <md-tab label={{title2}}>
+                            <md-content class="tab{{$index%4}}" id="tabs2" style="padding: 25px; text-align: center;">
+                                <md-table-container>
+                                    <table md-table md-row-select="options.rowSelection"  ng-model="selected" md-progress="promise">
+                                        <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                                        <tr md-row>
+                                            <th style="color:#ffffff;" md-column md-order-by="id" md-desc><span>Title</span></th>
+                                            <th style="color:#ffffff;" md-column md-numeric md-order-by="grade"><span>Grade</span></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody md-body>
+                                        <tr md-row md-select="grades2" md-on-select="logItem" ng-repeat="grades2 in grades2.data | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                                            <td md-cell>{{grades2.id2}}</td>
+                                            <td md-cell>{{grades2.grade2}}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </md-table-container>
+                                <br>
+                                <md-button class="md-raised" ng-click="showAdvanced3($event)">Add Grade</md-button>
+                                <!--<md-button class="md-raised" ng-click="showAdvanced4($event)">Modify Grade</md-button>-->
+                                <md-button class="md-raised" ng-click="showAdvanced5($event)">Remove Grade</md-button>
+                            </md-content>
+                        </md-tab>
+
+                        <md-tab label={{title3}}>
+                            <md-content class="tab{{$index%4}}" id="tabs3" style="padding: 25px; text-align: center;">
+                                <md-table-container>
+                                    <table md-table md-row-select="options.rowSelection"  ng-model="selected" md-progress="promise">
+                                        <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                                        <tr md-row>
+                                            <th style="color:#ffffff;" md-column md-order-by="id" md-desc><span>Title</span></th>
+                                            <th style="color:#ffffff;" md-column md-numeric md-order-by="grade"><span>Grade</span></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody md-body>
+                                        <tr md-row md-select="grades3" md-on-select="logItem" ng-repeat="grades3 in grades3.data | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                                            <td md-cell>{{grades3.id3}}</td>
+                                            <td md-cell>{{grades3.grade3}}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </md-table-container>
+                                <br>
+                                <md-button class="md-raised" ng-click="showAdvanced3($event)">Add Grade</md-button>
+                                <!--<md-button class="md-raised" ng-click="showAdvanced4($event)">Modify Grade</md-button>-->
+                                <md-button class="md-raised" ng-click="showAdvanced5($event)">Remove Grade</md-button>
+                            </md-content>
+                        </md-tab>
+
+                        <md-tab label="{{title4}}">
+                            <md-content class="tab{{$index%4}}" id="tabs4" style="padding: 25px; text-align: center;">
+                                <md-table-container>
+                                    <table md-table md-row-select="options.rowSelection"  ng-model="selected" md-progress="promise">
+                                        <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                                        <tr md-row>
+                                            <th style="color:#ffffff;" md-column md-order-by="id" md-desc><span>Title</span></th>
+                                            <th style="color:#ffffff;" md-column md-numeric md-order-by="grade"><span>Grade</span></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody md-body>
+                                        <tr md-row md-select="grades4" md-on-select="logItem" ng-repeat="grades4 in grades4.data | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                                            <td md-cell>{{grades4.id4}}</td>
+                                            <td md-cell>{{grades4.grade4}}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </md-table-container>
+                                <br>
+                                <md-button class="md-raised" ng-click="showAdvanced3($event)">Add Grade</md-button>
+                                <!--<md-button class="md-raised" ng-click="showAdvanced4($event)">Modify Grade</md-button>-->
+                                <md-button class="md-raised" ng-click="showAdvanced5($event)">Remove Grade</md-button>
+                            </md-content>
+                        </md-tab>
+
+                        <md-tab label="{{title5}}">
+                            <md-content class="tab{{$index%4}}" id="tabs5" style="padding: 25px; text-align: center;">
+                                <md-table-container>
+                                    <table md-table md-row-select="options.rowSelection"  ng-model="selected" md-progress="promise">
+                                        <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                                        <tr md-row>
+                                            <th style="color:#ffffff;" md-column md-order-by="id" md-desc><span>Title</span></th>
+                                            <th style="color:#ffffff;" md-column md-numeric md-order-by="grade"><span>Grade</span></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody md-body>
+                                        <tr md-row md-select="grades5" md-on-select="logItem" ng-repeat="grades5 in grades5.data | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                                            <td md-cell>{{grades5.id5}}</td>
+                                            <td md-cell>{{grades5.grade5}}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </md-table-container>
+                                <br>
+                                <md-button class="md-raised" ng-click="showAdvanced3($event)">Add Grade</md-button>
+                                <!--<md-button class="md-raised" ng-click="showAdvanced4($event)">Modify Grade</md-button>-->
+                                <md-button class="md-raised" ng-click="showAdvanced5($event)">Remove Grade</md-button>
+                            </md-content>
+                        </md-tab>
+
+                        <md-tab label="{{title6}}">
+                            <md-content class="tab{{$index%4}}" id="tabs6" style="padding: 25px; text-align: center; display:none;">
+                                <md-table-container>
+                                    <table md-table md-row-select="options.rowSelection"  ng-model="selected" md-progress="promise">
+                                        <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                                        <tr md-row>
+                                            <th style="color:#ffffff;" md-column md-order-by="id" md-desc><span>Title</span></th>
+                                            <th style="color:#ffffff;" md-column md-numeric md-order-by="grade"><span>Grade</span></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody md-body>
+                                        <tr md-row md-select="grades5" md-on-select="logItem" ng-repeat="grades5 in grades5.data | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                                            <td md-cell>{{grades5.id5}}</td>
+                                            <td md-cell>{{grades5.grade5}}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </md-table-container>
+                                <br>
+                                <md-button class="md-raised" ng-click="showAdvanced3($event)">Add Grade</md-button>
+                                <!--<md-button class="md-raised" ng-click="showAdvanced4($event)">Modify Grade</md-button>-->
+                                <md-button class="md-raised" ng-click="showAdvanced5($event)">Remove Grade</md-button>
+                            </md-content>
+                        </md-tab>
+
+                    </md-tabs>
+                </md-content>
+            </div>
+
+            <!--<div class="todo" flex="40">
+                <img src="../img/to-do.png">
+            </div>-->
+        </div>
+
+        <div layout="row">
+
+
+            <div layout="row" layout-sm="column">
+                <md-button class="md-fab generate" aria-label="Add Assessment" ng-click="showAdvanced($event)">
+                    <md-tooltip md-direction="right" md-visible="tooltipVisible" >Add Assessment</md-tooltip>
+                    <md-icon md-svg-src="../img/document.svg"></md-icon>
+                </md-button>
+            </div>
+
+            <span flex></span>
+
+            <md-button class="md-fab generate" ng-click="showAdvanced2($event)">
+                <md-tooltip md-direction="left" md-visible="tooltipVisible">Remove Tab</md-tooltip>
+                <md-icon md-svg-src="../img/trash.svg"></md-icon>
+            </md-button>
+
+        </div>
+
+
+
+        <div class="graph" ng-controller="LineCtrl" style="height:450px; width:100%;">
+            <h2>GRADE TRENDS FOR COURSE</h2>
+            <canvas style="display: block; margin:auto;" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="true"  chart-hover="onHover" chart-series="series" height="450" width="1000"></canvas>
+        </div>
+
+    </div>
+    <md-toolbar class="footer"></md-toolbar>
+
+</div>
+
+
+<script src="../node_modules/angular/angular.min.js"></script>
+<script src="../node_modules/angular-animate/angular-animate.js"></script>
+<script src="../node_modules/angular-aria/angular-aria.min.js"></script>
+<script src="../node_modules/angular-messages/angular-messages.js"></script>
+<script src="../node_modules/angular-material/angular-material.min.js"></script>
+<script src="../node_modules/angular-material-data-table/dist/md-data-table.min.js"></script>
+<script src="../node_modules/angular-chart/Chart.min.js"></script>
+<script src="../node_modules/angular-chart/angular-chart.min.js"></script>
+<script src="../node_modules/angular-sanitize/angular-sanitize.js"></script>
+<script src="../angularjs/controllers/breakdownController.js"></script>
+
+</body>
+
+
+</html>

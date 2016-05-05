@@ -16,7 +16,7 @@ $stmt->bind_param('sssss', $_POST["email"], $_POST["username"], $hash_password, 
 <html>
 	<head>
 		<title>Congratulations</title>
-		<link type="text/css" rel="stylesheet" href="main.css">
+		<link type="text/css" rel="stylesheet" href="../css/main.css">
 	</head>
 	<body>
 		<div id="header">

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Semester GPA Forecast Report</title>
+
+    <link rel="stylesheet" href="../node_modules/angular-material/angular-material.min.css"/>
+    <link rel="stylesheet" href="../node_modules/angular-material-data-table/dist/md-data-table.min.css"/>
+    <link rel="stylesheet" href="../node_modules/angular-chart/angular-chart.css"/>
+    <link href="../css/angularReport.css" rel="stylesheet" type="text/css">
+
+</head>
+<body ng-app="semesterForecastApp" class="reportBody">
+    <h1 id='forecastTitle'>SEMESTER GPA FORECAST REPORT</h1>
+
+    <div id="sum"></div>
+
+    <div class="table" flex>
+        <md-card ng-controller="forecastTableController">
+
+            <md-table-container>
+                <table md-table md-progress="promise">
+                    <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                    <tr md-row>
+                        <th style="color:#ffffff;" md-column md-order-by="class" md-desc><span>Class</span></th>
+                        <th style="color:#ffffff;" md-column md-numeric md-order-by="weight"><span>Weight</span></th>
+                        <th style="color:#ffffff;" md-column md-numeric md-order-by="relevance"><span>Relevance</span></th>
+                        <th style="color:#ffffff;" md-column md-numeric md-order-by="grade"><span>Min. Grade<br>Required</span></th>
+                        <th style="color:#ffffff;" md-column md-numeric md-order-by="secure"><span>Secure<br>GPA Path</span></th>
+                        <th style="color:#ffffff;" md-column md-numeric md-order-by="time"><span>Estimated Study<br>Time(Hrs/Week)*</span></th>
+                    </tr>
+                    </thead>
+                    <tbody md-body>
+                    <tr class="forecast-cells" md-row md-select="courses" md-on-select="logItem" md-auto-select="options.autoSelect" ng-repeat="courses in courses.data | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                        <td md-cell>{{courses.class}}</td>
+                        <td md-cell>{{courses.weight}}</td>
+                        <td md-cell>{{courses.relevance}}</td>
+                        <td md-cell>{{courses.grade}}</td>
+                        <td md-cell>{{courses.secure}}</td>
+                        <td md-cell>{{courses.time}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </md-table-container>
+        </md-card>
+    </div>
+
+    <div id="recommend">
+        <p><i>*While only a recommendation, we highly recommend students to consider their circumstances and select an appropriate schedule based on their workload.</i></p>
+    </div>
+
+    <div class="graph" ng-controller="graphController" style="height:450px; width:100%;">
+        <h2>GRADE TRENDS FOR ALL COURSES</h2>
+        <div layout="row">
+            <p layout="row" layout-align="end center" style="font-size:small">Running<br>Grade</p>
+            <canvas style="display: block; margin:auto;" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="true"  chart-hover="onHover" chart-series="series" height="450" width=1100"></canvas>
+        </div>
+        <p layout="row" layout-align="center start" style="font-size:small">Date</p>
+        <p layout="row"><i>** P1, P2, P3 are projections, or estimates, of possible future averages based on Assessments input by the Student. These are NOT the Student's current averages.</i></p>
+    </div>
+    <br><br><br>
+
+    <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="../node_modules/angular-animate/angular-animate.js"></script>
+    <script src="../node_modules/angular-aria/angular-aria.min.js"></script>
+    <script src="../node_modules/angular-material/angular-material.min.js"></script>
+    <script src="../node_modules/angular-material-data-table/dist/md-data-table.min.js"></script>
+    <script src="../node_modules/angular-chart/Chart.min.js"></script>
+    <script src="../node_modules/angular-chart/angular-chart.min.js"></script>
+    <script src="../angularjs/controllers/semesterForecastController.js"></script>
+
+</body>
+</html>

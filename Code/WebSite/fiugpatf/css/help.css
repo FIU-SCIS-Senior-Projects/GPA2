@@ -1,0 +1,37 @@
+h1 {
+    text-align: center;
+    font-weight: bold;
+    color: #002d62;
+}
+
+.jump {
+    list-style-type: none;
+    padding-left:0;
+    font-size: large;
+}
+
+.toc, .gpaDash {
+    background-color: #ffffff;
+    padding:10%;
+    text-align: justify;
+    font-size: large;
+}
+
+.toc {
+    padding-top: 0;
+}
+
+.about, .semDash {
+    background-color: rgba(166, 200, 254, 1);
+    padding: 10%;
+    text-align: justify;
+    font-size: large;
+}
+
+.toc h2, .gpaDash h2 {
+    text-align: start;
+}
+
+.about h2, .semDash h2 {
+    text-align: right;
+}

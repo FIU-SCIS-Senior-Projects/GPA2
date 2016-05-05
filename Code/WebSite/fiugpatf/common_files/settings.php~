@@ -111,7 +111,7 @@ if($action == "deleteData") {
 	}
 }
 
-if($action == "importWhatif") {
+if($action == "importAudit") {
 	if(isset($_SESSION['userID'])){
 		$username = $_SESSION['username'];
 		$user = $_SESSION['userID'];
@@ -122,129 +122,26 @@ if($action == "importWhatif") {
 			shell_exec('qpdf --password="" --decrypt ' . $loc . ' ' . $username . '/unencrypted.pdf');
 			$courseInfo = shell_exec('python PDFWhatIfParser.py ' . $username . '/unencrypted.pdf');
 			echo 'python PDFWhatIfParser.py ' . $username . '/unencrypted.pdf';
+
 			$allData = explode("!!!!", $courseInfo);
 			$majorData = explode("\n", $allData[0]);
 			$courses = explode("\n", $allData[1]);
-			$ipCourses = explode("\n", $allData[2]);
-			$neededCourses = explode("\n", $allData[3]);
-			$majorName;
+			$neededCourses = explode("\n", $allData[2]);
+
 			foreach ($majorData as $maj) {
 				if($maj != "")
 				{
-					echo "5";
 					$mysqli = new mysqli("localhost","sec_user","Uzg82t=u%#bNgPJw","GPA_Tracker");
 					$stmt = $mysqli->prepare("INSERT INTO StudentMajor (userID, majorID) VALUES (?, (SELECT majorID from Major WHERE majorName = ?))");
 					$stmt->bind_param('ss', $user, $maj);
 					$stmt->execute();
-					
-					$majorName = $maj;
     			}
 			}
-			
-			foreach ($courses as $course) {
-				if($course != ""){
-					$courseDetails = explode("$$&&", $course);
-					$bucket = $courseDetails[0];
-					$semester = $courseDetails[1];
-					$year = $courseDetails[2];
-					$courseID = $courseDetails[3];
-					$courseName = $courseDetails[4];
-					$grade = $courseDetails[5];
-					$credits = $courseDetails[6];
-				
-					$mysqli = new mysqli("localhost","sec_user","Uzg82t=u%#bNgPJw","GPA_Tracker");
-					$stmt = $mysqli->prepare("INSERT INTO CourseInfo (courseID, courseName, credits) VALUES (?, ?, ?)");
-					if($stmt !== false){
-						$stmt->bind_param('sss', $courseID, $courseName, $credits);
-						$stmt->execute();
-					}
-					else {
-						echo "Error on course CourseInfo Import\n";
-					}
-					
-					if($bucket != "None"){
-						$stmt = $mysqli->prepare("INSERT INTO MajorBucketRequiredCourses (bucketID, courseInfoID, minimumGrade) VALUES ((SELECT bucketID FROM MajorBucket WHERE description = ? AND majorID in (SELECT majorID FROM Major WHERE majorName = ?)), (SELECT courseInfoID FROM CourseInfo WHERE courseID = ? ), 'C')");
-						if($stmt !== false){
-							$stmt->bind_param('sss', $bucket, $majorName, $courseID);
-							$stmt->execute();
-						}
-						else {
-							echo "Error on course MajorRequiredBucketCourses Import\n";
-						}
-					}
-					
-					$stmt = $mysqli->prepare("INSERT INTO StudentCourse (grade, weight, relevance, semester, year, courseInfoID, selected, userID) VALUES (?, 0, 0, ?, ?, (SELECT CourseInfoID FROM CourseInfo WHERE courseID = ?), 0, ?)");
-					if($stmt !== false)
-					{
-						$stmt->bind_param('sssss', $grade, $semester, $year, $courseID, $user);
-						$stmt->execute();
-					}
-					else {
-						echo "Error on StudentCourse Import\n";
-					}	
-    			}
-			}
-			
-			foreach ($ipCourses as $ipCourse) {
-				if($ipCourse != ""){
-					$courseDetails = explode("$$&&", $ipCourse);
-					$bucket = $courseDetails[0];
-					$semester = $courseDetails[1];
-					$year = $courseDetails[2];
-					$courseID = $courseDetails[3];
-					$courseName = $courseDetails[4];
-					$grade = $courseDetails[5];
-					$credits = $courseDetails[6];
-				
-					$mysqli = new mysqli("localhost","sec_user","Uzg82t=u%#bNgPJw","GPA_Tracker");
-					$stmt = $mysqli->prepare("INSERT INTO CourseInfo (courseID, courseName, credits) VALUES (?, ?, ?)");
-					if($stmt !== false){
-						$stmt->bind_param('sss', $courseID, $courseName, $credits);
-						$stmt->execute();
-					}
-					else {
-						echo "Error on course CourseInfo Import\n";
-					}
-					
-					if($bucket != "None"){
-						$stmt = $mysqli->prepare("INSERT INTO MajorBucketRequiredCourses (bucketID, courseInfoID, minimumGrade) VALUES ((SELECT bucketID FROM MajorBucket WHERE description = ? AND majorID in (SELECT majorID FROM Major WHERE majorName = ?)), (SELECT courseInfoID FROM CourseInfo WHERE courseID = ? ), 'C')");
-						if($stmt !== false){
-							$stmt->bind_param('sss', $bucket, $majorName, $courseID);
-							$stmt->execute();
-						}
-						else {
-							echo "Error on course MajorRequiredBucketCourses Import\n";
-						}
-					}
-					
-					echo $bucket . " " . $courseID . "\n";
-					$stmt = $mysqli->prepare("INSERT INTO StudentCourse (grade, weight, relevance, semester, year, courseInfoID, selected, userID) VALUES ('IP', 0, 0, ?, ?, (SELECT CourseInfoID FROM CourseInfo WHERE courseID = ?), 0, ?)");
-					if($stmt !== false)
-					{
-						$stmt->bind_param('ssss', $semester, $year, $courseID, $user);
-						$stmt->execute();
-					}
-					else {
-						echo "Error on StudentCourse Import\n";
-					}	
-    			}
-			}
-			
-			foreach ($neededCourses as $neededCourse) {
-				if($neededCourse != ""){
-					$stmt = $mysqli->prepare("INSERT INTO StudentCourse (grade, weight, relevance, semester, year, courseInfoID, selected, userID) VALUES ('ND', 0, 0, '', '', (SELECT CourseInfoID FROM CourseInfo WHERE courseID = ?), 0, ?)");
-					if($stmt !== false)
-					{
-						$stmt->bind_param('ss', $neededCourse, $user);
-						$stmt->execute();
-					}
-					else {
-						echo "Error on StudentCourse Import\n";
-					}	
-    			}
-			}
+
+			InsertCourses($courses, $user);
+			InsertNeeded($neededCourses, $user);
+
 			shell_exec('rm -rf ' . $username);
-			//echo "true";
 		}
 	}
 }
@@ -462,18 +359,182 @@ function validate_and_insert_data($xml)
 	}
 	return true;
 }
-/*insert_student_data($xml) {
+
+function InsertCourses($courses, $user){
 	$mysqli = new mysqli("localhost","sec_user","Uzg82t=u%#bNgPJw","GPA_Tracker");
-	$user = $_SESSION['username'];
-	foreach($xml->database[0]->children() as $table_data)
-	{
-		foreach($table_data->children() as $rows)
-		{
-			$stmt = $mysqli->prepare("INSERT INTO student_course (username, courseID, grade, weight, relevance, student_course_id, semester, year) VALUES (?, ?, ?, ?, ?)
-                                          ON DUPLICATE KEY UPDATE grade=VALUES(grade), weight=VALUES(weight), relevance=VALUES(relevance)");
-				$stmt->bind_param('sssssss', $user, $rows->field[1], $rows->field[2], $rows->field[3], $rows->field[4], $rows->field[5], $rows->field[6]);
-    			$stmt->execute();
+
+	foreach ($courses as $course) {
+		if($course != ""){
+			$courseDetails = explode("$$&&", $course);
+			$semester = $courseDetails[0];
+			$year = $courseDetails[1];
+			$courseID = $courseDetails[2];
+			$courseName = $courseDetails[3];
+			$grade = $courseDetails[4];
+			$credits = $courseDetails[5];
+			$inserted = false;
+
+			//check if course is in database
+			if ($stmt = $mysqli->prepare("SELECT COUNT(*) FROM CourseInfo WHERE courseID = ?")){
+				$stmt->bind_param("s", $courseID);
+				$stmt->execute();
+				$stmt->bind_result($count);
+				$stmt->fetch();
+				$stmt->close();
+
+			}
+			else {
+				echo("Error on checking database for course\n");
+			}
+
+			// if course is not in database then insert
+			if ((int)$count == 0) {
+				if ($stmt = $mysqli->prepare("INSERT INTO CourseInfo (courseID, courseName, credits)
+								VALUES (?, ?, ?)")){
+					$stmt->bind_param('sss', $courseID, $courseName, $credits);
+					$stmt->execute();
+					$stmt->close();
+				}
+				else {
+					echo("Error inserting course into database\n");
+				}
+			}
+
+			//check if course is in student course and update
+			if ($stmt = $mysqli->prepare("SELECT grade, semester, year FROM StudentCourse WHERE userID = ? AND
+							courseInfoID = (SELECT courseInfoID FROM CourseInfo Where courseID = ?)")) {
+				$stmt->bind_param('ss', $user, $courseID);
+				$stmt->execute();
+				$stmt->bind_result($eGrade, $eSemester, $eYear);
+
+				while($stmt->fetch()){
+					if ($semester == $eSemester && $year == $eYear){
+						//update grade
+						$mysqli2 = new mysqli("localhost","sec_user","Uzg82t=u%#bNgPJw","GPA_Tracker");
+
+						if ($stmt2 = $mysqli2->prepare("UPDATE StudentCourse SET grade = ? WHERE userID = ? AND
+							semester = ? AND year = ? AND
+							courseInfoID = (SELECT courseInfoID FROM CourseInfo Where courseID = ?)")){
+							$stmt2->bind_param('sssss', $grade, $user, $semester, $year, $courseID);
+							$stmt2->execute();
+							$stmt2->close();
+						}
+						else {
+							echo("Error updating grade $stmt->errno, $mysqli->error\n");
+						}
+
+						$stmt2->close();
+						$mysqli2->close();
+
+						$inserted = true;
+						break;
+					}
+					elseif ($eGrade == 'ND'){
+						//case where course was needed and now in progress
+						$mysqli2 = new mysqli("localhost","sec_user","Uzg82t=u%#bNgPJw","GPA_Tracker");
+
+						if ($stmt2 = $mysqli2->prepare("UPDATE StudentCourse SET grade = ?, semester = ?, year = ?
+							WHERE userID = ? AND courseInfoID = (SELECT courseInfoID FROM CourseInfo Where courseID = ?)
+							AND grade = 'ND' ")){
+							$stmt2->bind_param('sssss', $grade, $semester, $year, $user, $courseID);
+							$stmt2->execute();
+							$stmt2->close();
+						}
+						else {
+							echo("Error updating grade from needed $stmt->errno, $mysqli->error\n");
+						}
+
+						$stmt2->close();
+						$mysqli2->close();
+
+						$inserted = true;
+
+						break;
+					}
+				}
+				$stmt->close();
+			}
+			else {
+				echo("Error checking for studentCourse\n");
+			}
+
+			//insert
+			if (!$inserted){
+				if ($stmt = $mysqli->prepare("INSERT INTO StudentCourse (grade, weight, relevance, semester, year,
+					courseInfoID, selected, userID) VALUES (?, 0, 0, ?, ?, (SELECT CourseInfoID FROM CourseInfo
+					WHERE courseID = ?), 0, ?)")){
+					$stmt->bind_param('sssss', $grade, $semester, $year, $courseID, $user);
+					$stmt->execute();
+					$stmt->close();
+					continue;
+				} else {
+					echo("Error inserting course\n");
+				}
+			}
 		}
 	}
-}*/
+	$mysqli->close();
+}
+
+function InsertNeeded($neededCourses, $user){
+	$mysqli = new mysqli("localhost","sec_user","Uzg82t=u%#bNgPJw","GPA_Tracker");
+
+	foreach ($neededCourses as $neededCourse) {
+		$inserted = false;
+
+		if($neededCourse != ""){
+			if ($stmt = $mysqli->prepare("SELECT grade, weight, relevance FROM StudentCourse WHERE userID = ?
+			 		AND courseInfoID = (SELECT courseInfoID FROM CourseInfo WHERE courseID = ?)")){
+				$stmt->bind_param('ss', $user, $neededCourse);
+				$stmt->execute();
+				$stmt->bind_result($eGrade, $eWeight, $eRelevance);
+
+				while($stmt->fetch()){
+					if ($eGrade == 'ND')
+					{
+						$inserted = true;
+						break;
+					}
+					else{
+						$mysqli2 = new mysqli("localhost","sec_user","Uzg82t=u%#bNgPJw","GPA_Tracker");
+
+						if ($stmt2 = $mysqli2->prepare("INSERT INTO StudentCourse (grade, weight, relevance, semester, year,
+								courseInfoID, selected, userID) VALUES ('ND', ?, ?, '', '', (SELECT CourseInfoID
+								FROM CourseInfo WHERE courseID = ?), 0, ?)")){
+							$stmt2->bind_param('ssss', $eWeight, $eRelevance, $neededCourse, $user);
+							$stmt2->execute();
+							$stmt2->close();
+							$mysqli2->close();
+							$inserted = true;
+							break;
+						}
+						else{
+							echo("error insert with w/r");
+						}
+					}
+				}
+				$stmt->close();
+			}
+			else {
+				echo("Error checking\n e1: $stmt->error e2: $mysqli->error\n");
+			}
+
+			if (!$inserted) {
+				$stmt = $mysqli->prepare("INSERT INTO StudentCourse (grade, weight, relevance, semester, year, courseInfoID,
+							selected, userID) VALUES ('ND', 0, 0, '', '', (SELECT CourseInfoID FROM CourseInfo
+							WHERE courseID = ?), 0, ?)");
+
+				if ($stmt !== false) {
+					$stmt->bind_param('ss', $neededCourse, $user);
+					$stmt->execute();
+					$stmt->close();
+				} else {
+					echo("Error on StudentCourse Import\n");
+				}
+			}
+		}
+	}
+	$mysqli->close();
+}
+
 

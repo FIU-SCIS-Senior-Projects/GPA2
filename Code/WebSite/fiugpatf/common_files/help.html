@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Help</title>
+    <link rel="stylesheet" href="../node_modules/angular-material/angular-material.min.css"/>
+    <link rel="stylesheet" href="../node_modules/angular-material-data-table/dist/md-data-table.min.css"/>
+    <link rel="stylesheet" href="../node_modules/angular-chart/angular-chart.css"/>
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <link href="../css/help.css" rel="stylesheet" type="text/css">
+
+</head>
+<body ng-app="myApp" layout="column">
+
+<md-toolbar class="navbar" layout="column" style="font-size: large" md-whiteframe="5">
+    <div layout="row">
+        <div layout="column">
+            <img class="logo" src="http://www.fiu.edu/_assets/images/core/fiu-logo-large.png">
+            <br><br>
+            <span layout="row">
+            <md-button href="../overallgpadashboard/OvrlDash.html">GPA DASHBOARD</md-button>
+            <md-button href="../sem_dashboard/semesterDashboard.html">SEMESTER DASHBOARD</md-button>
+            <md-button href="settings.html">SETTINGS</md-button>
+            <md-button href="help.html">HELP</md-button>
+            <md-button href="logout.php">LOGOUT</md-button>
+            </span>
+        </div>
+        <span flex></span>
+        <img class="profilePic" src="../img/blank-profile-picture.png">
+    </div>
+</md-toolbar>
+
+<div layout="column" flex>
+        <h1>HELP</h1>
+
+        <div class="toc">
+            <h2>Table of Contents</h2>
+            <ul class="jump">
+                <li><a href="#about" >Click here to learn more ABOUT the FIU GPA Tracker and Forecaster 2.0.</a></li>
+                <li><a href="#gpaDash" >Click here learn more about the GPA DASHBOARD.</a></li>
+                <li><a href="#semDash" >Click here learn more about the SEMESTER DASHBOARD.</a></li>
+            </ul>
+        </div>
+
+        <div class="about">
+            <a name="about"></a>
+            <h2>FIU GPA TRACKER AND FORECASTER - Release 2</h2>
+            <p>The FIU GPA Forecaster and Tracker is a website that allows Florida International University students to register, import their study program courses, enter grades in their currently enrolled courses and then give the student advice for what they need to achieve the GPA that they want. The system stores the data persistently so that when a new semester begins students will still have access to the information already entered. Also, the system will allow the students to define how hard they think a class is and how relevant it is to them personally and use these parameters to produce a forecast report which will advise the student on the minimum grade they need for each course to achieve the target GPA goal. The main objective of this website is to provide FIU students with a tool that can help them stay on track in their academic objectives.</p>
+        </div>
+
+        <div class="gpaDash">
+            <a name="gpaDash"></a>
+            <h2>THE GPA DASHBOARD</h2>
+            <p>The GPA Dashboard allows students to track their academic progress throughout their time at FIU and compare their calculated GPA to the GPA required for their target graduate program. Students will have the option to receive an indiviualized forecast upon assigning a value to the weight and relevance of classes they are going to take. The forecast generates the appropriate grades for each class that a student should strive for.</p>
+            <p>For a "How To" on using the GPA Dashboard, click <a href="../overallgpadashboard/OvrlDash_help.html">HERE</a>.</p>
+        </div>
+
+        <div class="semDash">
+            <a name="semDash"></a>
+            <h2>THE SEMESTER DASHBOARD</h2>
+            <p>The Semester Dashboard provides a way for students to keep track of how they are doing in a certain course. For each course a user can create a set of "Assessment Types" which are basically a collection of grades that have the same weight. One possible example is a course where homework is worth 30% of the grade. The user can then create an Assessment Type called "Homework" with a weight of 30%. The user can insert what grades they got for assessments in that Assessment Type. The system will persistently store information about grades and automatically calculate total running average for the whole semester.</p>
+            <p>For a "How To" on using the GPA Dashboard, click <a href="../sem_dashboard/SemHelp.html">HERE</a>.</p>
+        </div>
+</div>
+
+<script src="../node_modules/angular/angular.min.js"></script>
+<script src="../node_modules/angular-animate/angular-animate.js"></script>
+<script src="../node_modules/angular-aria/angular-aria.min.js"></script>
+<script src="../node_modules/angular-messages/angular-messages.js"></script>
+<script src="../node_modules/angular-material/angular-material.min.js"></script>
+<script src="../node_modules/angular-material-data-table/dist/md-data-table.min.js"></script>
+<script src="../node_modules/angular-chart/Chart.min.js"></script>
+<script src="../node_modules/angular-chart/angular-chart.min.js"></script>
+<script>
+    var myApp = angular.module('myApp', [ 'ngMaterial']);
+</script>
+
+</body>
+
+
+</html>

@@ -3,18 +3,19 @@
 	<head>
 		<title>FIU GPA Tracker</title>
 		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    	<link href="../overallgpadashboard/main2.css" rel="stylesheet" type="text/css">
+    	<link href="../css/main2.css" rel="stylesheet" type="text/css">
 		<link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css"/>
-		<link type="text/css" rel="stylesheet" href="../common_files/main.css"/>
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<script src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
-		<!--<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 		<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.min.js"></script>
-	<script type="text/javascript" src="http://raw.github.com/markrcote/flot-axislabels/master/jquery.flot.axislabels.js"></script>
-	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.time.min.js"></script>
+		<script type="text/javascript" src="http://raw.github.com/markrcote/flot-axislabels/master/jquery.flot.axislabels.js"></script>
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/flot/0.8.2/jquery.flot.time.min.js"></script>
 		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/overcast/jquery-ui.css">
+
+		<link type="text/css" rel="stylesheet" href="../css/main.css"/>
 		<script type="text/javascript" src="nav.js"></script>
 		<script type="text/javascript" src="current.js"></script>
 	</head>
@@ -33,6 +34,26 @@
 			</div>
 		</div>
 		<h1 class id="title">Current Courses</h1>
+		<div class="targetGPA">
+			<div id="studentMajText">
+				<label for="gradprogs">Current Program:</label>
+			</div>
+			<div id="studentMajData">
+				<p>N/A</p>
+			</div>
+			<div id="text">
+				<label for="gradprogs">Target Graduate Program:</label>
+				<p>Required GPA:</p>
+			</div>
+			<div id="data">
+				<select id="gradprogs" name="gradprogs"></select>
+				<p></p>
+			</div>
+		</div>
+		<div class="importButton">
+			<button id="generateSemesterForecast">Generate Forecast</button>
+		</div>
+		<br>
 		<div id ="current_course">
 		</div>
 		<div class="footer">

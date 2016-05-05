@@ -27,7 +27,7 @@ if (isset($_POST['username'], $_POST['password'])) {
         if ($type == "1") {
             
             //Login success 
-            header('Location: ../overallgpadashboard/student_roster.html');
+            header('Location: admin.html');
         } else {
             header('Location: ../overallgpadashboard/OvrlDash.html');
         }

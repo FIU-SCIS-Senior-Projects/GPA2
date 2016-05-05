@@ -46,7 +46,6 @@ function start() {
 			};
 			$('#PDFimport').ajaxForm(options);
 			$('#PDFimport').submit(function(){
-				alert("Hello");
 				//$('#PDFimport').ajaxSubmit();
 				return false;
 			});
@@ -144,7 +143,7 @@ function importData()
 
 }
 
-function importWhatif()
+function importAudit()
 {
 	document.getElementById("Whatif").click();
 	var control = document.getElementById("Whatif");
@@ -160,14 +159,14 @@ function importWhatif()
 				type: 'POST',
 				url: 'settings.php',
 				data: {
-					action: 'importWhatif',
+					action: 'importAudit',
 					file:   contents
 				},
 				dataType: 'text',
 				success: function(data) {
 					if(data == "true")
 					{
-						alert("File imported correctly!");
+						alert("hereeeeee!");
 					}
 					else
 					{

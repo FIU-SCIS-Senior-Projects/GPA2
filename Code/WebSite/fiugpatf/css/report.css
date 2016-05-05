@@ -1,0 +1,79 @@
+body {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+h2#forecastTitle {
+    text-align: center;
+    font-weight: bold;
+}
+
+.results .credits {
+    float: right;
+}
+
+table, td, th {
+    border: 1px solid black;
+
+}
+
+table {
+    width: 100%;
+}
+
+th, td {
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+ tr:nth-child(odd) {
+     background-color: #f5ea6c
+ }
+
+th {
+    background-color: #112d54;
+    color: white;
+}
+
+/*graph*/
+#placeholder {
+    width: 100%;
+}
+
+#gtitle {
+    width: 100%;
+}
+
+/* basic positioning */
+#graph_legend {
+    text-align: center;
+    width: 100%
+}
+.legend {
+    list-style: none;
+}
+.legend li {
+    display:inline-block;
+    margin-right: 10px;
+}
+.legend span {
+    border: 1px solid #ccc;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 2px;
+}
+/* your colors */
+.legend .course0 { background-color: #000080; }
+.legend .course1 { background-color: #FFD700; }
+.legend .course2 { background-color: #333333; }
+.legend .course3 { background-color: #0f6b2e; }
+.legend .course4 { background-color: #ff3300; }
+.legend .course5 { background-color: #7d00b3; }
+
+.footerReport {
+    height: 5em;
+}

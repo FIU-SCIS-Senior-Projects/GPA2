@@ -1,0 +1,81 @@
+Setup
+
+Enable repositories
+sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
+sudo apt-get build-dep apache2
+sudo apt-get install libxml2-dev
+sudo apt-get install autoconf
+
+
+Download and install MySQL
+sudo apt-get install mysql-server
+pass: sqliscool
+Create database
+CREATE DATABASE GPA_Tracker;
+Create users
+CREATE USER 'sec_user'@'localhost' IDENTIFIED BY 'Uzg82t=u%#bNgPJw';
+ GRANT CREATE, DROP, DELETE, INSERT, SELECT, UPDATE ON GPA_Tracker.* TO 'sec_user'@'localhost';
+CREATE USER ‘admin’@'localhost' IDENTIFIED BY '12345678';
+GRANT ALL ON GPA_Tracker.* TO admin'@'localhost'
+Import database
+
+
+Download and Install apache
+wget http://archive.apache.org/dist/httpd/httpd-2.4.18.tar.gz
+unzip: $ tar -xzvf httpd-2.4.18.tar.gz
+cd into directory
+./configure
+make
+sudo make install
+
+
+Download pthread library
+wget http://pecl.php.net/get/pthreads-2.0.10.tgz
+unzip: $ tar -xzvf pthreads-2.0.10.tgz
+
+
+
+Download and install php
+wget -O php-5.6.18.tar.gz http://php.net/get/php-5.6.18.tar.gz/from/this/mirror
+unzip: $ tar -xzvf php-5.6.18.tar.gz
+mv pthreads-2.0.10 php-5.6.18/ext/pthreads (from downloads folder)
+cd into php-5.6.18
+rm -rf aclocal.m4
+rm -rf autom4te.cache/
+./buildconf --force
+./configure --help | grep pthreads
+Ensure it shows enable-pthreads
+./configure --with-apxs2=/usr/local/apache2/bin/apxs --with-mysql --with-mysqli --with-json --enable-mbstring --enable-soap --enable-maintainer-zts --enable-pthreads --enable-sysvsem --enable-sysvshm --enable-sysvmsg 
+make
+sudo make install
+
+
+Configure Apache
+Edit /usr/local/apache2/conf/httpd.conf
+<FilesMatch \.php$>
+    SetHandler application/x-httpd-php
+</FilesMatch>
+ServerName localhost
+# DocumentRoot: The directory out of which you will serve your
+# documents. By default, all requests are taken from this directory, but
+# symbolic links and aliases may be used to point to other locations.
+DocumentRoot "/home/sproject/GPA2/Code/WebSite/fiugpatf"
+<Directory "/home/sproject/GPA2/Code/WebSite/fiugpatf">
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride None
+    Require all granted
+</Directory>
+<DirectoryMatch "/home/sproject/GPA2/Code/WebSite/fiugpatf">
+php_admin_value auto_prepend_file "/home/sproject/GPA2/Code/WebSite/fiugpatf/common_files/toLog.php"
+</DirectoryMatch>
+
+
+Configure php
+Copy php.ini-development from php-5.8.18 to /usr/local/lib as php.ini
+Edit php.ini
+date.timezone = 'America/New_York'
+change: session.cache_limiter = public
+uncomment: ;session.save_path = "/tmp"
+always_populate_raw_post_data = -1 
+
+!!! READ REAMDE IN WEBSITE FOLDER !!!

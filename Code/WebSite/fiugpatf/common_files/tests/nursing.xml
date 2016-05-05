@@ -1,0 +1,406 @@
+<main>
+	<programName>Nursing</programName>
+	<minGPA>3.0</minGPA>
+	<activeDate>2012</activeDate>
+	<bucket>
+		<data>
+			<description>Prerequisites</description>
+			<allRequired>1</allRequired>
+			<quantity>9</quantity>
+			<quantification>buckets</quantification>
+		</data>
+		<bucket>
+			<data>
+				<description>Human Anatomy &amp; Lab</description>
+				<allRequired>1</allRequired>
+				<quantity>2</quantity>
+				<quantification>courses</quantification>
+			</data>
+			<course>
+				<courseID>ZOO3731</courseID>
+				<courseName>Human Anatomy</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>ZOO3731L</courseID>
+				<courseName>Human Anatomy Lab</courseName>
+				<credits>1</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+		</bucket>
+		<bucket>
+			<data>
+				<description>Human Physiology &amp; Lab</description>
+				<allRequired>1</allRequired>
+				<quantity>2</quantity>
+				<quantification>courses</quantification>
+			</data>
+			<course>
+				<courseID>PCB2099</courseID>
+				<courseName>Foundations of Human Physiology</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>PCB2099L</courseID>
+				<courseName>Foundations of Human Physiology Lab</courseName>
+				<credits>1</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+		</bucket>
+		<bucket>
+			<data>
+				<description>Microbiology &amp; Lab</description>
+				<allRequired>1</allRequired>
+				<quantity>2</quantity>
+				<quantification>courses</quantification>
+			</data>
+			<course>
+				<courseID>MCB2000</courseID>
+				<courseName>Introductory Microbiology</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>MCB2000L</courseID>
+				<courseName>Introductory Microbiology Lab</courseName>
+				<credits>1</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+		</bucket>
+		<bucket>
+			<data>
+				<description>Chemistry &amp; Lab</description>
+				<allRequired>1</allRequired>
+				<quantity>2</quantity>
+				<quantification>courses</quantification>
+			</data>
+			<course>
+				<courseID>CHM1045</courseID>
+				<courseName>General Chemistry I</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>CHM1045L</courseID>
+				<courseName>General Chemistry Lab I</courseName>
+				<credits>1</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+		</bucket>
+		<bucket>
+			<data>
+				<description>Statistics</description>
+				<allRequired>1</allRequired>
+				<quantity>1</quantity>
+				<quantification>courses</quantification>
+			</data>
+			<course>
+				<courseID>STA2023</courseID>
+				<courseName>Statistics for Business and Economics</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+		</bucket>
+		<bucket>
+			<data>
+				<description>Nutrition</description>
+				<allRequired>1</allRequired>
+				<quantity>1</quantity>
+				<quantification>courses</quantification>
+			</data>
+			<course>
+				<courseID>HUN2201</courseID>
+				<courseName>Principles of Nutrition</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+		</bucket>
+		<bucket>
+			<data>
+				<description>Human Growth &amp; Development</description>
+				<allRequired>1</allRequired>
+				<quantity>1</quantity>
+				<quantification>courses</quantification>
+			</data>
+			<course>
+				<courseID>DEP2000</courseID>
+				<courseName>Human Growth &amp; Development</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+		</bucket>
+		<bucket>
+			<data>
+				<description>Intro to Psychology</description>
+				<allRequired>1</allRequired>
+				<quantity>1</quantity>
+				<quantification>courses</quantification>
+			</data>
+			<course>
+				<courseID>PSY2012</courseID>
+				<courseName>Intro to Psychology</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+		</bucket>
+		<bucket>
+			<data>
+				<description>Intro to Ethics</description>
+				<allRequired>1</allRequired>
+				<quantity>1</quantity>
+				<quantification>courses</quantification>
+			</data>
+			<course>
+				<courseID>PHI2600</courseID>
+				<courseName>Introduction to Ethics</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+		</bucket>
+	</bucket>
+	<bucket>
+		<data>
+			<description>Nursing Core</description>
+			<allRequired>1</allRequired>
+			<quantity>5</quantity>
+			<quantification>buckets</quantification>
+		</data>
+		<bucket>
+			<data>
+				<description>Junior 1: Semester 1</description>
+				<allRequired>1</allRequired>
+				<quantity>5</quantity>
+				<quantification>courses</quantification>
+			</data>
+			<course>
+				<courseID>NUR3029</courseID>
+				<courseName>Foundations of Nursing Practice</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>NUR3029C</courseID>
+				<courseName>Foundations of Nursing Practice Lab</courseName>
+				<credits>2</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>NUR3029L</courseID>
+				<courseName>Foundations of Nursing Practice Clinical</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>NUR3125</courseID>
+				<courseName>Pathophysiologic Basis for Nursing Practice</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>NUR3066C</courseID>
+				<courseName>Health Assessment and Promotion in Nursing Practice</courseName>
+				<credits>4</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+		</bucket>
+		<bucket>
+			<data>
+				<description>Junior 2: Semester 2</description>
+				<allRequired>1</allRequired>
+				<quantity>6</quantity>
+				<quantification>courses</quantification>
+			</data>
+			<course>
+				<courseID>NUR3226</courseID>
+				<courseName>Nursing Care of Adults I</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>NUR3226L</courseID>
+				<courseName>Nursing Care of Adults I Clinical</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>NUR3145</courseID>
+				<courseName>Pharmacologic Basis for Nursing Practice</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>NUR3666</courseID>
+				<courseName>Evidence-Based Nursing and Research in Global Health Care</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>NSP3801</courseID>
+				<courseName>Interprofessional Approaches to Health Care</courseName>
+				<credits>1</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>NUR3821</courseID>
+				<courseName>Professional Nursing Leadership: Concepts and Issues</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+		</bucket>
+		<bucket>
+			<data>
+				<description>Junior 2: Semester 3</description>
+				<allRequired>1</allRequired>
+				<quantity>5</quantity>
+				<quantification>courses</quantification>
+			</data>
+			<course>
+				<courseID>NUR3227</courseID>
+				<courseName>Nursing Care of Adults II</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>NUR3227L</courseID>
+				<courseName>Nursing Care of Adults II Clinical</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>NUR4455</courseID>
+				<courseName>Care of Families: Childbearing Nursing</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>NUR4455L</courseID>
+				<courseName>Care of Families: Childbearing Nursing Clinical</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>NUR3685L</courseID>
+				<courseName>Integrative Nursing Care I</courseName>
+				<credits>0</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+		</bucket>
+		<bucket>
+			<data>
+				<description>Senior 3: Semester 1</description>
+				<allRequired>1</allRequired>
+				<quantity>6</quantity>
+				<quantification>courses</quantification>
+			</data>
+			<course>
+				<courseID>NUR3535</courseID>
+				<courseName>Psychosocial Nursing</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>NUR3535L</courseID>
+				<courseName>Psychosocial Nursing Clinical</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>NUR4355</courseID>
+				<courseName>Care of Families: Childrearing Nursing</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>NUR4355L</courseID>
+				<courseName>Care of Families: Childrearing Nursing Clinical</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>NUR4686L</courseID>
+				<courseName>Integrative Nursing Care II</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>NUR4667</courseID>
+				<courseName>Nursing in Global Health Care Systems</courseName>
+				<credits>3</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+		</bucket>
+		<bucket>
+			<data>
+				<description>Senior 4: Semester 2</description>
+				<allRequired>1</allRequired>
+				<quantity>4</quantity>
+				<quantification>courses</quantification>
+			</data>
+			<course>
+				<courseID>NUR4636C</courseID>
+				<courseName>Care of Communities: Community Health Nursing</courseName>
+				<credits>4</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>NUR4286</courseID>
+				<courseName>Nursing Care of Older Adults</courseName>
+				<credits>2</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>NUR4940</courseID>
+				<courseName>Senior Nursing Synthesis</courseName>
+				<credits>2</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+			<course>
+				<courseID>NUR4945L</courseID>
+				<courseName>Senior Clinical Practicum</courseName>
+				<credits>4</credits>
+				<courseDescription></courseDescription>
+				<minGrade>C</minGrade>
+			</course>
+		</bucket>
+	</bucket>
+</main>

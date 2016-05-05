@@ -1,18 +1,19 @@
 var course;
 var maintab;
 var gradeTable;
+var router = 'semesterDashboardRouter.php';
 
 $(document).ready(function(){
     course = getUrlVars()["id"];
     getCourse();
-    makeTabs();
+    //makeTabs();
 });
 
 function getCourse()
 {
     $.ajax({
         type: 'POST',
-        url: 'tabs.php',
+        url: router,
         data: {
             action: 'tabs',
             course: course
@@ -47,9 +48,9 @@ function makeTabs(tabs)
 
 	$.ajax({
 		type: 'POST',
-		url: 'tabs.php',
+		url: router,
 		data: {
-		    action: 'GetAllAssessments',
+		    action: 'getAllAssessments',
 	        course: course
 	    },
 		dataType: 'json',
@@ -73,9 +74,9 @@ function makeTabs(tabs)
 	});
 	$.ajax({
 		type: 'POST',
-		url: 'tabs.php',
+		url:router,
 		data: {
-		    action: 'PlotPoints',
+		    action: 'plotPoints',
 	        course: course
 	    },
 		dataType: 'json',
@@ -141,7 +142,7 @@ function createDiv(assessment)
     var currCourse;
     $.ajax({
         type: 'POST',
-        url: 'tabs.php',
+        url: router,
         data: {
             action: 'getGrades',
             assessment: assessment,
@@ -221,16 +222,16 @@ function createDiv(assessment)
                 if (del == true) {
                     $.ajax({
                         type: 'POST',
-                        url: 'tabs.php',
+                        url: router,
                         data: {
                             action: 'removeGrade',
                             assessment: assessment,
                             grade: grade,
                             course: course
                         },
-                        dataType: 'text',
+                        dataType: 'json',
                         success: function (data) {
-                            if (data == 'true') {
+                            if (data[0] == 'success') {
                                 currCourse.fnClose(nTr);
                                 currCourse.fnDeleteRow(nTr);
 								recreateGradeTable();
@@ -270,7 +271,7 @@ function createDiv(assessment)
 
                     $.ajax({
                         type: 'POST',
-                        url: 'tabs.php',
+                        url: router,
                         data: {
                             action: 'modifyGrade',
                             course: course,
@@ -278,9 +279,9 @@ function createDiv(assessment)
                             grade: grade,
                             newGrade: newGrade
                         },
-                        dataType: 'text',
+                        dataType: 'json',
                         success: function(data) {
-                            if(data == "true")
+                            if(data[0] == "success")
                             {
                                 currCourse.fnUpdate(newGrade, row, 1);
 								recreateGradeTable();
@@ -313,16 +314,16 @@ function createDiv(assessment)
 					var grade = $('#grade' + assessmentNoSpace).val();
 					$.ajax({
 						type: 'POST',
-						url: 'tabs.php',
+						url: router,
 						data: {
 						    action: 'addGrade',
 						    course: course,
 						    assesment: assessment,
 						    grade: grade
 						},
-						dataType: 'text',
+						dataType: 'json',
 						success: function(data) {
-						    if(data == "true")
+						    if(data[0] == "success")
 						    {
 						        currCourse.dataTable().fnAddData([
 						            "Grade" + (currCourse.fnSettings().fnRecordsTotal() + 1),
@@ -377,15 +378,15 @@ function removeAssessment(assessment)
 	var assessmentNoSpace = removeSpace(assessment);
     $.ajax({
         type: 'POST',
-        url: 'tabs.php',
+        url: router,
         data: {
             action: 'removeBucket',
             course: course,
             assessment: assessment
         },
-        dataType: 'text',
+        dataType: 'json',
         success: function(data) {
-            if(data == "true")
+            if(data[0] == "success")
             {
                 $("#" + assessmentNoSpace).remove();
                 $("li[aria-controls = '" + assessmentNoSpace +"']").remove();
@@ -477,16 +478,16 @@ function addAssesment()
         var percentage = $('#percentage').val();
         $.ajax({
             type: 'POST',
-            url: 'tabs.php',
+            url: router,
             data: {
                 action: 'add',
                 course: course,
-                assesment: assessment,
+                assessment: assessment,
                 percentage: percentage
             },
-            dataType: 'text',
+            dataType: 'json',
             success: function(data) {
-                if(data=="true")
+                if(data[0] == 'success')
                 {
                     $('#tabs ul').append('<li><a href="#' + assessmentNoSpace + '"> ' + assessment + '</a></li>');
                     createDiv(assessment);
@@ -521,9 +522,9 @@ function recreateGradeTable()
 
 	$.ajax({
 		type: 'POST',
-		url: 'tabs.php',
+		url: router,
 		data: {
-		    action: 'GetAllAssessments',
+		    action: 'getAllAssessments',
 	        course: course
 	    },
 		dataType: 'json',

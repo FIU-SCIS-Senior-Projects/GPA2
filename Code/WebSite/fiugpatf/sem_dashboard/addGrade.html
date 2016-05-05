@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<md-dialog aria-label="Add Grade" ng-cloak>
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Add Grade</h2>
+                <span flex></span>
+                <md-button ng-click="cancel()">
+                    Cancel
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+
+                <form layout="column" class="md-padding" style="padding-top: 0;">
+                    <div layout="row" layout-sm="column">
+                        <div flex style="position: relative;">
+                            <h2 class="md-subhead" style="position: absolute; bottom: 0; left: 0; margin: 0; font-weight: 500; text-transform: uppercase; line-height: 35px; white-space: nowrap;">Add a New Grade:</h2>
+                        </div>
+                        <!--<md-input-container>
+                            <label for="assessment">Assessment</label>
+                            <input type="text" id="assessment" ng-model="tAssessment">
+                        </md-input-container>-->
+                        <md-input-container>
+                            <label for="grade">Grade</label>
+                            <input type="text" id="grade" ng-model="tGrade">
+                        </md-input-container>
+                        <md-button class="add-tab md-primary md-raised" ng-disabled="!tGrade" ng-click="answer(tGrade)" style="margin-right: 0;">Add Grade</md-button>
+                    </div>
+                </form>
+
+            </div>
+        </md-dialog-content>
+    </form>
+</md-dialog>
+
+</body>
+</html>
